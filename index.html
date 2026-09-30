@@ -1,0 +1,1726 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dofus Silvestre: checklist de 0 a 100</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marcellus&family=Source+Sans+3:wght@400;600;700&display=swap">
+<style>
+:root{
+  --bg:#e8dfcb;--paper:#f4eedf;--paper2:#ebe2cc;--ink:#241b12;--muted:#6b5a42;--line:#d3c6a6;--line2:#a89060;
+  --bar:#1c150e;--bar2:#2a2016;--barink:#efe4c8;--gold:#b8892e;--goldhi:#dcb762;--goldink:#221606;
+  --green:#4e7a3a;--link:#864619;--chip:#241a10;--chipink:#e8ca7c;--warn:#efe1b8;--warnink:#45340f;
+  --eggbg:rgba(255,255,255,.11);--scale:#83552f;--scale-lit:#6faa3b;--focus:#1c5e8a;--tone:#b8892e;
+  --display:"Marcellus","Cinzel","Trajan Pro",Georgia,"Times New Roman",serif;
+  --text:"Source Sans 3",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#120e0a;--paper:#1b1610;--paper2:#241d15;--ink:#ebe0c7;--muted:#a99878;--line:#33291d;--line2:#5c4a2a;
+    --bar:#0c0906;--bar2:#1a130c;--link:#e2ab5f;--warn:#2f2610;--warnink:#ecd9a4;--eggbg:rgba(255,255,255,.11);--scale:#6a4629;--scale-lit:#6cae3a;--focus:#8cc4ea;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#120e0a;--paper:#1b1610;--paper2:#241d15;--ink:#ebe0c7;--muted:#a99878;--line:#33291d;--line2:#5c4a2a;
+  --bar:#0c0906;--bar2:#1a130c;--link:#e2ab5f;--warn:#2f2610;--warnink:#ecd9a4;--eggbg:rgba(255,255,255,.11);--scale:#6a4629;--scale-lit:#6cae3a;--focus:#8cc4ea;
+}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 60px)}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;color:var(--ink);font:400 1rem/1.55 var(--text);background:radial-gradient(900px 420px at 50% -140px,rgba(184,137,46,.10),transparent 65%),var(--bg)}
+a{color:var(--link);font-weight:600}
+:focus-visible{outline:2px solid var(--focus);outline-offset:2px;border-radius:3px}
+.wrap{max-width:820px;margin:0 auto;padding:0 16px 72px}
+
+/* barra superior */
+.topbar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bar);border-bottom:1px solid #6b5326}
+.topbar .in{max-width:820px;margin:0 auto;padding:9px 16px;display:flex;align-items:center;gap:12px}
+.mini{width:18px;flex:none}
+.lbl{font:400 .82rem var(--display);color:var(--chipink);white-space:nowrap;letter-spacing:.12em;text-transform:uppercase}
+.xp{flex:1;height:6px;border-radius:3px;background:#2c2114;overflow:hidden}
+.xp i{display:block;height:100%;width:0;background:linear-gradient(90deg,#a97a25,#e2be6c);transition:width .35s}
+
+/* cabecera */
+.hero{position:relative;display:grid;grid-template-columns:190px 1fr;gap:28px;align-items:center;margin:20px 0 16px;padding:30px 30px 26px;border-radius:6px;color:var(--barink);
+  border:1px solid #6b5326;background:radial-gradient(520px 260px at 16% 45%,rgba(200,150,60,.16),transparent 70%),linear-gradient(180deg,#1f1810,#120d08);box-shadow:0 10px 30px rgba(0,0,0,.28)}
+.hero::before{content:"";position:absolute;inset:7px;border:1px solid rgba(220,183,98,.28);border-radius:3px;pointer-events:none}
+.hero-egg{position:relative;text-align:center}
+.bigegg{width:150px;margin:0 auto;filter:drop-shadow(0 0 16px rgba(220,183,98,.22)) drop-shadow(0 8px 10px rgba(0,0,0,.5))}
+.bigegg svg{width:100%;height:auto;display:block}
+.pctbadge{margin:14px auto 0;display:inline-block;padding:2px 14px;font:400 1.05rem var(--display);letter-spacing:.08em;color:var(--goldhi);border:1px solid rgba(220,183,98,.55);border-radius:3px;background:rgba(0,0,0,.35)}
+.kicker{margin:0 0 6px;font:600 .72rem var(--text);letter-spacing:.24em;text-transform:uppercase;color:#b89a5c}
+h1{margin:0;font:400 clamp(2rem,6.2vw,3.1rem)/1.05 var(--display);letter-spacing:.07em;text-transform:uppercase;
+  background:linear-gradient(180deg,#f6e2a6,#c99b3f 78%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.rule{display:flex;align-items:center;gap:10px;margin:12px 0 10px;color:#b89a5c}
+.rule::before,.rule::after{content:"";height:1px;flex:1;background:linear-gradient(90deg,rgba(184,154,92,.7),transparent)}
+.rule::after{background:linear-gradient(270deg,rgba(184,154,92,.7),transparent)}
+.rule i{width:7px;height:7px;background:#d3ab55;transform:rotate(45deg)}
+.subt{margin:0 0 8px;font:400 1rem var(--display);letter-spacing:.14em;text-transform:uppercase;color:#d9c48f}
+.lead{margin:0 0 12px;max-width:56ch;color:#cdbf9f;font-size:.96rem}
+.stats{margin:0 0 12px;color:#b89a5c;font-weight:600;font-size:.9rem;letter-spacing:.06em}
+@media (max-width:620px){.hero{grid-template-columns:1fr;text-align:center;padding:24px 16px}.bigegg{width:130px}.lead{margin-left:auto;margin-right:auto}.rule{justify-content:center}.hero .ctrl{justify-content:center}}
+
+/* personajes */
+.slots{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:0 0 12px}
+button.slot{display:block;text-align:left;padding:9px 11px 8px;min-height:0;border-radius:4px;border:1px solid rgba(220,183,98,.28);border-bottom:1px solid rgba(220,183,98,.28);
+  background:rgba(255,255,255,.03);color:var(--barink);font:400 .8rem var(--display);letter-spacing:.1em;text-transform:uppercase;box-shadow:none}
+button.slot .nm{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+button.slot .pc2{display:block;font:600 .74rem var(--text);letter-spacing:.06em;color:#a99878;margin-top:2px}
+button.slot .bar{display:block;height:3px;border-radius:2px;background:rgba(255,255,255,.12);overflow:hidden;margin-top:6px}
+button.slot .bar i{display:block;height:100%;background:#d3ab55}
+button.slot:hover{background:rgba(220,183,98,.10);filter:none}
+button.slot[aria-pressed="true"]{background:rgba(220,183,98,.16);border-color:#d3ab55;color:#f6e2a6;box-shadow:inset 0 -2px 0 #d3ab55}
+@media (max-width:520px){.slots{grid-template-columns:repeat(2,1fr)}}
+
+/* pendientes */
+.pbody ul.plist{margin:0;padding-left:1.2rem;list-style:disc}.pbody ul.plist li{margin:5px 0;color:var(--ink)}
+details.pend{border-left-color:#c97a3a;margin-top:14px}
+/* selección múltiple */
+.apply{margin:0 0 8px;color:#b89a5c;font-size:.85rem}
+.apply .mini-btn{margin-left:8px}
+.lrow{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.pips{display:none;gap:3px;align-items:center}
+.pips i{display:block;width:9px;height:9px;border-radius:2px;border:1px solid var(--line2)}
+.pips i.on{background:var(--gold);border-color:#8d6a20}
+.item input:indeterminate{border-color:var(--gold)}
+.item input:indeterminate::after{content:"";position:absolute;left:3px;top:8px;width:12px;height:2px;background:var(--gold)}
+/* herramientas de fase */
+.ptools{display:flex;flex-wrap:wrap;gap:8px;padding-top:12px}
+button.mini-btn{min-height:0;padding:5px 10px;font-size:.66rem}
+/* nombres editables */
+.names{margin:0 0 12px}
+.names summary{display:inline-block;padding:2px 0;cursor:pointer;list-style:none;font:600 .72rem var(--text);letter-spacing:.14em;text-transform:uppercase;color:#b89a5c}
+.names summary:hover{background:none;color:#e2be6c}
+.ned{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:8px;text-align:left}
+.ned label{display:block;font:600 .68rem var(--text);letter-spacing:.12em;text-transform:uppercase;color:#a99878}
+.ned input{width:100%;margin-top:3px;background:rgba(255,255,255,.06);border:1px solid rgba(220,183,98,.35);border-radius:4px;color:var(--barink);padding:7px 9px;font:600 .92rem var(--text)}
+.ned input:focus-visible{border-color:#d3ab55}
+/* botones */
+.ctrl{display:flex;flex-wrap:wrap;gap:8px}
+button{font:600 .74rem var(--text);letter-spacing:.1em;text-transform:uppercase;color:var(--ink);background:transparent;border:1px solid var(--line2);border-radius:4px;padding:9px 14px;cursor:pointer;min-height:38px}
+button:hover{background:rgba(184,137,46,.14);filter:none}
+button:active{transform:translateY(1px)}
+.hero button{color:var(--barink);border-color:rgba(220,183,98,.5)}
+.hero button:hover{background:rgba(220,183,98,.14)}
+button.pri{background:linear-gradient(#d9b25c,#b8892e);color:var(--goldink);border-color:#8d6a20}
+button.pri:hover{background:linear-gradient(#e3bf6d,#c4952f)}
+.seg{display:inline-flex}
+.seg button:first-child{border-radius:4px 0 0 4px}.seg button:last-child{border-radius:0 4px 4px 0;border-left:0}.seg button{border-radius:0}
+.seg button[aria-pressed="true"],button.tog[aria-pressed="true"]{background:linear-gradient(#d9b25c,#b8892e);color:var(--goldink);border-color:#8d6a20}
+
+/* paneles */
+.box{position:relative;background:var(--paper);border:1px solid var(--line2);border-radius:6px;padding:16px 20px;margin:0 0 14px}
+.box h2{margin:0 0 10px;font:400 .95rem var(--display);letter-spacing:.14em;text-transform:uppercase;color:var(--link);display:flex;align-items:center;gap:10px}
+.box h2::before{content:"";width:7px;height:7px;background:var(--gold);transform:rotate(45deg);flex:none}
+.box ul{margin:0;padding-left:1.15rem}.box li{margin:4px 0}
+.box .n{margin:8px 0 0;color:var(--muted);font-size:.9rem}
+.effects{border-left:3px solid var(--green)}
+.warn{background:var(--warn);color:var(--warnink);border-color:#b8892e}.warn h2{color:var(--warnink)}
+
+/* inventario de huevos */
+.eggs{display:grid;grid-template-columns:repeat(6,1fr);gap:8px}
+button.eg{display:block;background:var(--bar);color:var(--barink);border:1px solid rgba(220,183,98,.28);border-radius:4px;padding:10px 4px 8px;min-height:0;text-align:center;font:400 .72rem var(--display);letter-spacing:.12em;text-transform:uppercase}
+button.eg:hover{border-color:#d3ab55;background:var(--bar2)}
+button.eg.full{border-color:#d3ab55;box-shadow:0 0 12px rgba(220,183,98,.35)}
+button.eg svg{width:38px;height:auto;display:block;margin:0 auto 6px}
+button.eg small{display:block;margin-top:2px;font:600 .72rem var(--text);letter-spacing:.06em;color:#a99878;text-transform:none}
+@media (max-width:560px){.eggs{grid-template-columns:repeat(3,1fr)}}
+
+/* misión activa */
+.next{background:linear-gradient(180deg,var(--bar2),var(--bar));color:var(--barink);border:1px solid #6b5326;border-left:4px solid #d3ab55}
+.next h2{color:#d9c48f}
+.next .k{margin:0 0 4px;font:600 .7rem var(--text);letter-spacing:.2em;text-transform:uppercase;color:#b89a5c}
+.next h2.nt{display:block;margin:0 0 6px;font:400 1.3rem/1.2 var(--display);letter-spacing:.02em;text-transform:none;color:#f4e6bf}
+.next h2.nt::before{display:none}
+.next .kb{margin:0 0 6px;color:#a99878;font-weight:600;font-size:.9rem}
+.next .n{margin:0 0 8px;color:#d8cba8}
+.next .ctrl{margin-top:12px}
+.next button:not(.pri){color:var(--barink);border-color:rgba(220,183,98,.5)}
+
+/* fases */
+details.phase{position:relative;background:var(--paper);border:1px solid var(--line2);border-left:4px solid var(--tone);border-radius:6px;margin:0 0 10px;overflow:hidden}
+summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:14px;padding:12px 14px}
+summary::-webkit-details-marker{display:none}
+summary:hover{background:rgba(184,137,46,.06)}
+.pn{flex:none;width:36px;height:36px;border-radius:50%;display:grid;place-items:center;font:400 .95rem var(--display);color:var(--goldhi);background:var(--bar);border:1px solid var(--gold)}
+details.done .pn{color:#a9d47a;border-color:#6faa3b}
+.pt{flex:1;min-width:0}
+.ptitle{display:block;font:400 1.05rem/1.25 var(--display);letter-spacing:.02em;color:var(--ink)}
+.psub{display:block;color:var(--muted);font-size:.85rem}
+.pbar{display:block;height:3px;border-radius:2px;background:var(--line);overflow:hidden;margin-top:7px}
+.pbar i{display:block;height:100%;width:0;background:var(--tone);transition:width .3s}
+.pc{flex:none;font:600 .8rem var(--text);letter-spacing:.06em;color:var(--muted);white-space:nowrap}
+.pc::after{content:"";display:inline-block;width:7px;height:7px;margin-left:10px;border-right:2px solid var(--muted);border-bottom:2px solid var(--muted);transform:rotate(45deg) translateY(-2px);transition:transform .2s}
+details[open] .pc::after{transform:rotate(-135deg) translateY(-2px)}
+.pbody{padding:2px 16px 16px;border-top:1px solid var(--line)}
+.pbody h3{margin:20px 0 6px;padding-left:16px;position:relative;font:400 .86rem var(--display);letter-spacing:.12em;text-transform:uppercase;color:var(--link)}
+.pbody h3::before{content:"";position:absolute;left:0;top:.42em;width:6px;height:6px;background:var(--tone);transform:rotate(45deg)}
+.pbody ul{list-style:none;margin:0;padding:0}
+
+/* casillas */
+.item{display:grid;grid-template-columns:24px 1fr;gap:10px;padding:8px 0;border-bottom:1px solid var(--line)}
+.item:last-child{border-bottom:0}
+.item input{appearance:none;-webkit-appearance:none;margin:2px 0 0;width:20px;height:20px;border:1px solid var(--line2);border-radius:3px;background:var(--paper);cursor:pointer;position:relative}
+.item input:hover{border-color:var(--gold)}
+.item input:checked{background:linear-gradient(#d9b25c,#b8892e);border-color:#8d6a20}
+.item input:checked::after{content:"";position:absolute;left:6px;top:1px;width:5px;height:10px;border:solid var(--goldink);border-width:0 2px 2px 0;transform:rotate(42deg)}
+.item label{cursor:pointer;font-weight:600;display:block}
+.item.done label{color:var(--muted);text-decoration:line-through;text-decoration-color:var(--line2)}
+.item .n{margin:2px 0 0;color:var(--muted);font-size:.9rem}
+.meta{display:flex;flex-wrap:wrap;gap:6px 12px;margin-top:5px;align-items:center;font-size:.86rem}
+.chip{position:relative;background:var(--chip);color:var(--chipink);border:1px solid rgba(220,183,98,.35);border-radius:3px;padding:0 9px 0 21px;font-weight:600;white-space:nowrap;font-size:.84rem}
+.chip::before{content:"";position:absolute;left:7px;top:50%;width:8px;height:8px;margin-top:-5px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:#d3ab55}
+button.chip{min-height:0;text-transform:none;letter-spacing:.02em;padding:0 9px 0 21px;border-radius:3px;font:600 .84rem var(--text);color:var(--chipink);background:var(--chip);border:1px solid rgba(220,183,98,.35)}
+button.chip:hover{background:var(--bar2);text-decoration:underline}
+button.chip:active{transform:none}
+.tip{display:grid;grid-template-columns:24px 1fr;gap:10px;padding:8px 0;color:var(--muted);font-size:.93rem;border-bottom:1px solid var(--line)}
+.tip::before{content:"";width:7px;height:7px;background:var(--gold);transform:rotate(45deg);margin:8px 0 0 7px}
+body.hide-done .item.done{display:none}
+
+/* lista de compras */
+.scroll{overflow-x:auto;margin-top:12px}
+table.shop{width:100%;border-collapse:collapse;font-size:.93rem}
+table.shop th,table.shop td{text-align:left;padding:6px 10px;border-bottom:1px solid var(--line)}
+table.shop th{color:var(--muted);font:400 .78rem var(--display);letter-spacing:.12em;text-transform:uppercase}
+table.shop td.qty{font-weight:700;white-space:nowrap}
+#shopWrap{margin-bottom:10px}#shopWrap details.phase{margin:0}
+.pbody p.n{margin:10px 0 0;color:var(--muted);font-size:.88rem}
+.foot{color:var(--muted);font-size:.84rem;margin-top:26px}
+@media (prefers-reduced-motion:reduce){.xp i,.pbar i,.pc::after{transition:none}}
+</style>
+</head>
+<body>
+<div class="topbar" role="status" aria-live="polite">
+  <div class="in"><span class="mini" id="miniEgg"></span><span class="lbl" id="topLbl">Selotrop · 0 %</span><div class="xp"><i id="topFill"></i></div></div>
+</div>
+
+<div class="wrap">
+  <header class="hero">
+    <div class="hero-egg"><div class="bigegg" id="bigEgg" role="img" aria-label="Huevo del Dofus Silvestre que se vuelve verde al avanzar"></div><div class="pctbadge" id="pct">0 %</div></div>
+    <div class="hero-txt">
+      <p class="kicker">Guía de misiones · no oficial</p>
+      <h1>Dofus Silvestre</h1>
+      <div class="rule" aria-hidden="true"><i></i></div>
+      <p class="subt">De 0 a 100 · para tus 4 personajes</p>
+      <p class="lead">Por defecto, lo que marques avanza a los 4 personajes. Toca un personaje para quitarlo de la selección (por ejemplo, si un día juegas con alguien y avanza solo uno): cada uno lleva su propio avance. Todo se guarda en este navegador.</p>
+      <p class="stats" id="cnt">0 de 0 casillas</p>
+      <p class="apply">Lo que marques se aplica a los personajes seleccionados. <button type="button" class="mini-btn" id="allBtn">Seleccionar los 4</button></p>
+      <div class="slots" id="chars" role="group" aria-label="Personajes a los que se aplica lo que marques"></div>
+      <details class="names"><summary>Editar nombres de los personajes</summary><div class="ned" id="nameEd"></div></details>
+      <div class="ctrl">
+        <span class="seg" role="group" aria-label="Cantidades a comprar"><button id="m1" aria-pressed="true">Comprar para 1</button><button id="m4" aria-pressed="false">Comprar para los 4</button></span>
+        <button id="hideBtn" class="tog" aria-pressed="false">Ocultar completadas</button>
+        <button id="resetBtn">Reiniciar los seleccionados</button>
+        <button id="expBtn" type="button">Exportar progreso</button>
+        <button id="impBtn" type="button">Importar progreso</button>
+        <input type="file" id="impFile" accept="application/json,.json" hidden>
+      </div>
+      <p class="apply" id="ioMsg" role="status"></p>
+    </div>
+  </header>
+
+  <section class="box">
+    <h2>Los seis Dofus primordiales</h2>
+    <div class="eggs" id="eggs"></div>
+    <p class="n">Cada huevo se llena al avanzar su bloque. Toca uno para ir a él.</p>
+  </section>
+
+  <section class="box next" id="nextCard" aria-live="polite"></section>
+
+  <section class="box effects">
+    <h2>Qué te da el Dofus Silvestre</h2>
+    <ul>
+      <li>+2 de Alcance.</li>
+      <li>Ganas 8 de Potencia durante 2 turnos por cada PM que uses (se acumula hasta 20 veces).</li>
+      <li>Si en tu turno no gastas ningún PM, te curas el 8 % de tu vida.</li>
+    </ul>
+  </section>
+
+  <section class="box">
+    <h2>Cómo llevar tus 4 personajes a la vez</h2>
+    <ul>
+      <li>Hablar con PNJ y recoger objetos de misión lo tiene que hacer cada personaje. Repite cada paso con los cuatro, uno tras otro.</li>
+      <li>Los cuatro personajes vienen seleccionados: al marcar una casilla se marca en todos. Si un día avanzas solo con uno, quita a los demás de la selección y marca solo ese; luego vuelve a pulsar «Seleccionar los 4».</li>
+      <li>Cuando los personajes van por separado, cada casilla muestra cuatro cuadritos con el estado de cada uno, y una casilla con guion significa que solo algunos de los seleccionados la tienen hecha. Tocarla la marca en todos los seleccionados.</li>
+      <li>Los combates marcados «en solitario» los gana cada personaje por su cuenta. Los marcados «en grupo» puedes hacerlos con los cuatro juntos.</li>
+      <li>Toca una coordenada oscura, por ejemplo [-6,-3], para copiar el comando <b>/travel -6,-3</b>; pégalo en el chat del juego para ir en piloto automático.</li>
+      <li>Arriba tienes el botón <b>Comprar para los 4</b>: multiplica por 4 las cantidades de recursos y la lista de compras total.</li>
+      <li>Si alguno de tus personajes ya hizo parte de la ruta, déjalo como único seleccionado, abre esa fase y usa «Marcar la fase como hecha»; el botón se aplica a los seleccionados y es reversible. Puedes poner el nombre de cada personaje en «Editar nombres de los personajes»; se guarda solo en tu navegador.</li>
+    </ul>
+  </section>
+
+  <section class="box warn">
+    <h2>Léelo antes de empezar</h2>
+    <ul>
+      <li>Es de los Dofus más largos del juego: sumando prerrequisitos, la guía de Dofus pour les Noobs habla de más de 400 misiones.</li>
+      <li>Los seis Dofus primordiales (Esmeralda, Púrpura, Turquesa, Ocre, Marfil y Ébano) tienen que estar en tu inventario, no en el banco, en varios pasos.</li>
+      <li>El Dofus Marfil exige alineamiento 100 (orden 5) en Bonta o Brâkmar, y Quatre sur six exige haber terminado la serie Ocre d'ambre. Están marcados en sus bloques.</li>
+      <li>Los nombres van en francés, como en Dofus pour les Noobs y Dofuserie. Para verlos en español instala la extensión Dofus Translator (Chrome o Firefox), que usa las traducciones oficiales.</li>
+    </ul>
+  </section>
+
+  <div id="shopWrap"></div>
+  <div id="phases"></div>
+
+    <details class="phase pend" id="pendientes">
+    <summary><span class="pn">!</span><span class="pt"><span class="ptitle">Pendientes de revisar</span><span class="psub">Lo que aún no está verificado o desglosado</span></span><span class="pc">lista</span></summary>
+    <div class="pbody">
+      <h3>Datos de resumen que hay que confirmar en el juego</h3>
+      <ul class="plist">
+        <li>Quatre sur six, misiones 4 a 8 (Un remède draconien y los cuatro dragones), 9 (Mississitudes) y 10 (Le destin de Kalisthe), y los requisitos ocultos L'ombre et la proie, À la croisée des mondes y Bûcherons en détresse: salen de guías de 2016 a 2026 y de resúmenes de terceros. Cada dato puede haber cambiado.</li>
+        <li>Huecos que quedan: el Nectar céleste (Un remède draconien), el combate táctico final de Kalisthe y la coordenada de Amakna en las purificaciones del dragón de las llamas.</li>
+        <li>Cantidad de Enchanterelle de la serie Ocre d'ambre: puse 2 como estimación.</li>
+        <li>Guías antiguas piden una Laine de Bouftou Royal en Un remède draconien; Dofus pour les Noobs lista un Cuir de Bouftou Royal.</li>
+      </ul>
+      <h3>Misiones sin desglosar</h3>
+      <ul class="plist">
+        <li>Quatre sur six, misión 3 (Une ombre au tableau): solo resumen de terceros.</li>
+        <li>Ça est frugal, une fois: opcional, ahorra 50.000 kamas en À la croisée des mondes.</li>
+        <li>Las misiones de los bloques 4 a 9 (Esmeralda, Púrpura, Turquesa, Ocre, Marfil y Ébano) tienen resumen y enlace, no cada clic.</li>
+        <li>Alineamiento 100 (orden 5) del Marfil: solo enlaces a las guías de alineamiento.</li>
+        <li>Valonia: la estructura (4 logros, 16 misiones, orden, niveles y NPC de inicio) está verificada con Dofuserie. Solo La fin des maningances está paso a paso; las otras 15 tienen resumen y enlace. Los recursos de preparación siguen viniendo de Dofus pour les Noobs.</li>
+        <li>Prólogo, Dom de Pin, Silvosse y Flovoraison ya están verificados con Dofuserie. En Silvosse solo Cultures et turpitudes está paso a paso; las otras seis tienen resumen y enlace.</li>
+        <li>Requisitos ocultos nuevos sin pasos: Quand l'éveil n'est qu'un songe, Gobstination d'un Grobelin, Par ce serment s'écrit le monde, C'est frais mais c'est pas grave, Mort et renouveau, Un héritage tourmenté, Le givre des révélations, Dites-le avec des fleurs y Jusqu'à leur dernier soupir.</li>
+      </ul>
+      <h3>Otros</h3>
+      <ul class="plist">
+        <li>Nombres en español: solo los de Torrente Arcano; el resto está en francés.</li>
+        <li>Perfiles de personaje con imágenes: por hacer.</li>
+        <li>Torrente Arcano, duffus.fr y dofus-portals.fr bloquean el acceso automático: solo pude ver fragmentos de sus páginas.</li>
+        <li>Todo está revisado a septiembre de 2026; una actualización del juego puede cambiar misiones o nombres.</li>
+      </ul>
+    </div>
+  </details>
+
+  <p class="foot">Nombres en español de Torrente Arcano; pasos de Dofus pour les Noobs, Dofuserie y Millenium. Todos son fan sites o medios no oficiales y el juego puede haber cambiado desde septiembre de 2026. Guía madre: <a href="https://www.dofuspourlesnoobs.com/quetes-du-dofus-sylvestre.html" target="_blank" rel="noopener">Quêtes du Dofus Sylvestre</a>.</p>
+</div>
+
+<script>
+(function(){
+  var D = "https://www.dofuspourlesnoobs.com/";
+  function I(id,t,o){o=o||{};o.id=id;o.t=t;return o}
+  function T(t){return {tip:true,t:t}}
+  function L(label,path){return [label,D+path]}
+  function Q(id,q,name,o){o=o||{};o.id=id;o.q=q;o.name=name;return o}
+  function fmt(n){return n.toLocaleString("es-ES")}
+  function part(n,name){return name==="kamas" ? fmt(n)+" kamas" : fmt(n)+" × "+name}
+  var MKEY="dofus-sylvestre-mult-v1", mult=1;
+  try{ var mm=parseInt(localStorage.getItem(MKEY),10); if(mm===4) mult=4; }catch(e){}
+  function qtitle(it){ var s=part(it.q*mult,it.name); if(it.alt) s+=" (o "+part(it.alt[0]*mult,it.alt[1])+")"; return s; }
+  function el(tag, cls, text){ var e=document.createElement(tag); if(cls) e.className=cls; if(text!==undefined) e.textContent=text; return e; }
+  function copyText(t,btn){
+    var old = btn.textContent;
+    function ok(){ btn.textContent = "copiado"; setTimeout(function(){ btn.textContent = old; }, 1200); }
+    function fb(){ try{ var ta=document.createElement("textarea"); ta.value=t; ta.style.position="fixed"; ta.style.opacity="0"; document.body.appendChild(ta); ta.select(); document.execCommand("copy"); document.body.removeChild(ta); ok(); }catch(e){ btn.textContent = t; setTimeout(function(){ btn.textContent = old; }, 2500); } }
+    try{ if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(t).then(ok,fb); else fb(); }catch(e){ fb(); }
+  }
+  function mkChip(w){
+    var m = /^\[(-?\d+),(-?\d+)\]$/.exec(w);
+    if (!m) return el("span","chip",w);
+    var b = el("button","chip",w); b.type="button";
+    b.title = "Copiar /travel "+m[1]+","+m[2]+" (pégalo en el chat del juego)";
+    b.addEventListener("click", function(){ copyText("/travel "+m[1]+","+m[2], b); });
+    return b;
+  }
+
+    var PHASES = [
+  {id:"p1",title:"Preparación con tus 4 personajes",sub:"Herramientas y oficios",blocks:[
+    {h:"Herramientas",items:[
+      I("p1g","Guarda en favoritos la guía madre del Dofus Silvestre",{l:[L("Abrir guía","quetes-du-dofus-sylvestre.html")]}),
+      I("p1h","Instala la extensión Dofus Translator para ver los nombres en español",{n:"Traduce misiones, objetos y logros con las traducciones oficiales. Existe para Chrome y Firefox.",l:[["Chrome","https://chromewebstore.google.com/detail/dofus-translator/oejpehohlnnkidannkailjjocdekjbbf"],["Firefox","https://addons.mozilla.org/en-US/firefox/addon/dofus-translator/"]]})
+    ]},
+    {h:"Oficios (súbelos desde cero en cada personaje)",items:[
+      T("Plan mínimo de oficios para toda la ruta. Minero a 200 cubre tres requisitos a la vez, así que es el primero que conviene subir."),
+      I("jo1","Minero a nivel 200",{n:"Cumple el oficio de recolección a 200 de Six sur six, el Minero 20 de Quatre sur six y del Ébano, y el oficio a 50 de Esmeralda (misión 2). Para saber qué recursos comprar, usa tú la calculadora de XP de oficio de DofusDB (eliges oficio y nivel).",l:[["DofusDB", "https://dofusdb.fr"]]}),
+      I("jo2","Campesino a nivel 80",{n:"Lo pide Le creuset de Mériana, misión 5 del Ébano."}),
+      I("jo3","Cazador a nivel 120",{n:"Para fabricar los Délices des Kitsous de la serie Ocre d'ambre (misión 7 de esa serie)."}),
+      I("jo4","Criador (Éleveur) a nivel 20",{n:"Lo pide Naissance d'une vocation, misión 5 de Esmeralda, junto con los logros «Ce n'est qu'un prélèvement» y «Elle a peut-être trop mangé ?»."}),
+      I("jo5","Façonneur a nivel 10",{n:"Lo pide À la croisée des mondes: hay que fabricar tu propio escudo (Pandaclier) en el taller de Pandala. Es necesario para Dans la gueule du Dragon."}),
+     I("jo6","Forjador (Forgeron) a nivel 180 y Alquimista a nivel 140 (o encárgalos a otros jugadores)",{n:"El forjador fabrica la Tapette à moskitos y el alquimista el Élixir des Trépasseurs (Silvosse). Si compras esos objetos, puedes saltarte estos oficios."}),
+      T("Los oficios son por personaje: hay que subirlos en los cuatro. Cuando quieras, dime los oficios que ya tenga cada uno y ajusto esta lista.")
+    ]}
+  ]},
+  {id:"p1b",title:"Bloque 1: En route pour l'aventure",sub:"Incarnam, 7 misiones. Empieza con Ganymède en [-3,-3]",blocks:[
+    {h:"Antes de empezar",items:[
+      T("No pude confirmar que un personaje nivel 200 pueda volver a Incarnam. Prueba con uno y, si no te deja entrar, avísame antes de hacer el resto.")
+    ]},
+    {h:"1. L'anneau de tous les dangers",items:[
+      I("b1a","Habla con Ganymède",{w:"[-3,-3]"}),
+      I("b1b","Sube las escaleras de la derecha y habla con Maître Hoboulo"),
+      I("b1c","Recoge todos los recursos que hay en el mapa"),
+      I("b1d","Craftea el anillo (anneau de l'audacieux) con esos recursos"),
+      I("b1e","Vuelve a hablar con Maître Hoboulo y luego con Ganymède para lanzar la siguiente")
+    ]},
+    {h:"2. Sous le regard des dieux",items:[
+      I("b2a","Habla con Ganymède y sube las escaleras de la izquierda",{n:"Nivel recomendado: 2."}),
+      I("b2b","Habla con Maître Darm y luego con las criaturas para combatir",{n:"Los combates son en solitario (hasta 3 según la guía)."}),
+      I("b2c","Al terminar, habla de nuevo con Maître Darm y baja a hablar con Ganymède")
+    ]},
+    {h:"3. Réponses à tout (Respuestas para todo)",items:[
+      I("b3a","Habla con Ganymède",{w:"[-3,-3]"}),
+      I("b3b","Haz clic en las 3 estelas de la sala",{n:"Explican quién eres, cómo es el Mundo de los Doce y qué son los 6 Dofus primordiales."}),
+      I("b3c","Vuelve a hablar con Ganymède para terminar y lanzar la siguiente")
+    ]},
+    {h:"4. Le village dans les nuages (Un pueblo sobre las nubes)",items:[
+      I("b4a","Habla con Lykhen Lesurviven"),
+      I("b4b","Ve a ver a Ternette Nhin",{w:"[-1,-3]"}),
+      I("b4c","Preséntate a los 4 habitantes que te pida",{n:"Entre ellos: Berb Nhin en [0,-3] y el Capitán de los Kerubim en [0,-4]. Estos dos además te lanzan misiones de otros logros (Produits naturels y Mise à l'épreuve); acéptalas, las harás después."}),
+      I("b4d","Vuelve con Ternette",{w:"[-1,-3]"}),
+      I("b4e","Ve a ver a Fécaline la Sage",{w:"[2,-3]"})
+    ]},
+    {h:"5. Espoirs et tragédies (La esperanza y la tragedia)",items:[
+      I("b5a","Habla con Fécaline la Sage",{w:"[2,-3]",n:"Nivel recomendado: 5."}),
+      I("b5b","Lee el libro de la leyenda de Rykke Errel",{n:"Haz clic en el libro de la esquina inferior de la biblioteca."}),
+      I("b5c","Habla con los tres buscadores de Dofus y vence a la bestia",{n:"Uno de ellos es Aléha. El diario de misión te marca dónde está cada uno."}),
+      I("b5d","Vuelve con Fécaline la Sage",{w:"[2,-3]"})
+    ]},
+    {h:"6. Dans la gueule du Milimilou (En la boca del Minilubo Albino)",items:[
+      I("b6a","Habla con Fécaline la Sage",{w:"[2,-3]",n:"Nivel recomendado: 8."}),
+      I("b6b","Ve a ver a Klasmor el sepulturero y elige «Se renseigner sur le Milimilou»",{w:"[5,-1]"}),
+      I("b6c","Ve un mapa a la izquierda y entra en la tumba",{w:"[4,-1]"}),
+      I("b6d","Habla con el Milimilou y vence el combate en solitario",{n:"Lo puedes evitar dándole un pot de confiture, que sale de la misión La galette secrète (La torta secreta)."}),
+      I("b6e","Habla con Hargnok y pregúntale dónde fue el Milimilou",{n:"Termina el diálogo antes de salir de la guarida: hubo jugadores que se quedaron atascados al salir antes de tiempo."}),
+      I("b6f","Vuelve con Fécaline la Sage",{w:"[2,-3]"})
+    ]},
+    {h:"7. Destination Astrub (Destino Astrub)",items:[
+      I("b7a","Habla con Fécaline la Sage",{w:"[2,-3]"}),
+      I("b7b","Ve a ver a Maître Anemo",{w:"[4,-3]"}),
+      I("b7c","Usa el portal hacia Astrub"),
+      I("b7d","Habla con la Enviada de los Doce en el mapa de llegada",{n:"Termina la misión y el logro En route pour l'aventure."})
+    ]}
+  ]},
+  {id:"p1c",title:"Bloque 2: Un citoyen modèle (Un ciudadano modelo)",sub:"Astrub, 6 misiones. Empieza con la Enviada de los Doce en [6,-19]",blocks:[
+    {h:"Prepara",items:[
+      Q("c0",40,"kamas",{n:"La guía original pide tener unos 40 kamas a mano."}),
+      T("Torrente Arcano avisa de que una misión concreta del Dofus Plateado (Argenté) pide un arma de cazador. Llévala por si acaso."),
+      T("Combates de este logro según la guía original: 3 que se pueden hacer en grupo y 1 en solitario. El juego te lo indica al entrar.")
+    ]},
+    {h:"1. Les principes d'Archie m'aident (Archi y sus principios)",items:[
+      I("c1a","Habla con la Enviada de los Doce",{w:"[6,-19]"}),
+      I("c1b","Entra en la Tour du Conseil, dos mapas a la izquierda",{w:"[4,-19]"}),
+      I("c1c","Habla con la Conseillère Archie y termina la misión",{n:"Te manda a la taverne. Si le vuelves a hablar puedes coger la misión Ça tombe à l'eau, de otro logro; acéptala, la harás después."})
+    ]},
+    {h:"2. On marche sur des oeufs (Eso va a costar un huevo)",items:[
+      I("c2a","Ve a la taverne de Astrub y habla con Acidrik Fenlapanse ofreciéndole una bière",{w:"[6,-18]"}),
+      I("c2b","Sube por la escalera del fondo a la derecha y habla con Huze Belli",{n:"Te manda con Nowa, en los Enclos publics."}),
+      I("c2c","Habla con el Pandawa: esquiva su intento de sacarte kamas y amenázalo con la milicia",{n:"Intenta huir y se lanza un combate."}),
+      I("c2d","Vence el combate y habla con él para escoltarlo hasta la milice",{w:"[5,-19]"}),
+      I("c2e","Entra en la milice y habla con Badufron",{n:"Te lanza Bière qui roule n'amasse pas mousse, de otro logro (Mercenaire d'acier)."}),
+      I("c2f","Vuelve con la Conseillère Archie para cerrar la misión",{w:"[4,-19]",n:"Recibes un Dofawa. Archie te envía a ver a Setsinbol."})
+    ]},
+    {h:"3. Conseil de classe (Consejo de clase)",items:[
+      I("c3a","Habla con Setsimbol",{w:"[2,-16]"}),
+      I("c3b","Ve a la milice, cruza la puerta del fondo y habla con la Mercenaire instructrice",{w:"[5,-19]"}),
+      I("c3c","La instructrice te envía a la Épicerie: ve a buscar a Seth Sourcet",{w:"[1,-16]"})
+    ]},
+    {h:"4. C'est pour ta pomme (Torrente Arcano la llama «Misión de clase»)",items:[
+      I("c4a","En la Épicerie, habla con Seth Sourcet y coge el Cageot de pommes pourries",{w:"[1,-16]"}),
+      I("c4b","Llévalo a la milice: la instructrice te manda al Hôtel de vente des consommables"),
+      I("c4c","Habla con René Gossian y sigue las huellas de tomates",{n:"A él también le robaron."}),
+      I("c4d","Habla con las dos Voleuses de tomates y llama a un mercenario para que se las lleve",{w:"[-2,-17]",n:"La guía de Millenium escribe [-2,17], pero en Astrub esa zona tiene Y negativa; casi seguro es [-2,-17]."}),
+      I("c4e","Sigue las huellas hacia la entrada de los subterráneos, en las praderas",{w:"[7,-10]"}),
+      I("c4f","Vence a los tres ladrones de manzanas y registra la carreta",{n:"Te da la Caisse de pommes fraîches."}),
+      I("c4g","Vuelve a la milice y haz clic en la gran diana de entrenamiento del centro del mapa"),
+      I("c4h","Habla con Setsinbol para validar la misión",{w:"[2,-16]"})
+    ]},
+    {h:"5. Ça sent le gaz (Aquí huele a gas; la más larga)",items:[
+      I("c5a","Ve a la Tour du Conseil, sube la escalera y habla con Fallanster"),
+      I("c5b","Baja al hall y habla con Paule Amploa",{n:"Te lanza Crise sanitaire, de otro logro (Pas le temps de chômer)."}),
+      I("c5c","Entra en las cloacas y ve a hablar con los Rats Strubiens",{w:"[5,-17] → [7,-16]"}),
+      I("c5d","Vence el combate contra 3 Râts famés (nivel 25)",{n:"Al terminar aparece Ramane Hitoo: habla con él."}),
+      I("c5e","Ve a la carrière d'Astrub y habla con los dos Gardoas Vétérans",{w:"[10,-19]",n:"Te sacan a la fuerza de la mina. Vuelve a entrar."}),
+      I("c5f","Vuelve un mapa atrás de la sala del cofre y usa la Fée de signalisation",{n:"Es un objeto que ya tienes en el inventario."}),
+      I("c5g","Entra en la sala del cofre y escóndete detrás de los toneles",{n:"Interactúa con los dos guardias que se acercan a ver el ruido."}),
+      I("c5h","Encuentra a Rathrosk y ve a la entrada de la mina a por la Pioche de Sidoas"),
+      I("c5i","Vuelve con Rathrosk y háblale para liberarlo",{n:"Te sigue. A la salida de la sala vence a los guardias que vuelven."}),
+      I("c5j","Escolta a Rathrosk hasta la Salle du Conseil, sube las dos escaleras y preséntaselo a Fallanster"),
+      I("c5k","Ve a la Bibliothèque y habla con Aisling, en el piso de arriba",{w:"[7,-19]",n:"Pregúntale por el dragón. Prim, el goblin de la primera sala, te ofrece una misión que no cuenta para el Dofus."}),
+      I("c5l","Acepta L'histoire en mouvement",{n:"Es de otro logro (La grande biblioquête). Aparece una recrue mercenaire que valida la misión y lanza la última."})
+    ]},
+    {h:"6. Balade en forêt (Paseo por el bosque)",items:[
+      I("c6a","Ve a la forêt y habla con la recrue mercenaire",{w:"[-1,-23]",n:"Mira dentro de la carreta: empieza el combate contra tres recrues."}),
+      I("c6b","Vence a las tres recrues y recoge el Signe Pandawa"),
+      I("c6c","Ve a la milice y habla con Badufron",{n:"Te explica que eran Pandikazes disfrazados."}),
+      I("c6d","Habla con Fallanster en la Tour du Conseil",{n:"Te lanza Visite médicale, que no cuenta para el Dofus Argenté. Aquí termina Un citoyen modèle."}),
+      I("c6e","Logro Un citoyen modèle completo")
+    ]},
+    {h:"Requisito oculto: Bûcherons en détresse (lo pide La fin… ou le commencement)",items:[
+      T("Nivel 30 (mínimo 20). Empieza con el Disciple de Sêpt en el bosque de Astrub [0,-25]. Cuesta 100 kamas (miel). Son 11 pasos. Fuentes: Breakflip, Gamosaurus y Dofuserie."),
+      Q("bd0",100,"kamas",{n:"El miel de Seth Sourcet."}),
+      I("bd1","Habla con el Disciple de Sêpt y acepta ayudar",{w:"[0,-25]"}),
+      I("bd2","Vence a 5 Milimulou en el bosque de Astrub"),
+      I("bd3","Vuelve con el Disciple y habla con el leñador superviviente",{n:"Interrógalo sobre el ataque: te da una Griffe non identifiée.",w:"[3,-21]"}),
+      I("bd4","Enseña la garra a Unterix Unter: «Montrer la griffe et parler des attaques contre les bûcherons»",{w:"[1,-23]"}),
+      I("bd5","En la Épicerie d'Astrub compra miel a Seth Sourcet y habla con Artand",{w:"[1,-16]"}),
+      I("bd6","Ve al campamento, haz clic en el trío de toneles y habla con el Homme-Ours",{n:"Combate en solitario con Artand (16.000 PV, aguanta los golpes y vuelve vulnerable al Homme-Ours). El Homme-Ours tiene 630 PV, es invulnerable e invoca un Ours Meurtrier.",w:"[-2,-16]"}),
+      I("bd7","Pregunta a Artand si está bien y vuelve con el Disciple de Sêpt: «Annoncer que les bûcherons sont désormais en sécurité»",{n:"Termina la misión.",w:"[0,-25]"})
+    ]}
+  ]},
+  {id:"p1d",title:"Bloque 3: Mais où sont les Dofus ?",sub:"5 misiones más 3 requisitos ocultos. Pandala, isla de los Wabbits y Forêt Maléfique",blocks:[
+    {h:"Requisito oculto A: Le réveil de Pandala (abre el puente y la isla de Pandala)",items:[
+      I("rp1","Habla con Moktwa delante del puente de Pandala",{n:"Nivel recomendado 30, sin prerrequisitos.",w:"[12,-21]"}),
+      I("rp2","Vence 5 Martoa, 5 Sherpoa, 5 Douzdoa y 5 Pikdoa",{n:"Son los Sidoas de la Carrière d'Astrub (niveles 22 a 30)."}),
+      I("rp3","Vuelve con Moktwa",{w:"[12,-21]"}),
+      I("rp4","Habla con Nepra Lido en el dispensario y pide el sérum contra la Pandrista",{n:"Elige «Annoncer venir pour un sérum contre la Pandrista». No le queda stock.",w:"[3,-21]"}),
+      I("rp5","Entra en el taller de alquimistas del mismo mapa y habla con Nibé Lulle",{w:"[3,-21]"}),
+      I("rp6","Habla con Sel Dawa y pídele una muestra de sangre",{n:"Elige «Demander si vous pouvez prélever un peu de son sang».",w:"[6,-18]"}),
+      Q("rp7",5,"Laine de Boufton Noir",{n:"Ingrediente del Sérum contre la Pandrista."}),
+      Q("rp8",50,"Ortie",{n:"Ingrediente del Sérum contre la Pandrista."}),
+      I("rp9","Fabrica el Sérum contre la Pandrista en un taller de alquimistas",{n:"Lleva la lana, las ortigas y la muestra de sangre de Sel Dawa."}),
+      I("rp10","Entrégale el sérum a Nepra Lido para que te vacune",{w:"[3,-21]"}),
+      I("rp11","Cruza el puente de Pandala",{n:"Empieza en [12,-21] y termina en [19,-28]."}),
+      I("rp12","Habla con el Garde Chopynju y bebe la pinta de leche de bambú fermentada",{n:"Úsala desde el inventario de misión: te desmayas y despiertas en una habitación.",w:"[19,-28]"}),
+      I("rp13","Habla con Doukwang y sal de la habitación",{n:"Quedas delante del Pandazaap y toda la isla se abre. Guarda ese zaap.",w:"[20,-29]"})
+    ]},
+    {h:"Requisito oculto B: Intrusion chez les wabbits (abre la isla de los Wabbits)",items:[
+      I("iw1","Habla con el Assistant d'Otomaï",{n:"Nivel recomendado 40, sin prerrequisitos. Si ya tenías la Potion Wabbit de antes de la 2.14, basta con enseñársela a Lilou la Lenalde en [24,-3].",w:"[-2,-4]"}),
+      Q("iw2",1,"Ailes de Scarafeuille Bleu",{n:"Mercadillo, o Scarafeuilles de la Plaine des Scarafeuilles."}),
+      Q("iw3",1,"Ailes de Scarafeuille Blanc"),
+      Q("iw4",1,"Ailes de Scarafeuille Vert"),
+      Q("iw5",1,"Ailes de Scarafeuille Rouge"),
+      I("iw6","Entrégale las 4 alas y recibe la Potion Wabbit",{n:"Te abre la isla de los Wabbits de por vida.",w:"[-2,-4]"})
+    ]},
+    {h:"Requisito oculto C: Un pendule pour guider ses pas (abre el Dédale du Dark Vlad)",items:[
+      I("pe1","Habla con Lanseuft de Troille",{n:"Nivel 20 como mínimo. Elige «Demande à entrer dans la forêt».",w:"[-5,13]"}),
+      Q("pe2",1,"Chaînes Brisées"),
+      Q("pe3",1,"Ébonite"),
+      Q("pe4",1,"Scalp de Bwork Archer"),
+      I("pe5","Entrégale los tres objetos",{w:"[-5,13]"}),
+      I("pe6","Espera al menos 3 minutos y pídele el pendule",{n:"Elige «Demander si le pendule est prêt». Si es demasiado pronto, vuelve luego."}),
+      I("pe7","Usa el Pendule de Lanseuft desde el inventario de misión",{n:"Termina la misión y abre el Dédale du Dark Vlad."})
+    ]},
+    {h:"Misión 1: Le réceptacle des Dofus",items:[
+      I("r1","Habla con Fallanster, en el piso de arriba de la Tour du Conseil",{n:"Necesitas Balade en forêt y Le réveil de Pandala hechas. Te da un mensaje para la Daimya Hikomi.",w:"[4,-19]"}),
+      I("r2","Cruza el puente de Pandala hasta [19,-28]",{n:"La misión se actualiza al llegar."}),
+      I("r3","Entrega el mensaje al Pandarin Sudopong, en el palacio de la Daimya",{w:"[22,-29]"}),
+      I("r4","Habla con el chamán Surivitna",{n:"Elige «Le saluer et dire que vous êtes en quête des six Dofus».",w:"[20,-27]"}),
+      I("r5","Habla con Chonayu en la taverne du Fermenthé",{n:"Te pide que eches a unos clientes borrachos.",w:"[22,-27]"}),
+      I("r6","Habla con el Pandawa éméché y vence el combate",{n:"Nivel 10. Se puede hacer en grupo."}),
+      I("r7","Vuelve con Chonayu para recibir la Pinte du visionnaire",{w:"[22,-27]"}),
+      I("r8","Habla con el Assistant du chaman, junto a la escalera de Aerdala",{n:"Te lleva a la entrada de la caverna.",w:"[19,-32]"}),
+      I("r9","Entra en la caverna haciendo clic detrás de la cascada",{n:"Sube las escaleras de la primera sala.",w:"[21,-33]"}),
+      I("r10","Usa la Pinte du visionnaire delante del receptáculo",{n:"Desde el inventario de misión. Ves los seis Dofus y aparece una llama."}),
+      I("r11","Habla con el Feu prophétique y vence el combate en solitario",{n:"Colócate lejos: sus llamas te matan al contacto. Basta con matarlo a él. Si pierdes no gastas energía y puedes repetir."}),
+      I("r12","Vuelve con Surivitna y sigue la conversación",{n:"Elige «Dire que vous avez justement été confronté à la vision d'une flamme crépitante». Así lanzas la siguiente.",w:"[20,-27]"})
+    ]},
+    {h:"Misión 2: Un sage parmi les sages",items:[
+      I("s1","Habla con Surivitna",{w:"[20,-27]"}),
+      I("s2","Ve a la maison des Lenalds, habla con Guipol y acepta su duelo",{n:"Combate en solitario, nivel 40. Elige «Accepter le défi de Guipol».",w:"[22,-28]"}),
+      I("s3","Habla con Helmeline",{w:"[22,-28]"}),
+      Q("s4",500,"kamas",{n:"Para el barco de la Capitaine Lily."}),
+      I("s5","Toma el barco de la Capitaine Lily hasta la isla de los Wabbits",{n:"Necesitas la Potion Wabbit (requisito B).",w:"[9,-2]"}),
+      I("s6","Habla con Wanald le Sage Lenald",{n:"Elige «Lui parler de Ronald le sage lenald».",w:"[23,-4]"}),
+      I("s7","Defiende a Ronald le sage lenald de los wabbits",{n:"Está en el subterráneo wabbit. Combate posible en grupo. Elige «Suggérer une autre forme de négociation et défendre le sage lenald». Ojo: «Vent de panique» envenena a todo tu equipo.",w:"[24,-7]"}),
+      I("s8","Escolta a Ronald de vuelta con Wanald",{w:"[23,-4]"}),
+      I("s9","Escucha la historia de los seis Dofus hablando con Ronald",{n:"Termina la misión. Sigue la conversación para lanzar la siguiente.",w:"[23,-4]"})
+    ]},
+    {h:"Misión 3: Protection divine",items:[
+      I("d1","Habla con Ronald le sage lenald",{w:"[23,-4]"}),
+      I("d2","Ve al templo de tu clase y habla con el maestro del templo",{n:"Elige «Dire que vous êtes sur le chemin de la Forêt Maléfique». El templo depende de la clase de cada personaje."}),
+      I("d3","Habla con el maestro de los Dopeuls y vence al Dopeul Maléfique",{n:"Combate en solitario, nivel 40. Elige «Évoquer votre voyage vers la forêt Maléfique»."}),
+      I("d4","Haz clic en la estatua del templo y elige «Prier»",{n:"Recibes la Bénédiction des Douze."}),
+      I("d5","Sube al piso de arriba de la bibliothèque d'Amakna y habla con Wally Elconom",{n:"Elige «Se racler la gorge pour attirer son attention».",w:"[4,1]"}),
+      I("d6","Abre el libro de Wally Elconom con doble clic en tu inventario"),
+      I("d7","Habla con Lanseuft de Troille en la entrada de la Forêt Maléfique",{n:"Termina la misión. Sigue la conversación para lanzar la siguiente.",w:"[-5,13]"})
+    ]},
+    {h:"Misión 4: Voir le Dark Vlad et mourir... ou pas",items:[
+      I("v1","Habla con Lanseuft de Troille y pide entrar en el bosque",{n:"Necesitas haber terminado Un pendule pour guider ses pas.",w:"[-5,13]"}),
+      I("v2","Cruza el Dédale du Dark Vlad hasta el centro y sube las escaleras",{n:"Dentro del dédale no funcionan la poción de retorno ni el piloto automático de la montura. La teletransportación de pareja sí.",w:"[-5,17]"}),
+      I("v3","Habla con el Dark Vlad («Se défendre vaillamment») y vence a sus monstruos maléfiques",{n:"Combate en solitario."}),
+      I("v4","Vuelve a preguntarle («Tenter de survivre») y vence a sus chafers",{n:"Combate por oleadas en solitario: 2 Chafer décati; a los 3 turnos 1 Archer y 1 Chafer; a los 5 turnos 1 Assassin y 1 Chafer; a los 5 turnos más 1 Assassin y 1 Archer."}),
+      I("v5","Pregúntale por tercera vez y elige «Insister»",{n:"Así sales directo del dédale. Con «S'en aller» te quedas dentro."}),
+      I("v6","Habla con Ronald le sage lenald en el puerto de Madrestam",{n:"Termina la misión.",w:"[10,-5]"})
+    ]},
+    {h:"Misión 5: La magicienne des marécages",items:[
+      I("m1","Sigue la conversación con Ronald le sage lenald",{w:"[10,-5]"}),
+      I("m2","Ve a los Marécages nauséabonds y habla con Mériana",{n:"Elige «Dire que vous êtes envoyé par Ronald le Sage Lenald». El camino no es directo.",w:"[-6,-3]",l:[["Camino a Mériana (Dofus pour les Noobs)", "https://www.dofuspourlesnoobs.com/chemin-vers-meacuteriana.html"]]}),
+      I("m3","Logro Mais où sont les Dofus ? completo",{n:"Se abren las misiones de los Dofus primordiales, todas con Mériana."})
+    ]},
+    {h:"Requisito oculto D: À la croisée des mondes (lo pide Dans la gueule du Dragon)",items:[
+      T("Nivel 100. Empieza con Hintikou en la taverna del Pandazaap [20,-29]. Exige Le réveil de Pandala (arriba) y, para ahorrar 50.000 kamas, conviene tener hecha antes Ça est frugal, une fois. Son 3 combates en solitario y algo de artesanía. Fuentes: Guide Dofus 2, dofus-portals.fr, Doflex y blogs de 2025 y 2026; verifica los datos."),
+      I("cm0","Ten Façonneur a nivel 10 como mínimo",{n:"Hay que fabricar tu propio escudo (Pandaclier) en el taller de los façonneurs de Pandala; no sirve otro taller. Necesita artefactos Pandawushu."}),
+      I("cm1","Habla con Hintikou y haz clic en el bocal del mostrador",{n:"Te teletransporta al Éter, a la croisée des mondes.",w:"[20,-29]"}),
+      I("cm2","Intenta llamar la atención del Grandapan (grita y agita los brazos) y vuelve a la taverna",{n:"Cuéntale a Hintikou lo que viste."}),
+      I("cm3","Habla con el chamán Surivitna sobre tu visión",{w:"[20,-27]"}),
+      I("cm4","Ve al palacio de bambú y pide audiencia con la Daimya al Pandarin Sudopong",{n:"Te exige tres recomendaciones de habitantes con problemas con los espíritus.",w:"[22,-29]"}),
+      I("cm5","Recomendación 1: en la biblioteca, habla con Narber Rihen Levihawa, sube y vence a los Yokai",{n:"Cinco enemigos invulnerables por turnos; se duermen todos a la vez con el hechizo temporal Yokaido Do.",w:"[21,-27]"}),
+      I("cm6","Recomendación 2: en la casa de subastas, calma el apetito de los Yokai llevando un plato a Ghao Zuo",{n:"Si hiciste Ça est frugal, une fois, el plato (Filtounga pokuzienne) sale gratis; si no, cuesta 50.000 kamas.",w:"[21,-29]"}),
+      I("cm7","Recomendación 3: en el sótano del banco, lucha contra los Pandissidans",{w:"[20,-30]"}),
+      I("cm8","Fabrica el Pandaclier en el taller de los façonneurs y vence a Maître Kwatimbe",{n:"Combate en solitario. Se le baja la fuga golpeándolo cuerpo a cuerpo (sobre un glifo suyo) hasta inmovilizarlo, o placándolo. Mantén el Pandaclier equipado.",w:"[23,-28]"}),
+      I("cm9","Preséntate ante la Daimya Hikomi, que invoca al Grandapan, y habla con él en la croisée des mondes",{n:"Después te expulsan: vuelve con la Daimya Hikomi para terminar. Desbloquea las misiones del Dofus d'encre (Domakuro)."})
+    ]}
+  ]},
+  {id:"p1e",title:"Bloque 4: Dofus Esmeralda (Vert émeraude)",sub:"8 misiones, niveles 45 a 120. Empieza con Mériana [-6,-3]",blocks:[
+    {h:"Prepara antes",items:[
+      T("Dofuserie recomienda reunir todo antes de empezar, para evitar viajes de ida y vuelta. Mériana está en los Marécages nauséabonds [-6,-3]."),
+      Q("em1",10,"Champignon Ligneux",{n:"Misión 2. Se recogen en el claro de Brouce Boulgoure."}),
+      Q("em2",8,"Graine de la Discorde",{n:"Misión 2 (Semelles de Vent)."}),
+      Q("em3",4,"Résine",{n:"Misión 2."}),
+      Q("em4",10,"Plume du Kwak de Vent",{n:"Misión 2."}),
+      Q("em5",6,"Ailes de Scarafeuille Blanc",{n:"Misión 2."}),
+      Q("em6",2,"Pierre d'Émeraude",{n:"Misión 2."}),
+      Q("em7",1,"Dragodinde Rousse",{n:"Misión 5. Mejor cómprala en el mercadillo que capturarla."}),
+      Q("em8",1,"Dragodinde Amande",{n:"Misión 5."}),
+      Q("em9",1,"Dragodinde Dorée",{n:"Misión 5."}),
+      Q("em10",9,"Primaton",{n:"Misión 6: uno por cada buscado capturado."}),
+      Q("em11",1100,"kamas",{n:"Misión 8: 1.000 para el testimonio del miliciano y 100 para el Orbalantyr."}),
+      I("em12","Un oficio a nivel 50 como mínimo",{n:"Lo pide la misión 2. Si ya subes uno a 200, lo cumples."}),
+      I("em13","Tener el hechizo Capture d'âmes",{n:"Obligatorio para la misión 3. Piden almas de jefes: captúralas en mazmorras o compra sus pierres d'âme."}),
+      I("em14","Éleveur (criador) a nivel 20 y los logros «Ce n'est qu'un prélèvement» y «Elle a peut-être trop mangé ?»",{n:"Los pide la misión 5."}),
+      I("em15","Mazmorra Tanière du Meulou (nivel 100)",{n:"La pide la misión 7."})
+    ]},
+    {h:"Las 8 misiones, en orden",items:[
+      I("e1","1. Retourner voir le Dark Vlad, toujours sans mourir",{n:"Mériana te manda preparar la poción para el repaire del Dark Vlad: seis ingredientes que se recogen por los pantanos. Después, un combate en solitario contra Hell Mina Ensorcelée (a veces con Crocodailles Agressifs).",w:"[-6,-3]",l:[["Pasos detallados (Dofuserie)", "https://www.dofuserie.com/quetes/retourner-voir-le-dark-vlad-toujours-sans-mourir/"]]}),
+      I("e2","2. Qui botte le cul des Culs Bottés ?",{n:"Bowisse, en el Village d'Amakna, quiere ver tus dotes de artesano: fabrica Semelles de Vent y vence solo al Cordonnier Sombre, el Boulanger Sombre y el Mineur Sombre. Es la que más recursos pide.",w:"[5,1]",l:[["Pasos detallados (Dofuserie)", "https://www.dofuserie.com/quetes/qui-botte-le-cul-des-culs-bottes/"]]}),
+      I("e3","3. Le voleur d'âmes",{n:"Toungousa, en Terrdala, prepara un ritual: reúne las almas que pide y vence al Esprit de Tonam Etamwa (en grupo si quieres).",w:"[27,-28]",l:[["Pasos detallados (Dofuserie)", "https://www.dofuserie.com/quetes/le-voleur-d-ames/"]]}),
+      I("e4","4. L'amour perdu de Nabur",{n:"Sellia Renuf, cementerio de los Héroes de Bonta: ayuda a Maître Nabur a encontrar a su amor de juventud. Combate en solitario contra los pillards.",w:"[-21,-58]",l:[["Pasos detallados (Dofuserie)", "https://www.dofuserie.com/quetes/l-amour-perdu-de-nabur/"]]}),
+      I("e5","5. Naissance d'une vocation",{n:"Capitán Starky, Milicia de Bonta: entrégale las tres dragodindes y vence solo a Profana Tryss y Nikono Klaste.",w:"[-32,-57]",l:[["Pasos detallados (Dofuserie)", "https://www.dofuserie.com/quetes/naissance-d-une-vocation/"]]}),
+      I("e6","6. Les bandits de Cania",{n:"Mériana: gana 9 Primatons capturando buscados, reconstruye la Carte de Cania y vence a los tres bandidos (Nomekop, Eratz y Edasse; en grupo si quieres).",w:"[-6,-3]",l:[["Pasos detallados (Dofuserie)", "https://www.dofuserie.com/quetes/les-bandits-de-cania/"]]}),
+      I("e7","7. Draconanthropie",{n:"Vence a Rasamoune le Vert y haz la mazmorra Tanière du Meulou para conseguir la Bague Enchantée du Meulou.",w:"[-6,-3]",l:[["Pasos detallados (Dofuserie)", "https://www.dofuserie.com/quetes/draconanthropie/"]]}),
+      I("e8","8. Ultime réminiscence",{n:"Encuentra al Dark Vlad en Incarnam y véncelo en su forma de dragón, en combate táctico en solitario. Antes hay 2 combates (Bandit Chafer y los Trois Crânes; en grupo posible).",w:"[-6,-3]",l:[["Pasos detallados (Dofuserie)", "https://www.dofuserie.com/quetes/ultime-reminiscence/"]]}),
+      I("e9","Logro Vert émeraude completo: tienes el Dofus Esmeralda")
+    ]}
+  ]},
+  {id:"p1f",title:"Bloque 5: Dofus Púrpura (Pourpre profond)",sub:"8 misiones, 5 mazmorras. Mériana [-6,-3] y la isla del Minotoror",blocks:[
+    {h:"Prepara antes",items:[
+      T("Es una serie con poco recurso pero cinco mazmorras. Empieza con Mériana [-6,-3] y sigue en la isla del Minotoror, alrededor del Refuge des cent détours [-42,-17]."),
+      Q("pu1",1000,"kamas",{n:"Misión 6: la Bière Triple del Bourreau que hace aparecer a Vensitard Smisse."}),
+      Q("pu2",25,"Trésor archéologique",{n:"Misión 3. Salen 5 al día con la Chasse au trésor archéologique, o 1 por cada jefe de nivel 120 a 130 vencido en mazmorra."}),
+      Q("pu3",1,"Tige de Bambouto",{n:"Misión 5. Bamboutos de Plantala o mercadillo."}),
+      Q("pu4",1,"Tête de mort",{n:"Misión 6. Monstruos de Srambad o un PNJ de la base de Srambad."}),
+      I("pu5","Terminar la misión Comment perdre ses plumes",{n:"Sin ella, Éner Brelloq no te vende las piezas de la tablilla de Totankama y la serie se atasca (misión 3)."}),
+      I("pu6","Tener acceso a Srambad",{n:"Lo pide la misión 6."}),
+      I("pu7","Mazmorra Bibliothèque du Maître Corbac (nivel 110)"),
+      I("pu8","Mazmorra Centre du Labyrinthe du Minotoror (nivel 120)"),
+      I("pu9","Mazmorra Antre du Blop Multicolore Royal (nivel 120)"),
+      I("pu10","Mazmorra Ring du Capitaine Ekarlatte (nivel 130)",{n:"Da la Clef du Ring del capitán; llévate también una Tête de mort."}),
+      I("pu11","Mazmorra Serre du Royalmouth (nivel 120)"),
+      T("Truco de Dofuserie: las misiones 4 a 6 se desbloquean en cuanto hablas con Mériana en Le trésor de Totankama y no dependen entre sí. Además, el Blop y el Capitán Ekarlatte cuentan como jefes que dan Trésor archéologique.")
+    ]},
+    {h:"Las 8 misiones, en orden",items:[
+      I("p1","1. Le livre des Taures",{n:"Recorre seis bibliotecas, de Bonta a Pandala, hasta el desván de la de Astrub. El libro lo tiene el Maître Corbac, en su mazmorra. Perder el combate solo contra los roublards de Astrub no tiene consecuencias.",w:"[-6,-3]",l:[["Pasos detallados (Dofuserie)", "https://www.dofuserie.com/quetes/le-livre-des-taures/"]]}),
+      I("p2","2. Taures et détours",{n:"Vence al Minotoror en su mazmorra y apunta el Os Enchanté de Mériana hacia su trono: aparece el Minotot. Haz clic en el trono de piedra antes de salir de la mazmorra.",w:"[-6,-3]",l:[["Pasos detallados (Dofuserie)", "https://www.dofuserie.com/quetes/taures-et-detours/"]]}),
+      I("p3","3. Le trésor de Totankama",{n:"El Minotot te da el Dofus a cambio del Masque de Totankama: compra las 5 piezas de la tablilla con 25 Trésors archéologiques, haz las tres protecciones (misiones 4 a 6) y termina con una cacería legendaria hasta la Momie Nova (grupo posible). Coger el Dofus al final es una trampa: la solución está en la misión 7.",w:"[-39,-11]",l:[["Pasos detallados (Dofuserie)", "https://www.dofuserie.com/quetes/le-tresor-de-totankama/"]]}),
+      I("p4","4. Il faut battre le lait quand il est chaud",{n:"Apisaphé te enseña a fabricar la Perle de Lait Doré: leche dorada, un Bout de Blop Multicolore Royal (de su mazmorra) y Lired para cristalizarla. Combate en solitario con Gavroch, que no puede morir. Una mala respuesta a Lired te obliga a esperar unos 10 minutos.",w:"[-42,-17]",l:[["Pasos detallados (Dofuserie)", "https://www.dofuserie.com/quetes/il-faut-battre-le-lait-quand-il-est-chaud/"]]}),
+      I("p5","5. Regrets d'éternailes",{n:"Tolmac te manda a Pandala a fabricar un Attrape-Poussière (1 Tige de Bambouto, 13 Totems Firefoux y la Toile Spirituelle, que guarda un Araknesprit vencible en solitario). Equipado como arma, recoge 5 Poudres d'Éternaile en la isla del Minotoror.",w:"[-42,-17]",l:[["Pasos detallados (Dofuserie)", "https://www.dofuserie.com/quetes/regrets-d-eternailes/"]]}),
+      I("p6","6. L'anneau de Tot",{n:"Kerubim Crépin, Astrub: ofrece una bière de 1.000 kamas al Bourreau para que aparezca Vensitard Smisse y véncelo (grupo posible). El anillo está en el Ring del Capitaine Ekarlatte: habla con él antes de salir de la mazmorra.",w:"[3,-17]",l:[["Pasos detallados (Dofuserie)", "https://www.dofuserie.com/quetes/l-anneau-de-tot/"]]}),
+      I("p7","7. Une âme en peine",{n:"Combate táctico en solitario contra el Minogolem séculaire: hay que llegar a la casilla verde con 50 PV, 10 PA y 1 PM. Perder no cuesta energía y puedes repetir en el acto.",w:"[-39,-11]",l:[["Pasos detallados (Dofuserie)", "https://www.dofuserie.com/quetes/une-ame-en-peine/"]]}),
+      I("p8","8. Le pouvoir derrière le trône",{n:"Apisaphé te da la llave del trono. Reencuentra a Gavroch en la Serre du Royalmouth, habla con él antes del combate y antes de salir, y vence a Soun Rinos a su lado (Gavroch no puede morir). Coge el Dofus en la sala del Dofus.",w:"[-42,-17]",l:[["Pasos detallados (Dofuserie)", "https://www.dofuserie.com/quetes/le-pouvoir-derriere-le-trone/"]]}),
+      I("p9","Logro Pourpre profond completo: tienes el Dofus Púrpura")
+    ]}
+  ]},
+  {id:"p1g",title:"Bloque 6: Dofus Turquesa (Bleu turquoise)",sub:"10 misiones, 12 mazmorras y 600 Pépite. Mériana [-6,-3]",blocks:[
+    {h:"Antes de empezar",items:[
+      T("Sirve para tus 4 personajes en paralelo. Mériana [-6,-3] da 7 de las 10 misiones; las otras 3 son las bendiciones de Viti, Thomahon y Foluk."),
+      T("Consejo de Dofuserie: fabrica las ídolas una por una (una ídola, luego su mazmorra). Si pierdes, vuelve a la sala del jefe y reutiliza la ídola: sigue en tu inventario hasta terminar la misión."),
+      T("Cada personaje tiene que fabricar sus propias ídolas y activar la suya en la sala del jefe.")
+    ]},
+    {h:"Misión 1: Plongeon et dragon",items:[
+      I("t1","Vence al Dragon Cochon y al Chêne Mou en sus mazmorras",{n:"Mériana te envía. Las llaves están en las salas de salida: haz estos combates en mazmorra, no en arena. Después, vence a la Gardienne du Sanctuaire (solo avanza la misión de quien lanza el combate).",w:"[-6,-3]",l:[["Pasos detallados (Dofuserie)", "https://www.dofuserie.com/quetes/plongeon-et-dragon/"]]}),
+      I("t1a","Mazmorra Antre du Dragon Cochon (nivel 100)"),
+      I("t1b","Mazmorra Clairière du Chêne Mou (nivel 140)")
+    ]},
+    {h:"Misión 2: Extinction des feux",items:[
+      I("t2","Consigue el Voile Astral y vence al Esprit de Bolgrot",{n:"El Mage Ax te teje el Voile Astral con Peau d'Obscurantus, Fumée Chamanique y Fil Magique. Después, un combate táctico en solitario contra el Esprit de Bolgrot, en la Dimensión Abisal. Perder no cuesta energía. Guarda el Voile Astral para la misión 10.",w:"[-6,-3]",l:[["Pasos detallados (Dofuserie)", "https://www.dofuserie.com/quetes/extinction-des-feux/"]]})
+    ]},
+    {h:"Misión 3: On dirait le Sud (pala de Riome)",items:[
+      Q("t3r1",5,"Pierre de Topaze"),
+      Q("t3r2",15,"Os de Sramouraï"),
+      Q("t3r3",1,"Bière du Feubuk",{n:"Se compra a Nek Feubuk en la taverne du Feubuk."}),
+      Q("t3r4",1,"Étoffe de Kaniglou"),
+      Q("t3r5",1,"Oreille du Fu Mansot"),
+      Q("t3r6",1,"Talon d'achille de l'Abrakleur sombre"),
+      I("t3","Lleva a Riome, en Bonta, los cinco recursos de la pala y vence solo a las Ombres Vengeresses, dos veces",{n:"Combates en la taverne du Feubuk y en el atelier des Forgerons. Riome reclama una Bière du Feubuk. La bendición de Pytch completa el ritual.",w:"[-6,-3]",l:[["Pasos detallados (Dofuserie)", "https://www.dofuserie.com/quetes/on-dirait-le-sud/"]]})
+    ]},
+    {h:"Misión 4: La méchante sorcière de l'Est",items:[
+      I("t4","Gana la marca de Badmorva y deja para el final la bendición de Viti",{n:"Vence 7 veces a cada monstruo del Berceau d'Alma (Harpirate, Vigie pirate, Fantomalamère, Fancrôme, Fantômat y Fantimonier) y responde bien las preguntas del Spectre de Badmorva. Con la Pelle du Clan Terra equipada en lugar de tu arma, desentierra el tótem.",w:"[-6,-3]",l:[["Pasos detallados (Dofuserie)", "https://www.dofuserie.com/quetes/la-mechante-sorciere-de-l-est/"]]}),
+      Q("t4p",1,"Pelle du Clan Terra")
+    ]},
+    {h:"Misión 5: Autel du Nord",items:[
+      I("t5","Lleva los autómatas a Nobir y ayuda a Chignole",{n:"Los autómatas se llevan de uno en uno. Después, vence solo al Robot Expérimental. La bendición de Thomahon (misión 8) viene luego.",w:"[-6,-3]",l:[["Pasos detallados (Dofuserie)", "https://www.dofuserie.com/quetes/autel-du-nord/"]]})
+    ]},
+    {h:"Misión 6: Il était une foi dans l'Ouest",items:[
+      I("t6","Entrega la lanza en Incarnam y vence a la Terre d'Amakna",{n:"Golpea fuerte: ve en grupo (con los 4 personajes basta, y mejor a distancia). Necesita la bendición de Foluk (misión 9).",w:"[-6,-3]",l:[["Pasos detallados (Dofuserie)", "https://www.dofuserie.com/quetes/il-etait-une-foi-dans-l-ouest/"]]})
+    ]},
+    {h:"Misión 7: La bénédiction de Viti (3 ídolas)",items:[
+      Q("t7r1",10,"Corne de Berserkoffre"),
+      Q("t7r2",5,"Substrat de Bosquet"),
+      Q("t7r3",10,"Plume de Gobvious"),
+      Q("t7r4",1,"Chaussette trouée de Dramak"),
+      Q("t7r5",3,"Coquille de Dragoss Ardoise"),
+      Q("t7r6",10,"Peau de Don Duss Ang"),
+      Q("t7r7",5,"Kouartz"),
+      Q("t7r8",10,"Canine de Mergranlou"),
+      Q("t7r9",10,"Coquille de Dragoss Charbon"),
+      Q("t7r10",1,"Peau de Moon"),
+      Q("t7r11",8,"Estomac de Black Wo Wabbit"),
+      Q("t7r12",5,"Bakélélite"),
+      Q("t7r13",1,"Carapace du Mantiscore"),
+      Q("t7r14",3,"Laine de Dardalaine"),
+      Q("t7r15",3,"Écorce de Liroye Merline"),
+      I("t7","Fabrica las tres ídolas de Viti y vence al Founoroshi, al Tynril Perfide y al Mansot Royal bajo su alteración",{n:"Disciple de Viti, altar del Este en Plantala.",w:"[27,-30]",l:[["Pasos detallados (Dofuserie)", "https://www.dofuserie.com/quetes/la-benediction-de-viti/"]]}),
+      I("t7a","Mazmorra Excavation du Mansot Royal (nivel 140)"),
+      I("t7b","Mazmorra Fabrique de foux d'artifice (nivel 140)"),
+      I("t7c","Mazmorra Laboratoire du Tynril (nivel 140)")
+    ]},
+    {h:"Misión 8: La bénédiction de Thomahon (4 ídolas)",items:[
+      Q("t8r1",200,"Pépite"),
+      Q("t8r2",10,"Aile de dragodinde"),
+      Q("t8r3",10,"Poil de Rat d'Égoutant"),
+      Q("t8r4",10,"Fleur de Gloutoblop"),
+      Q("t8r5",10,"Peau de Don Dorgan"),
+      Q("t8r6",10,"Moustache du Mufafah"),
+      Q("t8r7",10,"Oreille de Rhinoféroce"),
+      Q("t8r8",10,"Duvet de Truchon"),
+      Q("t8r9",10,"Tronc de Kokoko"),
+      Q("t8r10",10,"Casque Cassé du Chafer"),
+      Q("t8r11",5,"Magnésite"),
+      Q("t8r12",5,"Kouartz"),
+      Q("t8r13",5,"Kriptonite"),
+      Q("t8r14",5,"Ébonite"),
+      Q("t8r15",5,"Lait de Tortue"),
+      Q("t8r16",3,"Rotule du Disciple Zoth"),
+      Q("t8r17",3,"Aile Atrophiée de Tofu Dodu"),
+      Q("t8r18",1,"Feuille de Blop Multicolore Royal"),
+      Q("t8r19",1,"Chaussette trouée de Dramak"),
+      Q("t8r20",1,"Carniflore"),
+      Q("t8r21",1,"Plume du Kwakwa"),
+      I("t8","Fabrica las cuatro ídolas de Thomahon y vence a Sphincter Cell, Ben le Ripate, el Kimbo y el Obsidiantre bajo su alteración",{n:"Disciple de Thomahon, Larmes d'Ouronigride, en Frigost. Te pide primero 100 millones de kamas: no pagues, después propone la vía de las ídolas.",w:"[-69,-88]",l:[["Pasos detallados (Dofuserie)", "https://www.dofuserie.com/quetes/la-benediction-de-thomahon/"]]}),
+      I("t8a","Mazmorra Canopée du Kimbo (nivel 160)"),
+      I("t8b","Mazmorra Épave du Grolandais violent (nivel 150)"),
+      I("t8c","Mazmorra Hypogée de l'Obsidiantre (nivel 160)"),
+      I("t8d","Mazmorra Repaire de Sphincter Cell (nivel 150)")
+    ]},
+    {h:"Misión 9: La bénédiction de Foluk (3 ídolas)",items:[
+      Q("t9r1",3,"Corne de Dragoss Calcaire"),
+      Q("t9r2",3,"Corne de Rhinoféroce"),
+      Q("t9r3",5,"Substrat de Fascine"),
+      Q("t9r4",1,"Groin de Dragon Cochon",{n:"La misión 1 te da uno: guárdalo."}),
+      Q("t9r5",3,"Échasse de Molette"),
+      Q("t9r6",10,"Poils de Smilomouth"),
+      Q("t9r7",10,"Carpelle de Brouture"),
+      Q("t9r8",400,"Pépite"),
+      Q("t9r9",10,"Croupion de Truchmuche"),
+      Q("t9r10",5,"Kriptonite"),
+      Q("t9r11",1,"Laine du Royalmouth"),
+      Q("t9r12",5,"Substrat de Fourré"),
+      Q("t9r13",10,"Calumet Zoth"),
+      Q("t9r14",3,"Morpion de Truchideur"),
+      Q("t9r15",3,"Arête géante du Shamansot"),
+      Q("t9r16",1,"Pixel de Fraktale"),
+      I("t9","Fabrica las tres ídolas de Foluk y vence al Phossile, al Kanigroula y al Korriandre bajo su alteración",{n:"Disciple de Foluk, altar del Oeste en Otomaï.",w:"[-57,12]",l:[["Pasos detallados (Dofuserie)", "https://www.dofuserie.com/quetes/la-benediction-de-foluk/"]]}),
+      I("t9a","Mazmorra Antre du Korriandre (nivel 180)"),
+      I("t9b","Mazmorra Galerie du Phossile (nivel 150)"),
+      I("t9c","Mazmorra Grotte de Kanigroula (nivel 160)")
+    ]},
+    {h:"Misión 10 y cierre: Une âme en colère",items:[
+      I("t10","Captura cinco espíritus acuáticos con los Globes Mystiques e invoca a Furye",{n:"Necesitas los cuatro tótems y el Voile Astral. Combate táctico en solitario: hay que proteger los globos durante 35 turnos; si mueren los 5 globos de la parte baja del mapa, pierdes. Aguabrial te da el Dofus al terminar.",w:"[-6,-3]",l:[["Pasos detallados (Dofuserie)", "https://www.dofuserie.com/quetes/une-ame-en-colere/"]]}),
+      I("t11","Logro Bleu turquoise completo: tienes el Dofus Turquesa")
+    ]}
+  ]},
+  {id:"p1h",title:"Bloque 7: Dofus Ocre y serie Ocre d'ambre",sub:"338 capturas de almas, más la serie Ocre d'ambre. Otomaï [-55,15]",blocks:[
+    {h:"Prepara antes",items:[
+      T("Es el mayor trabajo de toda la ruta: 338 almas (51 jefes de mazmorra, 286 archimonstruos y el Kralamoure Géant) repartidas en 19 etapas. Empieza pronto y avanza en paralelo con el resto."),
+      I("oc1","Tener el hechizo Capture d'âmes",{n:"Se recibe al terminar la mazmorra Nid du Kwakwa (nivel 50). Nivel 40 mínimo para la misión."}),
+      I("oc2","Mazmorra Nid du Kwakwa (nivel 50)"),
+      I("oc3","Reunir piedras de alma (pierres d'âme) de la potencia correcta",{n:"Cada captura pide una piedra de alma equipada. Elige la piedra según el monstruo de mayor nivel del grupo, no según la suma de niveles."}),
+      T("Con tus 4 personajes: desde la actualización 3.4, todos los personajes de un combate pueden capturar al archimonstruo. Uno lanza el hechizo y los demás deben llevar exactamente la piedra de alma más cercana al nivel del grupo. Así avanzáis los cuatro a la vez."),
+      T("Un archimonstruo que combates sin capturar reaparece al instante en su zona."),
+      T("Cuando se captura un archimonstruo, cada personaje del combate que no lo captura gana 1 Truk divin. Sirven para comprar Bouataklône ETP (6 Truks divins) en la tienda de Jykel, en la cabaña de Otomaï: lanza un combate en solitario contra un archimonstruo de la etapa que elijas, sin buscarlo."),
+      T("La Fée à tête chercheuse d'archimonstres marca en tu mapa el archimonstruo más cercano. Si no hay ninguno en la zona, la fée se pierde igualmente."),
+    ]},
+    {h:"La misión L'éternelle moisson (la única que da el Dofus)",items:[
+      I("oc5","Habla con Otomaï, en lo alto del árbol Hakam",{n:"Village de la Canopée, en la Jungle obscure. Las almas se entregan a su asistente, delante de la cabaña.",w:"[-55,15]",l:[["Pasos detallados (Dofuserie)", "https://www.dofuserie.com/quetes/l-eternelle-moisson/"]]}),
+      I("oc6","Captura y entrega las almas de 51 jefes de mazmorra (3 etapas)"),
+      I("oc7","Captura y entrega las almas de 286 archimonstruos (15 etapas)",{n:"Los foros y las guías de la comunidad aconsejan no seguir las etapas en orden, sino capturar por zona según lo que tengas cerca."}),
+      I("oc8","Captura y entrega el alma del Kralamoure Géant (etapa final)"),
+      I("oc9","Logro La fin de l'éternité completo: tienes el Dofus Ocre",{l:[["Seguimiento de etapas (DofusTools)", "https://dofustools.github.io/eternelle-moisson/"]]})
+    ]},
+    {h:"Serie Ocre d'ambre: prepara (8 misiones, necesarias para Quatre sur six)",items:[
+      T("Dofuserie dice que esta serie no hace falta para el Dofus Ocre. Pero un moderador del foro oficial explicó que, desde la actualización 2.63, Mériana no lanza Quatre sur six si no has terminado la misión Le serment de l'ambre y llevas los 4 Dofus en el inventario. Por eso la incluyo; confírmalo con Mériana antes de gastar recursos."),
+      I("am0","Acceso a la isla de Otomaï",{n:"Haber terminado Le nouveau monde y L'île des naufragés."}),
+      I("am0b","Haber terminado Protéger et sévir y Attention à la Bête !",{n:"Sin ellas, La raison du plus fort se atasca."}),
+      Q("am1",30,"Ambre",{n:"Ambre enchanté, misión 4 de la serie."}),
+      Q("am2",6,"Ambre d'Abraknyde"),
+      Q("am3",6,"Ambre d'Abraknyde Sombre"),
+      Q("am4",6,"Métaria jaune"),
+      Q("am5",1,"Substrat de Futaie"),
+      Q("am6",12,"Épices",{n:"Délices des Kitsous, misión 7 de la serie."}),
+      Q("am7",12,"Viande Saignante"),
+      Q("am8",12,"Riz"),
+      Q("am9",2,"Enchanterelle",{n:"La piden las misiones 6, 7 y 8 de la serie (una es un bonus que se consume antes de la última). Salen de los Malters de la Orée enchantée. Dofuserie las resume como 1; comprueba en el juego."}),
+      Q("am10",1,"Potion d'Otomaï",{n:"La consigues en La raison du plus fort."}),
+      I("am11","Cazador (chasseur) a nivel 120",{n:"Para fabricar los Délices des Kitsous."}),
+      I("am12","Mazmorra Akadémie des Gobs (nivel 40)"),
+      I("am13","Mazmorra Grotte Hesque (nivel 50)"),
+      I("am14","Mazmorra Antre de la Reine Nyée (nivel 90)"),
+      I("am15","Mazmorra Bambusaie de Damadrya (nivel 110)"),
+      I("am16","Mazmorra Demeure des Esprits (nivel 170)"),
+      I("am17","Haber terminado Un pendule pour guider ses pas y Arrête-la si tu peux",{n:"Lo pide la misión 6 de la serie."})
+    ]},
+    {h:"Serie Ocre d'ambre: las 8 misiones",items:[
+      I("as1","1. Le Dofus et l'alchimiste",{n:"Mériana te envía a conocer a Otomaï, guardián del Dofus Ocre, en lo alto del árbol Hakam.",w:"[-6,-3]",l:[["Pasos detallados (Dofuserie)", "https://www.dofuserie.com/quetes/le-dofus-et-l-alchimiste/"]]}),
+      I("as2","2. La raison du plus fort",{n:"Otomaï te hace investigar a los Bworks expulsados de la Forêt Maléfique, de la Akadémie des Gobs al laboratorio de Jykel. Al final Jykel crea los archiklônes y recibes una Potion d'Otomaï. Hazla cuanto antes: abre la tienda de Jykel, que acelera las capturas de archimonstruos.",w:"[-55,15]",l:[["Pasos detallados (Dofuserie)", "https://www.dofuserie.com/quetes/la-raison-du-plus-fort/"]]}),
+      I("as3","3. Après lui, le déluge",{n:"Otomaï te da el Anneau Ocre y te manda a buscar tres ámbares; el primero está al final de la Grotte Hesque. No salgas de la mazmorra tras el Corailleur Magistral: el ámbar se recoge de un coral grande en la sala del jefe. Guarda el Anneau Ocre para toda la serie.",w:"[-55,15]",l:[["Pasos detallados (Dofuserie)", "https://www.dofuserie.com/quetes/apres-lui-le-deluge/"]]}),
+      I("as4","4. Comme un corbac sur sa branche",{n:"Hel Munster, Bois des Arak-haï. El segundo ámbar: coge el Œuf noir de la Reine Nyée, fabrica el Ambre enchanté en el Athanor sylvestre y vence solo a los sirvientes y a los corbacs. Con el Abraknyde Ancestral, un mal diálogo te cuesta 1.000 kamas.",w:"[-5,-13]",l:[["Pasos detallados (Dofuserie)", "https://www.dofuserie.com/quetes/comme-un-corbac-sur-sa-branche/"]]}),
+      I("as5","5. Rester planté là",{n:"Silvosse, Forêt Sombre. El ámbar espiritual se gana meditando en Plantala: sigue la Lumière dorée hasta Damadrya y lleva el alma de un leñador pandawa a su tierra natal. Combates y mazmorra posibles en grupo.",w:"[-11,-13]",l:[["Pasos detallados (Dofuserie)", "https://www.dofuserie.com/quetes/rester-plante-la/"]]}),
+      I("as6","6. Pas de fumée sans feu",{n:"Esprit serein, Plantala. En el corazón de la Forêt Maléfique, revela el Sceau de Terrakourial con una Enchanterelle, sobrevive solo a las llamas de Hell Mina y coloca los tres ámbares purificados.",w:"[24,-35]",l:[["Pasos detallados (Dofuserie)", "https://www.dofuserie.com/quetes/pas-de-fumee-sans-feu/"]]}),
+      I("as7","7. Quand les esprits s'échauffent",{n:"Esprit boutefeu, cueva de la chaumière des Blairouiche, Dédale du Dark Vlad. Demuestra tu fuerza a Koumiho en la Demeure des Esprits y ofrécele 12 Délices des Kitsous; luego domina solo al Esprit boutefeu con la Volonté d'Inali.",w:"[-6,18]",l:[["Pasos detallados (Dofuserie)", "https://www.dofuserie.com/quetes/quand-les-esprits-s-echauffent/"]]}),
+      I("as8","8. Le serment de l'ambre",{n:"Sceau de Terrakourial, Dédale du Dark Vlad. Combate táctico en solitario tipo Memory: forma 16 pares de Malters antes del turno 31. Necesitas el Anneau Ocre equipado y el bonus de una Enchanterelle, más una Potion d'Otomaï. Otomaï recupera después el Anneau Ocre. Esta es la misión que exige Quatre sur six.",w:"[-3,19]",l:[["Pasos detallados (Dofuserie)", "https://www.dofuserie.com/quetes/le-serment-de-l-ambre/"]]}),
+      I("as9","Logro Ocre d'ambre completo")
+    ]}
+  ]},
+  {id:"p1i",title:"Bloque 8: Dofus Marfil (Blanc ivoire)",sub:"10 misiones de nivel 200, 9 mazmorras. Exige alineamiento 100",blocks:[
+    {h:"Prepara antes",items:[
+      T("Ojo con el alineamiento: pide alineamiento 100 (orden 5) en Bonta o Brâkmar en cada personaje. Es lo que más tiempo puede llevarte de este Dofus. Las guías de Dofus pour les Noobs cuentan unas 270 misiones de prerrequisito para el Dom de Pin y 369 si se suman las de alineamiento."),
+      I("mf1","Alineamiento 100 (orden 5) en Bonta o Brâkmar",{n:"Lo pide Examen de passage para recoger el masque mortuaire en la torre de tu ciudad. Sin él no entras en Externam.",l:[["Alineamiento bontarien", "https://www.dofuspourlesnoobs.com/alignement-bontarien.html"], ["Alineamiento brâkmarien", "https://www.dofuspourlesnoobs.com/alignement-bracirckmarien.html"]]}),
+      I("mf2","Terminar antes las misiones anexas que bloquean etapas",{n:"Espionnage industriel (misión 4); Malédiction !, Allumer le feu y La garde meurt mais ne se rend pas (misión 5); logro La chasse aux chasseurs (misión 6); haber lanzado Son nom est Personne (misión 7)."}),
+      I("mf3","Poder ir a Enutrosor, a Ecaflipus (tres veces) y a Srambad"),
+      Q("mf4",50,"Graisse Gélatineuse",{n:"Cire draconique, misión 1."}),
+      Q("mf5",15,"Obsidienne",{n:"Cire draconique, misión 1."}),
+      Q("mf6",1,"Pic du Nocturlabe",{n:"Cire draconique, misión 1."}),
+      Q("mf7",1,"Peau de Crocabulia",{n:"Cire draconique, misión 1."}),
+      Q("mf8",20,"Blague de Soufre",{n:"Mèche draconique, misión 1. Se vende en Frigost en [-77,-45]."}),
+      Q("mf9",15,"Perce-Neige",{n:"Mèche draconique, misión 1."}),
+      Q("mf10",5,"Moustache de Rilur",{n:"Mèche draconique, misión 1."}),
+      Q("mf11",1,"Corde du Fancrôme",{n:"Mèche draconique, misión 1."}),
+      Q("mf12",1,"Corde d'escalade",{n:"Para la pirámide de la misión 2: 30 Chanvre, 5 Fil de Soie y 1 Fil de Néfileuse en un bricoleur."}),
+      I("mf13","Llevar equipada la Baguette Rikiki para el Village Miniature (misión 6)",{n:"Es la misma que piden en Six sur six."}),
+      Q("mf14",50,"Frostiz",{n:"Pain à l'ail de Rucar, misión 8."}),
+      Q("mf15",4010,"kamas",{n:"Libros de Jean-Sol Patre (misión 9), si no los tienes ya."}),
+      I("mf16","Mazmorra Défi du Chalœil (nivel 200)"),
+      I("mf17","Mazmorra Ventre de la Baleine (nivel 200)"),
+      I("mf18","Mazmorra Belvédère d'Ilyzaelle (nivel 200)",{n:"No hace falta hacerla entera: el Gardien du Jour sans fin, en la entrada, te lleva con Ilyzaelle."}),
+      I("mf19","Mazmorra Palais du roi Nidas (nivel 200)"),
+      I("mf20","Mazmorra Chambre de Tal Kasha (nivel 200)"),
+      I("mf21","Mazmorra Laboratoire de Nileza (nivel 200)"),
+      I("mf22","Mazmorra Vaisseau du Capitaine Meno (nivel 200)"),
+      I("mf23","Mazmorra Manoir des Katrepat (nivel 200)"),
+      I("mf24","Mazmorra Transporteur de Sylargh (nivel 200)"),
+      T("Guarda el masque mortuaire: hay que llevarlo equipado para cruzar el portal a Externam en las misiones 3, 4 y 10.")
+    ]},
+    {h:"Las 10 misiones, en orden (todas de nivel 200)",items:[
+      I("f1","1. Le dragon blanc",{n:"Mériana dice que Dardondakal confiaría su Dofus. Fabrica una bougie draconique, recógete ante su cráneo en Brâkmar (habla con el Milicien zélé), vence a los miliciens zélés (combate en 3 oleadas) y al Chalœil en su mazmorra, en Ecaflipus. No salgas de la mazmorra: Dardondakal aparece en la sala secreta, por la boca del gato grande.",w:"[-6,-3]",l:[["Pasos detallados (Dofuserie)", "https://www.dofuserie.com/quetes/le-dragon-blanc/"]]}),
+      I("f2","2. Examen de passage",{n:"Dardondakal, en el Défi du Chalœil. Necesitas un masque mortuaire: sácalo de la torre de tu ciudad (orden 5), llena la urna con 12 poussières d'âme y hazla bendecir al fondo del Ventre de la Baleine. Necesitas la Corde d'escalade para la pirámide.",w:"[-9,-22]",l:[["Pasos detallados (Dofuserie)", "https://www.dofuserie.com/quetes/examen-de-passage/"]]}),
+      I("f3","3. Le Pays Gris",{n:"Ilyzaelle, en el Belvédère. Con el masque mortuaire equipado, cruza el portal hacia Externam y consigue audiencia en la Citadelle tras un combate en solitario contra el Mâne curieux: aguanta hasta el turno 6, cuando llega un Faucheur y lo mata de un golpe.",w:"[-73,-76]",l:[["Pasos detallados (Dofuserie)", "https://www.dofuserie.com/quetes/le-pays-gris/"]]}),
+      I("f4","4. Casse en Enutrosor",{n:"Archonte Kebesto, sala de audiencias de Externam. La reina exige un coffret précieux d'Enutrosor: vence al Roi Nidas en su palacio y rompe el Coffret précieux antes de salir. Necesitas haber terminado Espionnage industriel.",w:"[14,13]",l:[["Pasos detallados (Dofuserie)", "https://www.dofuserie.com/quetes/casse-en-enutrosor/"]]}),
+      I("f5","5. Nordalie",{n:"Atroskulda te envía a hablar con tres personas (una es Hem, al fondo de la Chambre de Tal Kasha) y exige las misiones 6 a 9 antes del combate en solitario contra Hyrkul. Tres misiones anexas bloquean etapas: Malédiction !, Allumer le feu y La garde meurt mais ne se rend pas.",w:"[-9,-22]",l:[["Pasos detallados (Dofuserie)", "https://www.dofuserie.com/quetes/nordalie/"]]}),
+      I("f6","6. Le bonheur est dans le spray",{n:"Clothurde, caverna del destino, Crevasse Perge. Reúne los cuatro ingredientes del remedio y gana el combate táctico en solitario de los glifos rosas. Necesitas el logro La chasse aux chasseurs y la Baguette Rikiki equipada.",w:"[-76,-80]",l:[["Pasos detallados (Dofuserie)", "https://www.dofuserie.com/quetes/le-bonheur-est-dans-le-spray/"]]}),
+      I("f7","7. Une voix de crystal",{n:"Lachandi pide la voz de Kallishindri: tras el Nileza, el Capitaine Meno canjea un crystal por siete partituras dispersas por el mundo. Lanza Son nom est Personne antes de vencer a Meno, o sus diálogos serán los equivocados.",w:"[-76,-80]",l:[["Pasos detallados (Dofuserie)", "https://www.dofuserie.com/quetes/une-voix-de-crystal/"]]}),
+      I("f8","8. Le mort dans l'âme",{n:"Atroskulda: ayuda al vampiro Funestaro a recuperar las ganas de vivir. Ni el pan de ajo, ni el agua bendita ni la estaca sirven; lo consigue Anerice la Shushess, al fondo del Manoir des Katrepat. Contra el Abraknyde sinistre, empezar tu turno a su lado te mata de un golpe.",w:"[-76,-80]",l:[["Pasos detallados (Dofuserie)", "https://www.dofuserie.com/quetes/le-mort-dans-l-ame/"]]}),
+      I("f9","9. Le guerrier noir",{n:"Atroskulda: gánate al espíritu del centoror Menalt. Lee los libros de Jean-Sol Patre, vence al Bwork bibliophile y lleva 9 cráneos de centoror a Jerhyn Gholein. Los cráneos caen solo con un 5 % base: ve en equipo y con equipo de prospección.",w:"[-76,-80]",l:[["Pasos detallados (Dofuserie)", "https://www.dofuserie.com/quetes/le-guerrier-noir/"]]}),
+      I("f10","10. Il est temps de mourir",{n:"Esprit de Menalt, Belvédère d'Ilyzaelle. Ayuda a Agonie venciendo al Sylargh, destruye el filactero de la liche y enfréntate a ella solo. Hyrkul tiene 100 % de resistencia en todo: bájalas antes de golpear y prevé 6 PM. La explosión del autómata del Sylargh te mata: está previsto.",w:"[-73,-76]",l:[["Pasos detallados (Dofuserie)", "https://www.dofuserie.com/quetes/il-est-temps-de-mourir/"]]}),
+      I("f11","Logro Blanc ivoire completo: tienes el Dofus Marfil")
+    ]}
+  ]},
+  {id:"p1j",title:"Bloque 9: Dofus Ébano (Noir d'ébène)",sub:"10 misiones, 9 mazmorras, 20.500 kamas. Empieza con Mériana [-6,-3]",blocks:[
+    {h:"Prepara antes (según Dofuserie y Torrente Arcano)",items:[
+      I("eb1","Campesino a nivel 80 y Minero a nivel 20",{n:"Los pide Le creuset de Mériana (misión 5): segar los Brins des possibles y fabricar el Alliage abyssal."}),
+      I("eb2","Poder hacer los Sueños Infinitos en dificultad Rêve III o superior y cruzarte 12 veces con el sueño de Crocobur",{n:"Es la misión 3. Desde el séptimo sueño hace falta Rêve III o más. El sueño aparece al azar en la sala siguiente y puede salir en el sueño de otro jugador: no hace falta ser el dueño."}),
+      I("eb3","Terminar antes las misiones que bloquean etapas",{n:"Mieux vaut ne pas se fier à la première impression (misión 1; en español «Las primeras impresiones son engañosas»); Le fléau de Burin hasta Volkaragnar (misión 2; «El daño de Búril»); La colère des dieux (misión 4; «La cólera de los dioses»); Frappez, ami, et entrez y luego De Brikke et de Brokke (misión 7; «Llama, amigo y entra» y «Birk, hija de Bork»); Un pendule pour guider ses pas (misión 5; ya lo tienes del bloque 3)."}),
+      I("eb4","Acceso a Frigost III",{n:"Hay que haber vencido al menos una vez al Glourséleste."}),
+      I("eb5","Poder ir al Xélorium (misión 1) y a Srambad (misión 9)"),
+      I("eb6","Tener el hechizo Nécronyx",{n:"Lo piden la Tour de Bethel (misión 4) y la Tour de Solar (misión 10). Si caduca, se renueva en el Domaine des Dieux, con la estatua de clase de tu templo."}),
+      Q("eb7",20500,"kamas",{n:"Misión 8: 500 para el Dictionnaire paztek y 20.000 para la información de Bout d'chair."}),
+      Q("eb8",36,"Poudre de Perlinpainpain",{n:"Poudre de superlinpainpain, misión 1."}),
+      Q("eb9",18,"Mesure de sel",{n:"Misión 1."}),
+      Q("eb10",18,"Seigle",{n:"Misión 1."}),
+      Q("eb11",10,"Obsidienne",{n:"Alliage abyssal, misión 5."}),
+      Q("eb12",10,"Dolomite",{n:"Alliage abyssal, misión 5."}),
+      Q("eb13",10,"Écume de mer",{n:"Alliage abyssal, misión 5."}),
+      Q("eb14",10,"Métal abyssal",{n:"Misión 5. Monstruos de las zonas de Merkator o mercadillo."}),
+      Q("eb15",1,"Corde d'escalade",{n:"Descenso a la caverna, misión 6."}),
+      Q("eb16",20,"Perce-Neige",{n:"Sopas de Graillevent para Ludrune, misión 7."}),
+      Q("eb17",10,"Saucisse Fumée",{n:"Para Ludrune l'Aveugle, misión 7."}),
+      Q("eb18",5,"Barbarbe",{n:"Misión 7. Mercadillo o taverna de los Nimbos; sin La dernière barbe avant la fin du monde, que un amigo las compre por ti."}),
+      I("eb19","Mazmorra Mégalithe de Fraktale (nivel 120)"),
+      I("eb20","Mazmorra Repaire de Skeunk (nivel 120)"),
+      I("eb21","Mazmorra Antre de Crocabulia (nivel 120)"),
+      I("eb22","Mazmorra Tour de Bethel (nivel 200)"),
+      I("eb23","Mazmorra Temple de Koutoulou (nivel 200)"),
+      I("eb24","Mazmorra Brasserie du roi Dazak (nivel 200)"),
+      I("eb25","Mazmorra Salons privés de Klime (nivel 200)"),
+      I("eb26","Mazmorra Trône de la Cour Sombre (nivel 200)"),
+      I("eb27","Mazmorra Tour de Solar (nivel 200)")
+    ]},
+    {h:"Las 10 misiones, en orden",items:[
+      I("g1","1. L'épée du rocher (La espada de la roca)",{n:"Libera la espada Crocobur de su roca: la poudre d'Oubn-Ghazou revela el sello y luego se abre paso venciendo a Fraktale, a tres Craqueleurs de verre y a la Gardienne de l'épée. Para Fraktale, ve por el mapa del portal del Xélorium: una Ankre de téléportation no funciona.",w:"[-6,-3]",l:[["Pasos detallados (Dofuserie)", "https://www.dofuserie.com/quetes/l-epee-du-rocher/"]]}),
+      I("g2","2. Le forgeur de légende (El forjador de leyenda)",{n:"Volkaragnar, que forjó Crocobur, acepta devolverle el poder: vence solo al Feu de forge volcanique, haz engastar un jade impérial y riega la espada con la sangre de Crocabulia en su antro. No salgas de la mazmorra antes de derramar la sangre en la hoja.",w:"[-6,-3]",l:[["Pasos detallados (Dofuserie)", "https://www.dofuserie.com/quetes/le-forgeur-de-legende/"]]}),
+      I("g3","3. Jusqu'au bout du rêve (Hasta el final del sueño)",{n:"Volkaragnar, Forge du Volcan. La espada recupera su leyenda en los Songes infinis: cruza 12 veces el sueño de Crocobur.",w:"[-29,25]",l:[["Pasos detallados (Dofuserie)", "https://www.dofuserie.com/quetes/jusqu-au-bout-du-reve/"]]}),
+      I("g4","4. À la recherche de Crocoburio (En busca de Cocoburio)",{n:"Con el pergamino de Sramsara, que se obtiene a cambio del alma de Bethel Akarna, sigue la reencarnación de Crocoburio de Bonta a Frigost hasta la pequeña Léane, escondida entre los brigandins. Toma el hechizo Nécronyx antes de entrar en la Tour de Bethel.",w:"[-6,-3]",l:[["Pasos detallados (Dofuserie)", "https://www.dofuserie.com/quetes/a-la-recherche-de-crocoburio/"]]}),
+      I("g5","5. Le creuset de Mériana (El crisol de Meriana)",{n:"Mériana necesita restos de tres Chafers millénaires, aceite de la Larve de Koutoulou, el Alliage abyssal y siete ramas perennes, colocados en el crisol en un orden preciso. Un error de orden te hace ser agredido y hay que recomenzar.",w:"[-6,-3]",l:[["Pasos detallados (Dofuserie)", "https://www.dofuserie.com/quetes/le-creuset-de-meriana/"]]}),
+      I("g6","6. Une douloureuse séparation (Una dolorosa separación)",{n:"En la caverna de las lágrimas del Dragón Negro, purifica las salas, esquiva la emboscada de los falsos milicianos con Joris Jurgen y vence solo al alma de Crocoburio con la espada. En el último combate, recoge siempre la espada después de clavarla.",w:"[-6,-3]",l:[["Pasos detallados (Dofuserie)", "https://www.dofuserie.com/quetes/une-douloureuse-separation/"]]}),
+      I("g7","7. Le dragon noir (El dragón negro)",{n:"Para llegar a la isla del Dragón Negro necesitas a los Nimbos: vence a Dazak Martegel y a Klime en sus mazmorras, alimenta a Ludrune l'Aveugle y cruza la jungla y la ciudad de Tikoltenak hasta Grougalorasalar. Guarda 1 Larve avide de sang (de los Moskitos géants) para entrar en el templo.",w:"[-6,-3]",l:[["Pasos detallados (Dofuserie)", "https://www.dofuserie.com/quetes/le-dragon-noir/"]]}),
+      I("g8","8. La vengeance du dernier empereur (La venganza del último emperador)",{n:"Grougalorasalar, caverna de Tikoltenak. El fantasma del emperador Crocahualpa quiere vengarse: sigue su rastro hasta Brâkmar y Gisgoul, vence solo a los shushus y luego al demonio Bulak, invulnerable a distancia.",w:"[-82,6]",l:[["Pasos detallados (Dofuserie)", "https://www.dofuserie.com/quetes/la-vengeance-du-dernier-empereur/"]]}),
+      I("g9","9. L'œuf de Crocabulia (El huevo de Cocabulia)",{n:"El huevo, robado del banco de Amakna, acabó con los Smisse de Srambad: reconcilia a Blak y Sissipie y llévales el cofre de la Reine des Voleurs. Nivel 190. Los Roublards te agreden a cambio del cofre; el combate puede hacerse en grupo.",w:"[-6,-3]",l:[["Pasos detallados (Dofuserie)", "https://www.dofuserie.com/quetes/l-oeuf-de-crocabulia/"]]}),
+      I("g10","10. Un nouvel héritier (Un nuevo heredero)",{n:"Alimenta a Crocobur con almas de Calcinés (caen en los monstruos de las Marches Magmatiques, no en la mazmorra) y la de Solar, libera a Crocoburio en los Vestiges d'Osamodas y escóltalo hasta su padre. Un combate táctico en solitario decide el Dofus.",w:"[-6,-3]",l:[["Pasos detallados (Dofuserie)", "https://www.dofuserie.com/quetes/un-nouvel-heritier/"]]}),
+      I("g11","Logro Noir d'ébène completo: tienes el Dofus Ébano")
+    ]}
+  ]},
+  {id:"p2",title:"Quatre sur six y cierre de Six sur six",sub:"Con los 6 Dofus primordiales en el inventario",blocks:[
+    {h:"Prepara antes",items:[
+      I("p2a","Poder ir a Ecaflipus",{n:"Alguna misión del logro te lleva a esa dimensión."}),
+      Q("p2b",1,"Framboise",{alt:[10,"Carré de Chocolat au Lait"],n:"Cómprala en el mercadillo. Si no la consigues, sirve la alternativa."}),
+      Q("p2c",1,"Carré de Chocolat Noir"),
+      Q("p2c2",1,"Oignon"),
+      Q("p2c3",1,"Baguette Rikiki"),
+      Q("p2c4",1,"kama"),
+      Q("p2d",600,"Reflet onirique"),
+      I("p2e","Mazmorra Oeil de Vortex"),
+      I("p2f","Mazmorra del Conde Harebourg"),
+      T("Combates que te pedirán: 4 tácticos en solitario, 14 en solitario y 2 en los que puedes ir en grupo.")
+    ]},
+    {h:"Antes de Quatre sur six (10 misiones)",items:[
+      I("p2n","Tener en el inventario los Dofus Púrpura, Esmeralda, Turquesa y Ocre"),
+      Q("p2o",25,"Éklâme majestueuse"),
+      Q("p2p",5,"Potion minérale"),
+      Q("p2p2",5,"Potion d'altération"),
+      Q("p2q",1,"Cuir de Bouftou Royal"),
+      Q("p2q2",1,"Petit Chienchien Noir"),
+      Q("p2q3",2,"Ticket de la Foire du Trool"),
+      Q("p2r",600,"kamas"),
+      I("p2s","Mazmorras: Grotte du Bworker, Temple du Grand Ougah, Pyramide d'Ombre, Antichambre des Gloursons y Palais de Dantinéa"),
+      T("Combates: 23 en solitario, 13 en los que puedes ir en grupo y 1 táctico en solitario."),
+    ]},
+    {h:"Quatre sur six, misión 1: La dernière pierre (paso a paso)",items:[
+      T("Empieza con Mériana en [-6,-3]. Necesitas los Dofus Esmeralda, Púrpura, Turquesa y Ocre en el inventario, y haber terminado L'éternelle moisson, Vert émeraude, Pourpre profond, Bleu turquoise y Ocre d'ambre. Fuente: Dofus pour les Noobs (actualizada en julio de 2025)."),
+      I("q1a","Habla con Mériana y anúnciale que tienes los cuatro Dofus",{n:"Elige «Répondre que vous êtes prêt à faire ce qu'il faut».",w:"[-6,-3]"}),
+      I("q1b","Habla con Otomaï, en lo alto del árbol Hakam",{n:"Elige «Dire que vous êtes envoyé par Mériana».",w:"[-55,15]"}),
+      I("q1c","Entra por la puerta de la izquierda y habla con Rimanda",{n:"Es la desconocida que viste en Incarnam durante el Dofus Esmeralda."}),
+      I("q1d","Vuelve con Otomaï y elige «Parler de la pierre qui doit contenir l'âme d'Ombre»",{n:"Los recursos (25 Éklâme majestueuse, 5 Potion minérale y 5 Potion d'altération) ya están en la lista de compras del inicio de esta fase."}),
+      I("q1e","Vence al Grand Craquelourd para conseguir el Grand fragment de pierre polie",{n:"Se puede hacer en grupo.",w:"[-17,-51]"}),
+      I("q1f","Habla con Azogzog y vence tres combates en solitario seguidos",{n:"Primero su mago; después habla otra vez con él y te enfrentas a 4 bworks; por último, otra vez, contra 2 monstruos. Tras el tercero te da la posición de su mago.",w:"[-20,-36]"}),
+      I("q1g","Habla con HUSKUL",{n:"Solo te habla si llevas los 4 Dofus en el inventario. Aparecen dos ecaflips: habla con Miss Tique y con Miss Teigne; los bworks se interponen. Reparla con HUSKUL y te da un tótem que facilita la aparición de artefactos.",w:"[-20,-43]"}),
+      Q("q1h",5,"Artefact élémental d'Air",{n:"Objeto de misión: no se compra, se dropea. Cae en los Bwork Élémental de la zona Gisgoul (12 % base, 24 % con los 4 Dofus equipados). No cae en la mazmorra del Bworker."}),
+      Q("q1i",5,"Artefact élémental d'Eau"),
+      Q("q1j",5,"Artefact élémental du Feu"),
+      Q("q1k",5,"Artefact élémental de Terre"),
+      I("q1l","Vence al Bworker en la mazmorra Grotte du Bworker",{n:"Suelta automáticamente el Jeton prismatique du Bworker.",w:"[-15,14]"}),
+      I("q1m","Enseña el jeton a Krowbe Jondon",{n:"Elige «Montrer le jeton prismatique». Se le atasca en la máquina.",w:"[-13,-40]"}),
+      I("q1n","Ve a ver a Gobrikol y ayúdale a golpear el champiñón del juego de fuerza",{n:"Necesitas más de 600 de Fuerza. Con builds de Agilidad o de Fuego probablemente no llegues: prevé equipo o pociones de Fuerza para ese momento.",w:"[-10,-40]"}),
+      I("q1o","Dile a Gobrikol que la maza funciona"),
+      I("q1p","Vuelve con Gobrikol y elige «Tenir fermement le levier»",{w:"[-13,-40]"}),
+      I("q1q","Habla con Krowbe Jondon: «Lui dire que la machine est réparée»",{n:"Te da un artefacto elemental prismático."}),
+      I("q1r","Vuelve con Otomaï y elige «Montrer ce que vous avez trouvé»",{n:"Llévale todo, incluidos los 25 Éklâme majestueuse y las pociones si aún no se los diste.",w:"[-55,15]"}),
+      I("q1s","Fabrica la pierre d'âme élémentale",{n:"Entra en la sala del fondo y haz clic en la muela de la esquina superior izquierda. Necesitas Minero nivel 20."}),
+      I("q1t","Muéstrale la piedra a Otomaï: «Montrer fièrement la pierre d'âme élémentale»",{n:"Termina la misión. Sigue la conversación para lanzar Les coûts du sort."})
+    ]},
+    {h:"Quatre sur six, misión 2: Les coûts du sort (paso a paso)",items:[
+      T("Empieza con Otomaï en [-55,15] cuando termines La dernière pierre. Necesitas los 4 Dofus en el inventario. Combates: 3 en grupo posible y 1 en solitario; mazmorra Temple du Grand Ougah. Fuente: Dofus pour les Noobs (actualizada en abril de 2025)."),
+      I("c1","Habla con Otomaï",{n:"Te explica que el hechizo Capture d'âmes no basta para capturar el alma de Ombre: hace falta un sortilegio más potente.",w:"[-55,15]"}),
+      I("c2","Ve a Pandala, entra en el edificio y habla con Surivitna",{n:"Pregúntale dónde están los escritos de Tonam Etamwa.",w:"[20,-27]"}),
+      I("c3","En la biblioteca, habla con Narber Rihen Levihawa",{n:"Te deja leer un pergamino sobre un hechizo más poderoso que Capture d'âmes.",w:"[21,-27]"}),
+      I("c4","Vuelve con Surivitna (mapa a la izquierda) y háblale del receptáculo",{n:"Para contactar con los espíritus antiguos necesitas respirar un incienso que él fabrica si le llevas los ingredientes de su receta.",w:"[20,-27]"}),
+      I("c5","Ve a ver a Bivoak, en los Marécages sans fond",{n:"Pregunta si es un ermitaño. No lo es, pero te orienta hacia él si le recuperas su boomerang.",w:"[-8,5]"}),
+      I("c6","Habla con el Crocodaille ronchon y vence el combate",{n:"Tiene el boomerang. Combate posible en grupo.",w:"[-10,3]"}),
+      I("c7","Devuelve el boomerang a Bivoak",{w:"[-8,5]"}),
+      I("c8","Habla con Maître Yado: «Dire que vous venez de la part de Surivitna»",{n:"No te ayudará hasta que compartas una sopa con él.",w:"[-9,8]"}),
+      I("c9","Recoge las raíces pantanosas: clic en la planta rojiblanca de cada mapa",{n:"Están en [-9,7], [-8,7], [-8,8] y [-8,9]."}),
+      I("c10","Vuelve con Yado («Montrer les racines marécageuses») y haz clic en la marmita",{w:"[-9,8]"}),
+      I("c11","Dale un bol de sopa a Bivoak, luego a Yado («Donner un bol de soupe au maître Yado») y di «Dire que la soupe était délicieuse»",{n:"Yado te indica dos posiciones para los kaliptus séculaire."}),
+      I("c12","Opcional: vuelve a hablar con Yado antes de ir",{n:"Te transforma en Crocodaille y evitas las agresiones. Si no lo haces, habrá un pequeño combate en cada posición."}),
+      I("c13","Haz clic en el tronco y vence al Koalak hostile",{n:"Combate posible en grupo.",w:"[-10,10]"}),
+      I("c14","Haz clic en el tronco y vence al Warko belliqueux",{n:"Combate posible en grupo. La guía duda de si hay que llevar los 4 Dofus equipados: hazlo así por si acaso.",w:"[-6,13]"}),
+      I("c15","Vence al Ougah en la mazmorra Temple du Grand Ougah",{n:"Te da el champiñón psicotrópico. Para llegar, Dofus pour les Noobs tiene una guía del camino al templo.",w:"[-9,29]"}),
+      I("c16","Entrega los ingredientes a Surivitna para que fabrique el incienso",{w:"[20,-27]"}),
+      I("c17","Entra en la cueva escondida detrás de la cascada",{n:"Necesitas haber hecho Le réceptacle des Dofus, aunque Mais où sont les Dofus ? figure como completado.",w:"[21,-33]"}),
+      I("c18","Ante la estatua: deposita el incienso en el fuego sagrado, equipa los 4 Dofus, colócate en la casilla superior derecha del dibujo de Dofus del suelo y haz clic en la estatua del dragón",{n:"Llegas a una sala con cuatro elementales."}),
+      I("c19","Habla con uno de los elementales: «Se présenter» y «Dire que vous venez en paix»"),
+      I("c20","Habla con Rimanda",{n:"Te manda a su forjamago para conseguir orbes elementales.",w:"[38,-21]"}),
+      I("c21","Habla con Maha Shoja: «Dire que Rimanda vous envoie chercher 4 orbres élémentaires neutres»",{n:"Ya se los dio a alguien.",w:"[38,-20]"}),
+      I("c22","Habla con Rincedent: «Demander poliment 4 orbres élémentaires neutres»",{n:"Se los confió a Lebagag, que no quiere abrir la tapa por el hipo.",w:"[39,-21]"}),
+      I("c23","Colócate detrás del cofre Lebagag: «Se placer derrière le coffre et crier BOUH !»"),
+      I("c24","Vuelve a la cueva, haz clic en el receptáculo y habla con cada elemental: «Brandir un orbe neutre devant l'esprit»",{n:"Son cuatro.",w:"[21,-33]"}),
+      I("c25","Haz clic en el fuego central y elige «Affronter le gardien»",{n:"Combate en solitario contra el Gardien prismatique. Golpea con un elemento distinto cada vez, con efectos (quita PA, PM, alcance o vida según el elemento). Su Explosion prismatique hace 300 en cada elemento en un círculo de 4 casillas, pero también se hiere a sí mismo."}),
+      I("c26","Ve al Temple Huppermage y enseña la esencia prismática a Rimanda",{n:"Elige «Les nuances de la Quintessence», luego «Penser à la capture d'une âme puissante» y por último «Répondre que vous parvenez à distinguer une suite de signes ésotériques». Termina la misión; sigue la conversación para lanzar Une ombre au tableau.",w:"[38,-21]"})
+    ]},
+    {h:"Requisito de la misión 3: L'ombre et la proie (paso a paso)",items:[
+      T("Nivel 140. Empieza con Joris Jurgen en el palacio de Bonta [-36,-60]: la misión On dirait le Sud (bloque 6, Turquesa) te lleva hasta Joris y de ahí se lanza. No hay nada que reunir: dos combates (uno posible en grupo y otro en solitario con Nabrisa) y un viaje entre Bonta y la isla de Moon. Fuentes: Dofuserie, dofus-portals.fr y Dofuthèque."),
+      I("op1","Habla con Joris Jurgen y luego con el Huppermage Jed Reivrepel, en el palacio de Bonta",{n:"Busca a Nabrisa, su aprendiz, desaparecida tras el robo del Ojo de Grougalorasalar.",w:"[-36,-60]"}),
+      I("op2","Busca a Tante Zilda, la tía de Nabrisa, en el barrio de los pescadores",{n:"Recupera el tofu de peluche de Nabrisa."}),
+      I("op3","Devuelve el tofu a Jed Reivrepel",{n:"Su visión te orienta hacia la isla de Moon.",w:"[-36,-60]"}),
+      I("op4","En la isla de Moon interroga al agente de viajes, al turista solitario, al indígena amable y al pirata de la maza; explora el centro de la isla y habla con la Servante de Moon"),
+      I("op5","Pasa por detrás del tótem para entrar en la clairière obscure y vence al Gloutovore Obscur en un solo combate",{n:"Nivel 140, 4.600 PV. Combate posible en grupo. Al ganar aparece Nabrisa y te sigue.",w:"[31,6]"}),
+      I("op6","Vuelve al palacio de Bonta y anuncia a Jed que la misión salió bien",{n:"Nabrisa está bajo una maldición de Ombre: Jed puede romperla si alguien lo protege durante el ritual."}),
+      I("op7","En la Salle de conjuration, colócate delante de Jed, habla con él y vence a la Ombre Funeste",{n:"Combate en solitario con Nabrisa (Ombre Funeste: nivel 140, 7.700 PV). Habla otra vez con Jed para terminar. Recompensa: título Allié de Joris. Después vuelve con Rimanda para enlazar con Une ombre au tableau.",w:"[-37,-61]"})
+    ]},
+    {h:"Quatre sur six, misión 3: Une ombre au tableau (paso a paso)",items:[
+      T("Empieza con Rimanda en el Temple Huppermage [38,-21]. Combate en solitario (con Nabrisa) y mazmorra Pyramide d'Ombre. Fuente: resumen de dofus-portals.fr, Guide Dofus 2 y Dafous; no pude abrir la guía completa de Dofus pour les Noobs para esta misión."),
+      I("u0","Haber terminado L'ombre et la proie",{n:"Guide Dofus 2 y Dafous la enumeran como prerrequisito de esta misión (y un foro la cita también para Les coûts du sort). Todavía no tengo sus pasos."}),
+      I("u1","Habla con Rimanda: dice que ya puedes enfrentarte a Ombre",{w:"[38,-21]"}),
+      I("u2","Habla con Joris Jurgen",{n:"Impidió que Ombre creara Obscuranti para debilitarte.",w:"[38,-20]"}),
+      I("u3","Habla con Nabrisa, en la isla de Rok",{n:"Te acompaña a la mazmorra.",w:"[39,-21]"}),
+      I("u4","Haz la mazmorra Pyramide d'Ombre escoltando a Nabrisa y vence a Ombre",{n:"Nabrisa te espera en la sala de salida.",w:"[6,13]"}),
+      I("u5","Comprueba que aún tienes la bendición de Rimanda",{n:"Si la perdiste, recógela con ella otra vez."}),
+      I("u6","En la sala de salida, equipa la Pierre d'âme élémentale y habla con Nabrisa",{n:"Combate en solitario, con Nabrisa, contra el Âme d'Ombre. La piedra te da el hechizo Capture élémentale, que la hace vulnerable durante 3 turnos (alcance 6, recarga 4); sin él es invulnerable. Si no lo ves, mira la lista de hechizos especiales y comprueba que tienes un hueco libre en la barra."}),
+      I("u7","Tras vencer, rechaza la exigencia de Kalisthe",{n:"Kalisthe quiere tus Dofus a cambio de tu vida. Al negarte quedas ciego (buff Regard aveugle, -6 de alcance) y te teletransporta a un mapa a oscuras."}),
+      I("u8","Pulsa Z para mostrar la Voz Familiar y habla con ella desde la casilla justo enfrente",{n:"Tienes que estar exactamente en esa casilla."}),
+      I("u9","Termina hablando con Mériana",{n:"Cierra la misión y desbloquea Un remède draconien."})
+    ]},
+    {h:"Quatre sur six, misión 4: Un remède draconien (resumen)",items:[
+      T("Esta misión es un paraguas: te pide los objetos de Otomaï (un Pépin de pomme d'or y un Nectar céleste) y que termines antes las cuatro misiones de los dragones. Pasos tomados de guías de 2016 a 2021 (Guide Dofus 2 y el blog de Mage & Krazy): comprueba cada dato en el juego. Empieza tras Une ombre au tableau."),
+      I("rd1","Llevar 1 Laine de Bouftou Royal",{n:"Las guías antiguas piden la lana; Dofus pour les Noobs lista un Cuir de Bouftou Royal en su preparación (ya está en la lista de compras de esta fase)."}),
+      I("rd2","Habla con Edrige Valling en el templo Crâ y pide un pépin de pomme d'or",{n:"Elige «Demander un pépin de pomme d'or, au cas où». No puede dártelo, pero te dice que una cazadora famosa está en la Forêt Sombre.",w:"[0,3]"}),
+      I("rd3","Ve a la cueva de la Forêt Sombre y habla con Kokillette",{n:"La cueva está a la derecha del mapa. Te da su pépin si le llevas a Razarbok.",w:"[-11,-14]"}),
+      I("rd4","Rastrea a Razarbok en este orden: [-27,-40], luego [-31,-40] y luego [-28,-37]"),
+      I("rd5","Habla con el Dresseur Porkass y ofrécele la Laine de Bouftou Royal",{n:"Te presta un silbato (Appeau à sanglier).",w:"[-3,-30]"}),
+      I("rd6","Vuelve a [-28,-37], abre el inventario de misión y haz doble clic en el Appeau à sanglier",{n:"Aparece Razarbok. Combate en solitario.",w:"[-28,-37]"}),
+      I("rd7","Vuelve con Kokillette: te da el pépin de pomme d'or",{n:"Falta también el Nectar céleste; las fuentes no coinciden en dónde se consigue."}),
+      I("rd8","Termina las cuatro misiones de los dragones (eaux, vents, flammes, forêts)",{n:"No hay orden fijo: puedes reunir los dos objetos antes o después. Están en la lista de abajo."}),
+      I("rd9","Vuelve con Rosal, en lo alto del árbol Hakam, junto a Otomaï",{n:"Termina la misión y abre las de los dragones.",w:"[-55,15]"})
+    ]},
+    {h:"Quatre sur six, misión 5: Le dragon des eaux (resumen)",items:[
+      T("Empieza con Rosal en [-27,-34], durante Un remède draconien. Los pasos vienen de dofus-portals.fr, Guide Dofus 2 (2021) y Dafous; no pude abrir la guía de Dofus pour les Noobs. Verifica cada dato en el juego. Objetivo: conseguir un poco de la sangre de Aguabrial."),
+      I("dw1","Habla con Rosal",{n:"Te manda a buscar sangre de dragón.",w:"[-27,-34]"}),
+      I("dw2","Ve al pueblo de los Brigandins, sube la escalera, baja la segunda escalera de la plataforma y habla con Girle Pylote",{n:"Te lleva al santuario de Aguabrial.",w:"[-19,-23]"}),
+      I("dw3","Sigue el camino hasta la Gardienne du Sanctuaire y elige «Attaquer la sirène»",{n:"Combate en solitario. Se puede evitar ofreciéndole un peine: equipa el Couteau de Mer, consigue una Perle d'Âme en un Moumoule (24 % base) y cámbiala por el peine en [21,28], en el Domaine des Trithons."}),
+      I("dw4","Haz clic en la cuenca del centro de la sala y habla con Aguabrial",{n:"Te da su sangre a cambio de «el agua que no existe»."}),
+      I("dw5","Sal del santuario y habla con Girle Pylote para informarte sobre el agua que no existe",{w:"[36,-3]"}),
+      I("dw6","Toma un barco al puerto de Saharach y habla con la Capitaine Nérée",{n:"Te manda a hablar con tres buscadores de agua.",w:"[14,-55]"}),
+      I("dw6b","Habla con los tres buscadores de agua: Gobldo, Gérard Mensoif y Carl Éric",{n:"Están en [15,-56], [16,-57] y [17,-58]."}),
+      I("dw6c","Habla con el Sourcier hagard y vence a 3 monstruos",{n:"Para fabricar su varita de zahorí te pide 4 Jus de vieux cacterre, 2 Os desséché par le soleil y 5 Roses des sables.",w:"[18,-60]"}),
+      I("dw6d","Vence en solitario a los PNJ de [14,-64], [15,-64] y [15,-65]",{n:"Suman los 4 Jus de vieux cacterre."}),
+      I("dw6e","Vence en solitario los combates de [20,-61] y luego el de [18,-61]",{n:"Dan los 2 Os desséché par le soleil, en ese orden."}),
+      I("dw6f","Recoge 5 Roses des sables en los cactus de [13,-58], [14,-58], [15,-58], [16,-58] y [17,-58]"),
+      I("dw6g","Vuelve con el Sourcier hagard, equipa la Baguette de Sourcier y bendícela",{n:"Haz clic en el cactus «de gran pecho» (Mère Cacterre).",w:"[15,-61]"}),
+      I("dw6h","Usa la varita para encontrar el agua que no existe y vence al Mirageux",{n:"Recibes el Eau qui n'existe pas."}),
+      I("dw7","Vuelve con Aguabrial por el pueblo brigandino y entrégale el agua",{n:"Te confía una muestra de su sangre. La misión termina y hace avanzar Un remède draconien.",w:"[-19,-23]"})
+    ]},
+    {h:"Quatre sur six, misión 6: Le dragon des vents (resumen)",items:[
+      T("Empieza con Rosal en [-27,-34], durante Un remède draconien. Fuentes: dofus-portals.fr, Guide Dofus 2 y Dafous. Objetivo: la sangre de Aerafal, a cambio del «fuego del cielo»."),
+      I("dv1","Habla con Rosal",{w:"[-27,-34]"}),
+      I("dv2","Compra 1 Ticket de la Foire du Trool a la vendedora",{n:"Ya lo tienes en la lista de compras de esta fase (piden 2 en total).",w:"[-11,-36]"}),
+      I("dv2b","Encuentra las tres señales de Aerafal (escamas esmeralda)",{n:"En los Hauts du Kramdam [37,-19]; en las alturas de las Routes Rocailleuses (sube por [-28,-26] o [-26,-27], con acceso por [-22,-27]); y en lo alto del árbol Hakam [-54,15], haciendo clic en la cajita rota de abajo a la izquierda. Hay que tener las tres antes de hablar con Yova Etna. Puedes reunir a la vez las de llamas."}),
+      I("dv3","En la feria, habla con Yova Etna: «Demander des informations sur la localisation d'une créature» y luego «Aerafal le dragon primordial des vents»",{w:"[-9,-40]"}),
+      I("dv4","Habla con el Courant ascendant, en el mapa anterior a la mazmorra Truche",{n:"Te teletransporta ante el Gardien des vents, que pide dos llaves.",w:"[-10,-43]"}),
+      I("dv5","Consigue la Clef nuageuse: haz clic en el tonel delante del transportista de Incarnam",{w:"[4,-3]"}),
+      I("dv6","Consigue la Clef brumeuse: en el claro del olmo, en el centro de la Forêt Maléfique, haz clic en las flores al pie del Orme",{n:"La entrada del dédale está en [-5,13] y exige haber hecho Un pendule pour guider ses pas.",w:"[-5,17]"}),
+      I("dv7","Entrega las dos llaves al Gardien des vents y vence el combate",{n:"Después te lleva ante Aerafal, que da su sangre a cambio del fuego del cielo.",w:"[-10,-43]"}),
+      I("dv8","Habla con Mama Ayuto: «Dire que vous voulez capturer le feu du ciel»",{w:"[-19,-23]"}),
+      I("dv9","Habla con Violette, bajo la escalera de Mama Ayuto: pide una cage à foudre y materiales para un pararrayos",{w:"[-19,-23]"}),
+      I("dv9b","Consigue el Fer de lance antique con Jennifer Hayeuse, detrás del Kolizeum",{n:"Cuesta 500 kamas.",w:"[-12,-29]"}),
+      I("dv9c","Consigue la Grosse patate: despierta al wabbit esqueleto (tumba de la derecha) y haz clic en la caja grande",{n:"Albert Patate no la vende. La caja está en [-12,-32].",w:"[-13,-32]"}),
+      I("dv9d","Consigue la Cage à foudre: habla con Nobir enfermo, con el Bwork pacifique y con el Vieux chef bwork",{n:"El viejo jefe está en [-11,-19]. Recoge una hoja de rozberk en [-8,-25] (la planta rosa del centro) y dásela a Nobir para que la mastique: te regala la jaula.",w:"[-9,-22]"}),
+      I("dv9e","Vence al Abraknyde ignifugé para conseguir la Hampe en bois ignifugé",{n:"Combate posible en grupo.",w:"[-15,-18]"}),
+      I("dv9f","Lleva todo a Violette para fabricar el Patatonnerre y captura el rayo de la tormenta",{n:"Recibes la Cage à foudre électrisée.",w:"[-16,-22]"}),
+      I("dv10","Vuelve con Aerafal y entrégale la Cage à foudre électrisée",{n:"Te da una muestra de su sangre. La misión termina.",w:"[-10,-43]"})
+    ]},
+    {h:"Quatre sur six, misión 7: Le dragon des flammes (resumen)",items:[
+      T("Empieza con Rosal en [-27,-34], durante Un remède draconien. Fuentes: Guide Dofus 2 y Dafous. Objetivo: la sangre de Ignemikhal. Dafous la estima en unos 27 minutos."),
+      I("df1","Encuentra las tres señales de Ignemikhal (escamas púrpura)",{n:"Bordure de Feudala [27,-46] (clic en la madera de la izquierda), oeste de Brâkmar [-32,35] y península de los Dragoeufs [-4,28] (con el Cadavre Calciné). Hazlo antes de hablar con Yova Etna."}),
+      I("df2","Habla con Yova Etna en la feria y pregunta por Ignemikhal, el dragón primordial de las llamas",{w:"[-9,-40]"}),
+      I("df3","Entra en la Hypogée de l'Obsidiantre",{n:"Te llevan ante la Gardienne des flammes, en la primera sala de la mazmorra. Solo te deja acercarte al dragón si le llevas dos llaves.",w:"[-71,-83]"}),
+      I("df4","Consigue la Clef carbonisée: en el centro del laberinto del Minotoror (sala 13), haz clic en el pavé junto al PNJ Lorkos",{n:"Hacen falta al menos dos personajes para abrir las rejas hasta la sala 13: con tu equipo de 4 es fácil. Una guía de 2016 dice que es la madera a la derecha del Enutrof.",w:"[-38,-15]"}),
+      I("df5","Consigue la Clef incandescente: en la herrería de Bonta, haz clic en la forja",{w:"[-28,-55]"}),
+      I("df6","Vuelve a la primera sala del Obsidiantre y entrega las dos llaves a la Gardienne des flammes",{n:"Combate; después te conduce ante el dragón.",w:"[-71,-83]"}),
+      I("df7","Purifica las ciudades: habla con los seguidores del Dios Cornudo y ataca",{n:"Brâkmar [-27,32], Bonta [-33,-52], Astrub [3,-18], Sufokia [9,25], el pueblo de Frigost [-80,-43], Pandala [23,-27] y Amakna (la coordenada sale cortada en la fuente). El diálogo inicial es aleatorio y lo único que puedes hacer es empezar el combate."}),
+      I("df8","Vuelve con Ignemikhal y recibe su sangre",{w:"[-71,-83]"})
+    ]},
+    {h:"Quatre sur six, misión 8: Le dragon des forêts (resumen)",items:[
+      T("Empieza con Rosal en [-27,-34], durante Un remède draconien. Fuentes: dofus-portals.fr, Guide Dofus 2, Mage-Team (2016) y Dofus Wiki. Terrakourial está muerto: su sangre solo se consigue en su sueño. Hay que llevar los 4 Dofus equipados; si no, la luz del sueño no responde."),
+      I("dt1","Habla con Rosal y luego con Otomaï",{n:"Elige «Dire que vous aurez besoin pour votre guérison du sang de Terrakourial…».",w:"[-55,15]"}),
+      I("dt2","Ve a ver a Toungousa, en Pandala, y acompáñala hasta la Tourbière sans Fond",{n:"Toungousa está en Pandala ([20,-27] según dofus-portals). Al llegar te envía al dominio de los sueños.",w:"[-57,-1]"}),
+      I("dt3","Con los 4 Dofus equipados, ve a la luz de la izquierda del mapa"),
+      I("dt4","Haz clic en las plantas hasta recibir los 4 perfumes",{n:"Parfum printanier, capiteux, bois y piquant. Hay que hacer clic varias veces, en órdenes distintos. Si ya hiciste Reasons of Wrath (Dragon Dreams, Dofus Vulbis), ya los tienes."}),
+      I("dt5","Habla con el Gardien Polter: te pide tu Dofus Ocre. Recházalo",{n:"Guide Dofus 2 dice que le das un falso Dofus Ocre: Otomaï te lo entrega en el sótano de su cabaña, junto a Rosal (puerta de la izquierda y trampilla)."}),
+      I("dt6","Devuelve los perfumes a Polter y responde: «Dans le rêve de Terrakourial», «Le fragment de l'âme d'un dragon» y «Un mortel qui suit le chemin tissé par les Nordes»",{w:"[-57,-1]"}),
+      I("dt7","Habla con Terrakourial",{n:"Te da su sangre si replantas árboles en distintos lugares."}),
+      I("dt8","Habla con Polter para recibir raíces y ve con Rosal a buscar 3 Engrais",{n:"Siembras en [-76,-69] (haz clic en la roca y protege el árbol) y en Saharach [16,-62] (clic en la planta izquierda y defiende el árbol). El tercero está en las Terres Désacrées [-17,23]: haz clic en la roca del centro y vence al Abrazif (nivel 190).",w:"[-55,15]"}),
+      I("dt9","Vuelve con Terrakourial y recibe su sangre",{n:"La misión termina y hace avanzar Un remède draconien, antes de Mississitudes.",w:"[-57,-1]"})
+    ]},
+    {h:"Quatre sur six, misión 9: Mississitudes (resumen)",items:[
+      T("Nivel 200. Empieza con Otomaï en [-55,15] tras Un remède draconien. Fuentes: Guide Dofus 2 (2021), Dofus Wiki en inglés y una guía de 2016: verifica cada dato. Objetivo: ajustar cuentas con las dos Misses al servicio de Kalisthe."),
+      I("ms1","Habla con Otomaï",{n:"Te dice que Mériana quiere verte: sabe por qué Kalisthe busca los Dofus.",w:"[-55,15]"}),
+      I("ms2","Habla con Mériana",{n:"Kalisthe quiere la sangre de los dragones para curarse de la misma maldición que sufriste tú. Mériana despistó a sus acólitos enviándolos a Ecaflipus.",w:"[-6,-3]"}),
+      I("ms3","Habla con Incognita, un mapa más abajo de la cabaña de Mériana",{n:"Te da información sobre las Misses; hay que buscar a la única persona que las venció.",w:"[-6,-2]"}),
+      I("ms4","Habla con el Bagarreur clandestin, que te desafía",{n:"Según Dofus Wiki es el «Aggressive Intruder» nivel 200, junto al barco a Brâkmar en Sufokia.",w:"[17,27]"}),
+      I("ms5","Habla con Lerty Dendure en el Fight Club",{n:"La entrada está arriba del todo del mapa [10,24], detrás del tonel de tentáculos en la esquina de la casa (clic en el póster azul). Dato de 2016."}),
+      I("ms6","Haz la mazmorra Palais de Dantinéa y no salgas antes de hablar con Lorn el Grawn en la última sala",{n:"Habla con él tras vencer al jefe. Si eliges mal el diálogo te expulsan y hay que repetir la mazmorra."}),
+      I("ms7","En Ecaflipus, en las Piedras de Elevación, equipa el Petit Chienchien Noir antes de hablar con las Misses",{n:"Sin él no verás la opción de enfrentarte a ellas «con tu Chienchien Noir». Luego combate con las dos Misses.",w:"[-3,-6]"})
+    ]},
+    {h:"Quatre sur six, misión 10: Le destin de Kalisthe (resumen)",items:[
+      T("Nivel 200. Empieza con Miss Teigne en Ecaflipus [2,1], tras Mississitudes. Fuente principal: dofus-portals.fr y Guide Dofus 2. Hay un combate táctico final en solitario (10 PV, 10 PA y 6 PM), del que no tengo el detalle."),
+      I("kd1","Habla con Miss Teigne",{n:"Kalisthe tiene un cuervo espía que adiestró una tal Cornelia.",w:"[2,1]"}),
+      I("kd2","Habla con Cornelia Granpa y después con Kokillette",{n:"Kokillette está en [-11,-14], por el pasaje secreto bajo la raíz. Elige «Dire que vous avez appris qu'elle était autrefois l'amie de Kalisthe». Te cuenta que Kalisthe, hija de la diosa Crâ, solo se detiene curándola.",w:"[-6,-10]"}),
+      I("kd3","Consigue la Plume de corbac gazouilleur en el Chanil",{n:"Entra y haz clic en el cuervo de la sala.",w:"[9,21]"}),
+      I("kd4","Consigue la Plume de corbac thanatophobe con el Corbac effrayé",{w:"[12,16]"}),
+      I("kd5","Consigue la Plume de corbac porte-bonheur en la taverna de Amakna",{n:"Por las escaleras de la izquierda.",w:"[2,-1]"}),
+      I("kd6","Supera la prueba elemental de la diosa Crâ (combate táctico en solitario) y exígele que cumpla su promesa",{n:"Sin detalle de este combate."}),
+      I("kd7","Habla con Kalisthe ya curada y vuelve con Mériana",{n:"Termina la misión y el logro Quatre sur six (Soie chatoyante para la Dofusteuse).",w:"[-6,-3]"})
+    ]},
+    {h:"Quatre sur six: cierre del logro",items:[
+      I("p2t","Logro Quatre sur six completo",{n:"Recompensa: título Ami des Dragons y el ornamento Dofus Élémentaires."})
+    ]},
+    {h:"Six sur six, misión 1: Dans la gueule du Dragon (paso a paso)",items:[
+      T("Empieza con Mériana en [-6,-3]. Requisitos: nivel 190, los seis Dofus primordiales, los logros Quatre sur six, Blanc ivoire y Noir d'ébène, haber hecho Le réceptacle des Dofus y acceso a Ecaflipus. Lleva un Pandaclier. Fuente: Dofuserie (septiembre de 2026)."),
+      I("gg0","Haber terminado À la croisée des mondes",{n:"Misión de Pandala de nivel 100. Sus pasos están en el bloque 3 (requisito oculto D). Es requisito del primer paso.",l:[["Pasos originales (Dofuserie)", "https://www.dofuserie.com/quetes/a-la-croisee-des-mondes/"]]}),
+      I("gg1","Habla con Mériana",{n:"Si tienes los seis Dofus y sus misiones, te envía a un lugar al que solo llega quien los porta.",w:"[-6,-3]"}),
+      I("gg1b","Tener el Pandaclier",{n:"Se fabrica en À la croisée des mondes (bloque 3) y se equipa para unirse a la Pandassemblée."}),
+      I("gg2","En Pandala, equipa el Pandaclier, ve a Daimya Hikomi y luego a Le Grandapan: colócate en la casilla delante del estrado y habla con él",{n:"Elige «Demander son autorisation avant de se rendre devant le réceptacle des Dofus».",w:"[22,-29]"}),
+      I("gg3","Pasa bajo la cascada hasta el receptáculo de los seis Dofus",{n:"Exige haber hecho Le réceptacle des Dofus, aunque el logro Mais où sont les Dofus ? salga completado.",w:"[21,-33]"}),
+      I("gg4","Equipa los seis Dofus, brandea el Ivoire y el Ébène con las actitudes, haz clic en una celda delante del fuego apagado y luego en el dragón",{n:"No siempre funciona a la primera. Te lleva al Destin du Monde."}),
+      I("gg5","Habla con las tres Nordes: «En savoir plus sur cet endroit»",{n:"Ve todo recto y sube las escaleras. Te piden recoger el soplo de los seis dragones."}),
+      I("gg6","Soplo de Aerafal: habla con el Courant ascendant y el Gardien des vents y elige «Rester sur place»",{w:"[-10,-43]"}),
+      I("gg7","Soplo de Ignemikhal: en la primera sala de la mazmorra Obsidiantre, habla con la corriente de aire; elige «Rester sur place» y «Ne pas broncher»",{w:"[-72,-83]"}),
+      I("gg8","Soplo de Aguabrial: Girle Pylote te lleva hasta él; elige «Rester sur place» y «Se laisser submerger»",{n:"Sube por la escalera del árbol en [-19,-23], baja por la segunda y habla con Girle Pylote.",w:"[37,-3]"}),
+      I("gg9","Soplo de Terrakourial: habla con Toungousa en Otomaï para entrar en su sueño y elige «Rester sur place»",{n:"En la segunda sala, si hace falta, haz clic en las cuatro plantas en este orden: abajo izquierda, arriba derecha, abajo derecha, arriba izquierda.",w:"[-57,-1]"}),
+      I("gg10","Soplo de Grougalorasalar: desde Mériana toma el portal por el camino abajo, derecha, abajo, abajo, izquierda, abajo, izquierda, abajo, abajo, derecha; habla con el guía, cruza la jungla y elige «Rester sur place»",{n:"El portal está en [-6,3]. Cuidado con los moskitos de la jungla.",w:"[-82,6]"}),
+      I("gg11","Soplo de Dardondakal: en Ecaflipus, entra en la última sala del Défi du Chalœil y elige «Rester sur place»",{n:"No hace falta repetir la mazmorra.",w:"[-9,-22]"}),
+      I("gg12","Vuelve al Destin du Monde y habla con Lachandi",{n:"Elige «Annoncer que les Dragons Primordiaux vous ont fait don de leurs souffles» y «Répondre que vous êtes prêt à prendre le contrôle des flammes».",w:"[21,-33]"}),
+      I("gg13","Combate táctico en solitario contra los seis Feux élémentaires",{n:"No pierdes vida. Hay que colocar cada bolita pequeña en uno de los 4 casillas del glifo de su color y se orientan con los glifos blancos en tu cuerpo a cuerpo: pisar uno te quita 100 PM, así que una sola dirección por turno. Una bolita que pise un glifo ajeno muere y, aunque el resto salga bien, el combate se pierde. Puedes hacer retroceder las bolitas."}),
+      I("gg14","Habla con Lachandi, Atroskulda y Clothurde sobre el Feu Primordial",{n:"Elige «Parler du Feu Primordial qui éclaire désormais le sanctuaire»; con la cuarta respuesta, «Se tourner vers une autre Norde…». Alguien te salva del fuego."}),
+      I("gg15","Habla con Rathrosk y vence el combate en solitario",{n:"Basta con dejarlo a la mitad de vida (tiene 22.000 PV). Evita el daño de empuje. Si pierdes, vuelve a la cueva de [-5,-9].",w:"[-5,-9]"}),
+      I("gg16","Vuelve a hablar con Rathrosk",{n:"Abre la vía de Rathrosk y la de Mériana. También desbloquea Le silence est d'Aure, que lleva al Dofus Argenté Scintillant (opcional).",w:"[-5,-9]"}),
+      I("gg17","Habla con Lired: «Demander où est Mériana»; luego vence a 3 Kèrdes con Mériana y vuelve a hablar con ella",{n:"Combate en solitario con Mériana, que les quita la invulnerabilidad. Después te dice que es semidragona y que debes cortar los hilos de la tapicería.",w:"[-8,-4]"}),
+      I("gg18","Ve al templo Huppermage por la plataforma [-4,-2] y habla con Rimanda",{n:"Termina la misión. Sigue la conversación para lanzar S'armer contre le destin.",w:"[38,-21]"})
+    ]},
+    {h:"Six sur six, misión 2: S'armer contre le destin (paso a paso)",items:[
+      T("Empieza con Rimanda en [38,-21]. Necesitas un oficio de recolección a 200 (Alquimista, Leñador, Campesino, Minero o Pescador), las mazmorras Comte Harebourg y Œil de Vortex, 600 Reflet onirique, una Baguette Rikiki y 1 Framboise (mercadillo). Los recursos ya están en la lista de compras de esta fase. Fuente: Dofuserie (septiembre de 2026)."),
+      I("ar1","Habla con Rimanda",{n:"Hay que cortar tres hilos (lo que fue, lo que es y lo que será). Para ello necesitas un Troisième Œil y unas Ciseaux du Destin.",w:"[38,-21]"}),
+      I("ar2","Haz clic en el tonel enterrado y habla con el Spectre de Badmorva",{n:"Te da otro ojo a cambio de un Flocon maudit de Frigost.",w:"[-54,-76]"}),
+      I("ar3","Consigue un Flocon maudit de Frigost",{n:"Cae con 100 % en los protectores de recursos de Frigost si recolectas con un oficio a 200 y llevas equipo de prospección. También lo vende Papy Pro, en la tienda de Frigost, por 30 Kama de glace, pero exige el mismo oficio y no compensa.",w:"[-77,-45]"}),
+      I("ar4","Entrégale el copo al Spectre de Badmorva",{n:"Te da un Œil de Sorcière.",w:"[-54,-76]"}),
+      I("ar5","Si no tienes la Framboise: compra 10 Carré de Chocolat au Lait (2.000 kamas) y 1 Carré de Chocolat Noir (200 kamas) a Stayfun Bonnawa",{n:"Solo si no compraste la Framboise en el mercadillo.",w:"[23,-27]"}),
+      I("ar6","Da los 10 chocolates a Droupik y compra 1 Krièk (500 kamas) en la taverne du Bateau Ivre",{n:"Elige «Compatir à son malheur» y «Lui montrer les dix carrés de chocolat»: te conviertes en gaviota. La taverna está en [-70,-69].",w:"[7,-67]"}),
+      I("ar7","Habla con la Mouette givrée: «Proposer d'échanger une Krièk contre une framboise…»",{n:"Recibes 1 Framboise. Comprueba que tienes también 1 Oignon y 1 Carré de Chocolat Noir.",w:"[-70,-70]"}),
+      I("ar8","Sube al radeau de Galaethiel y navega hacia el oeste",{w:"[-74,-53]"}),
+      I("ar9","Ofrece la Framboise a Maewin y pídele ayuda para el Troisième Œil",{n:"Elige «Proposer une framboise à la déesse». Solo te ayudará si haces feliz a un chienchien triste.",w:"[-87,-86]"}),
+      I("ar10","Consuela a Pistou, en el piso de arriba de la taverna de Astrub",{n:"Elige «Fondre comme un glaçon sous le soleil des Calanques et caresser la tête de Pistou».",w:"[6,-18]"}),
+      I("ar11","En la casa de Kerubim, equipa la Baguette Rikiki, usa el agujero de ratón de la planta baja y vence al Mirgrillon d'élite",{n:"Nivel 200, combate posible en grupo. Después haz clic en la pelota grande del fondo.",w:"[3,-17]"}),
+      I("ar12","Devuelve la pelota a Pistou: «Faire rouler la baballe sur le parquet»",{w:"[6,-18]"}),
+      I("ar13","Vuelve con Maewin y elige «S'incliner devant Maewin»",{n:"Recibes una Poussière divine.",w:"[-87,-86]"}),
+      I("ar14","Habla con Galaethiel: «Proposer un carré de chocolat noir à la déesse» y «Dire que vous êtes prêt»",{n:"Dos combates en solitario, con un mansot aliado: el primero contra 5 mansots y el segundo en la sala de la derecha. Al salir: «Quitter la prison de Galaethiel», «S'incliner devant Galaethiel» y entrégale 1 Oignon para recibir la Larme divine."}),
+      I("ar15","Ve a los Songes Infinis (pestaña de sueños) y habla con Draconiros",{n:"Sube las escaleras. Elige «Dire que vous cherchez à créer un Troisième Œil» y «Rencontrer le Marchand de sable»."}),
+      I("ar16","En el mapa a la izquierda de la llegada, habla con el Marchand de sable y vence a los Kèrdes",{n:"Combate en solitario. Luego cambia 600 Reflet onirique por el Sable des songes («Échanger du sable des songes contre des reflets oniriques» y «Payer le prix demandé»)."}),
+      I("ar17","Abre el inventario de misión y haz doble clic en el Œil de Sorcière",{n:"Obtienes el Troisième Œil."}),
+      I("ar18","Habla con Valdi Vivargent, en el taller de mineros: «Accepter le marché»",{n:"Te pide 3 Peau de contremaître gobelin y 3 Peau de bwork vétéran.",w:"[3,29]"}),
+      I("ar19","Vence en solitario a 3 Contremaîtres gobelins y 3 Bworks vétérans",{n:"Contremaîtres en [-4,7], [-3,4] y [-5,3]; Bworks vétérans en [-4,11], [-6,9] y [-7,7]. Habla con cada uno; cada victoria da una piel. Vuelve con Valdi por el Lingot de Grithril."}),
+      I("ar20","Lleva el lingote a Gobanos el forjador, en el Domaine des dieux",{n:"Llega con la estatua de clase de tu templo y baja por las escaleras de la izquierda. Te fabrica unas tijeras de grithril.",w:"[1,0]"}),
+      I("ar21","Habla con Maha Shoja: «Dire que vous voulez créer des Ciseaux du Destin»",{n:"Usa la plataforma Huppermage de [-4,-2]. Pide dos fragmentos de destinos rotos. Solo caen si ya tienes el Troisième Œil.",w:"[38,-20]"}),
+      I("ar22","Completa la mazmorra Donjon du Comte Harebourg y habla con Djaul",{n:"Hay que hacer la mazmorra entera; el combate suelto del Conde no da el fragmento. Con Djaul: «Lui demander ce qu'il fait ici» y «Répondre que vous allez réfléchir à la question».",w:"[-59,-89]"}),
+      I("ar23","Completa la mazmorra Œil de Vortex",{n:"Da el Destin brisé de Vortex.",w:"[7,-7]"}),
+      I("ar24","Vuelve con Maha Shoja y entrégale los dos destinos rotos y las tijeras",{n:"Elige «Donner les destins brisés de Vortex et du Comte Harebourg». Recibes las Ciseaux du Destin.",w:"[38,-20]"}),
+      I("ar25","Enseña los objetos a Rimanda",{n:"Termina la misión. Sigue la conversación para lanzar La fin… ou le commencement.",w:"[38,-21]"})
+    ]},
+    {h:"Six sur six, misión 3: La fin… ou le commencement (paso a paso)",items:[
+      T("Empieza con Rimanda en [38,-21]. Necesitas los seis Dofus en el inventario, haber terminado S'armer contre le destin y Bûcherons en détresse (bloquea una etapa) y 1 kama para una limonada. Es la última misión de Six sur six. Fuente: Dofuserie (septiembre de 2026)."),
+      I("fc0","Haber terminado Bûcherons en détresse",{n:"Sus pasos están en el bloque 2. Sin ella, Artand no te ayuda con las marionetas.",l:[["Pasos originales (Dofuserie)", "https://www.dofuserie.com/quetes/bucherons-en-detresse/"]]}),
+      I("fc1","Habla con Rimanda",{n:"Hay que encontrar a los agentes que guardan los hilos de plata de la Balanza. El Troisième Œil del inventario de misión te marca cada uno.",w:"[38,-21]"}),
+      I("fc2","Hilo del pasado: ve a la rueca de Clothurde y habla con los Fantômes du passé",{n:"Elige «Hausser les épaules et ne pas insister»: no te dejan pasar.",w:"[1,-13]"}),
+      I("fc3","Haz clic en la tumba de la izquierda y habla con Snuffles",{n:"Necesita una Relique brâkmarienne para alejar a los Centorors.",w:"[-1,-12]"}),
+      I("fc4","Vence al Capitaine de l'Aurore Pourpre",{n:"Combate posible en grupo. Da la Relique brâkmarienne.",w:"[-1,-9]"}),
+      I("fc5","Entrega la reliquia a Snuffles",{w:"[-1,-12]"}),
+      I("fc6","Vuelve con el Fantôme du passé y dile que hay espectros de la Aurora Púrpura junto a la tumba de Menalt",{n:"Los Centorors se marchan.",w:"[1,-13]"}),
+      I("fc7","Combate táctico en solitario contra «Ce qui a été»",{n:"Tienes 10 PV en total repartidos en 4 aparatos. Golpea el aparato bajo el que apareció el glifo rojo más reciente: cada acierto quita 1 PV y necesitas 10 antes del turno 20, o te matan. Al golpear un aparato empieza el turno siguiente.",w:"[1,-13]"}),
+      I("fc8","Hilo del presente: usa el Troisième Œil y ve a la rueca de Lachandi",{n:"No hables aún con las marionetas.",w:"[-3,-21]"}),
+      I("fc9","Habla con Artand en la Épicerie d'Astrub",{n:"Explícale tu situación con las Nordes.",w:"[1,-16]"}),
+      I("fc10","Vuelve a [-3,-21], habla con Artand y vence a los pantins",{n:"Combate en solitario con Artand. Las marionetas son invulnerables: Artand se lo quita 1 turno, en cuerpo a cuerpo.",w:"[-3,-21]"}),
+      I("fc11","Combate táctico en solitario contra «Ce qui est»",{n:"Coloca las máquinas pequeñas en los 4 glifos de la máquina central. Para moverlas, golpéalas en línea con ellas: se atraen a tu cuerpo a cuerpo. Prevé movilidad y 6 PM.",w:"[-3,-21]"}),
+      I("fc12","Hilo del futuro: usa el Troisième Œil y ve a la rueca de Atroskulda",{n:"No hables con los Gloots.",w:"[3,-28]"}),
+      I("fc13","Habla con Aisling en la Biblioteca de Astrub: «Saluer Aisling»",{n:"Aceptará venir a leer el pergamino de incantaciones.",w:"[7,-19]"}),
+      I("fc14","Vuelve a [3,-28] y habla con Aisling para que recite la incantación",{n:"Elige «Attendre», luego «Remarquer que les élémentaires s'agitent, mais patienter» y luego «Attendre encore tandis que les élémentaires s'approchent de la colline». Respeta ese diálogo. Después, combate en solitario contra 2 Larmes de l'ogre.",w:"[3,-28]"}),
+      I("fc15","Habla con Septange",{n:"Te ofrece unirte al clan de los Veilleurs; es una de las seis vías finales."}),
+      I("fc16","Combate táctico en solitario contra «Ce qui sera»",{n:"Llega a la casilla verde en menos de 10 turnos o te matan. Pisar un glifo te quita 1 turno: marrón vuelve a tu posición de inicio, rojo reduce 1 la duración de efectos, violeta quita 1 PM y azul empuja 2 casillas. Puedes desplazar las máquinas pequeñas golpeándolas.",w:"[3,-28]"}),
+      I("fc17","Toma el portal a Incarnam en Astrub, entra en la taverna y compra una limonada a Grobid por 1 kama",{n:"El portal está en [6,-19]. Elige «Commander une limonade pour 1 kama».",w:"[0,-3]"}),
+      I("fc18","Ofrece la limonada a Lykhen Lesurviven y brinda con él",{n:"Te dice que las Nordes no son invencibles.",w:"[0,-3]"}),
+      I("fc19","Ve a la cascada, pasa al Destin du Monde y habla con Clothurde: «Répondre que vous avez fait votre choix»",{w:"[21,-33]"}),
+      I("fc20","Elige una sola de las seis vías (es definitiva)",{n:"Cada vía fija el título, el aura y el Avatar que combate contigo; ninguna es mejor en el combate. Rathrosk: «Le Vent du Krosmoz», aura amarillo ocre. Mériana: «L'Élu des Dieux», aura blanco marfil. Rimanda: «Le Champion Éternel», aura multicolor. Djaul: «La Griffe des Démons», aura rojo púrpura. Septange: «Le Gardien du Kontinuum», aura azul turquesa. Destino a tus condiciones: «La Main du Destin», aura verde esmeralda. Cada personaje puede elegir una distinta."}),
+      I("fc21","Combate contra las tres Nordes y la Colère des Nordes",{n:"En solitario con el Avatar de tu vía, que da 2.500 de Vitalidad, 2 PA, 2 PM, 500 de Potencia y 50 de Fuga. La Colère es invulnerable mientras vivan las 3 Nordes. Orden recomendado: Clothurde, Atroskulda y Lachandi. Nunca acabes tu turno en la línea de visión de la Colère. El Rouet te ayuda a quitarles la invulnerabilidad."}),
+      I("fc22","Habla con el representante de la vía que elegiste"),
+      I("fc23","Toma el portal a Incarnam, ve al Temple Céleste y habla con Ganymède",{n:"Cinemática: la búsqueda de los Dofus termina. Desbloquea Au détour d'un rêve perdu, el prólogo de la fase siguiente.",w:"[-2,-3]"})
+    ]},
+    {h:"Six sur six: cierre",items:[
+      I("p2z","Six sur six completo: tienes los 6 Dofus primordiales y el logro",{l:[["Guía del logro", "https://www.dofuserie.com/succes/six-sur-six/"]]})
+    ]}
+
+  ]},
+  {id:"p3",title:"Prólogo: Le secret des Dofus (El secreto de los Dofus: Prólogo)",sub:"Tres misiones cortas",blocks:[
+    {h:"Requisitos y preparación",items:[
+      T("Draconiros lanza las tres misiones en la grotte du réceptacle, en Pandala [21,-33]. Nivel 190. Combates: 1 en solitario y 1 por oleadas (Au détour d'un rêve perdu), 2 en solitario (Entretemps, une renaissance) y 2 en solitario (La bête au bois dormant). Verificado con Dofuserie (septiembre de 2026)."),
+      I("pr0","Haber terminado Quand l'éveil n'est qu'un songe",{n:"Requisito de Au détour d'un rêve perdu que no estaba en la ruta. Aún no tengo sus pasos.",l:[["Pasos detallados (Dofuserie)", "https://www.dofuserie.com/quetes/quand-l-eveil-n-est-qu-un-songe/"]]}),
+      I("pr1","Tener los seis Dofus primordiales en el inventario y La fin… ou le commencement terminada"),
+      I("pr2","Tener el Masque mortuaire",{n:"Se equipa en la última sala del Belvédère d'Ilyzaelle durante Entretemps, une renaissance. Es el mismo del Marfil."}),
+      I("pr3","Tener 1 Ambre gris spirituel",{n:"Para entrar en el templo de la ballena (Entretemps, une renaissance)."}),
+      Q("p3a",1,"Substrat de Sylve",{n:"Para el Vieux moussu de La bête au bois dormant, si aún no lo tienes."}),
+      I("p3b","1 Enchanterelle (objeto de misión)",{n:"Solo la cita Dofus pour les Noobs; Dofuserie no la lista. Si no te la piden, ignórala."})
+    ]},
+    {h:"Las misiones",items:[
+      I("p3c","Au détour d'un rêve perdu",{n:"Draconiros te da un cofre que te lleva ante la Mère des Douleurs, la Déesse Sacrieur y Médoroziam: un combate en solitario (Douleur persistante) y otro por oleadas (Morts brûlants y Morts incendiaires).",w:"[21,-33]",l:[["Pasos detallados (Dofuserie)", "https://www.dofuserie.com/quetes/au-detour-d-un-reve-perdu/"]]}),
+      I("p3d","Entretemps, une renaissance",{n:"Sigues la voz perdida de Allisterine: dos combates en solitario, el Bélier divin y luego los cuatro Jinetes (Misère, Corruption, Servitude y Guerre).",w:"[21,-33]",l:[["Pasos detallados (Dofuserie)", "https://www.dofuserie.com/quetes/entretemps-une-renaissance/"]]}),
+      I("p3e","La bête au bois dormant",{n:"Averigua por qué Terrakourial encerró a la Reine cornue en el ámbar de la Forêt Maléfique: dos combates en solitario, contra la Baliste de Crâ y el Vieux moussu.",w:"[21,-33]",l:[["Pasos detallados (Dofuserie)", "https://www.dofuserie.com/quetes/la-bete-au-bois-dormant/"]]}),
+      I("p3f","Logro Le secret des Dofus : Prologue completo",{l:[["Guía del logro", "https://www.dofuserie.com/succes/le-secret-des-dofus-prologue/"]]})
+    ]}
+  ]},
+  {id:"p4",title:"Archipiélago de Valonia",sub:"Logro L'héritage de l'île brisée: 16 misiones",blocks:[
+    {h:"Llegar a Valonia",items:[
+      I("p4a","Viaja a Valonia",{n:"Barco de la capitana Isabello Tissier por 100 kamas, o dirigible de Freddy Rigeable por 10 kamas.",w:"[10,-3] barco · [-2,4] dirigible"}),
+      I("p4b","Guarda el zaap de Valonia",{w:"[39,-82]"}),
+      T("Solo para Forjalanza: según la guía de Valonia de Dofus pour les Noobs, al terminar la misión Dévotion à la Lance Originelle recibes un teletransporte gratis al templo de Valonia."),
+      T("El randonneur Edmön Taägnard te cruza la isla principal por 50 kamas: en [37,-77] (sur) y [34,-83] (norte).")
+    ]},
+    {h:"Prepara",items:[
+      Q("p4c",10,"Bière aigrisante",{alt:[5000,"kamas"]}),
+      Q("p4d",10,"Cristal liquide"),
+      Q("p4d2",10,"Cristal pliable"),
+      Q("p4d3",10,"Chanvre"),
+      Q("p4d4",10,"Sauge"),
+      Q("p4e",7,"Belladone"),
+      Q("p4e2",7,"Cendrepierre"),
+      Q("p4f",1,"Casque de Statulipe"),
+      Q("p4f2",1,"Mousse de Caméliache"),
+      Q("p4f3",1,"Fleur des protecteurs"),
+      Q("p4f4",1,"Poing de Coquelicogne"),
+      Q("p4f5",1,"Liane de Soldalia"),
+      Q("p4f6",1,"Épine d'Armuguet"),
+      Q("p4g",1,"Ardonite"),
+      Q("p4g2",1,"Élixir des Trépasseurs"),
+      Q("p4h",120,"kamas"),
+      I("p4h2","Tener el hechizo Flamiche",{n:"También tendrás que esperar 2 minutos en una misión."}),
+      I("p4i","Mazmorras: Refuge Sylvestre, Bastion des Marteaux-Aigris, Chambre des maléfices, Belvédère d'Ilyzaelle y Caverne de Cire Momore",{n:"Niveles recomendados: Refuge 50, Bastion 190, Chambre 200, Cire Momore 200."}),
+      T("Combates: 21 en los que puedes ir en grupo, 9 en solitario, 1 por oleadas en grupo, 1 por oleadas en solitario, 1 táctico y otros para conseguir drops.")
+    ]},
+    {h:"Logro 1: L'enfant regardait tomber la neige (5 misiones, nivel 50; recompensa: 3 Pom de Pin)",items:[
+ I("p4j","Dis, scierie ?",{n:"Hönger Lébaï, en Nouvelle Albuera. Nivel 50, 9 pasos: echar una mano al aserradero de la colonia.",w:"[38,-77]",l:[["Pasos detallados (Dofuserie)", "https://www.dofuserie.com/quetes/dis-scierie/"]]}),
+ I("p4k","Colonie de vaillance",{n:"Thorbjarn. Nivel 50, 9 pasos: expulsar a los Thomondors de la cantera sin hacerles daño y celebrar tu llegada en la taberna de Albuera.",w:"[38,-77]",l:[["Pasos detallados (Dofuserie)", "https://www.dofuserie.com/quetes/colonie-de-vaillance/"]]}),
+ I("p4l","Dans la gueule du Trankilou",{n:"Hönger Lébaï. Nivel 50, 8 pasos: revisar las trampas para trankilous del trampero enfermo.",w:"[38,-77]",l:[["Pasos detallados (Dofuserie)", "https://www.dofuserie.com/quetes/dans-la-gueule-du-trankilou/"]]}),
+ I("p4m","Association de fureteurs",{n:"Thorbjarn. Nivel 50, 14 pasos: alguien saboteó la presa de la colonia.",w:"[36,-77]",l:[["Pasos detallados (Dofuserie)", "https://www.dofuserie.com/quetes/association-de-fureteurs/"]]}),
+ I("p4n","La complote des P.O.M.S.",{n:"Rakoopeur, en el Refuge Sylvestre. Nivel 50, 9 pasos: desenmascarar a los saboteadores de la presa. El logro entrega 3 Pom de Pin.",w:"[40,-84]",l:[["Pasos detallados (Dofuserie)", "https://www.dofuserie.com/quetes/la-complote-des-p-o-m-s/"]]})
+    ]},
+    {h:"Logro 2: Un clan hétéroclite (4 misiones, nivel 190; recompensa: 3 Poils de barbe de Marteau-Aigri)",items:[
+ I("p4o","Un événement inattendu",{n:"Thorbjarn. Nivel 190, 17 pasos: la última entrega para los Marteaux-Aigris de Ereboria salió mal y el acuerdo comercial de la colonia peligra.",w:"[36,-77]",l:[["Pasos detallados (Dofuserie)", "https://www.dofuserie.com/quetes/un-evenement-inattendu/"]]}),
+ I("p4p","L'île maudite",{n:"Selma Reen, en Nouvelle Albuera. Nivel 190, 9 pasos: investigar en Ereboria la última entrega de mineral.",w:"[36,-76]",l:[["Pasos detallados (Dofuserie)", "https://www.dofuserie.com/quetes/l-ile-maudite/"]]}),
+ I("p4q","Chercher un Marteau-Aigri dans une galerie d'Ereboria",{n:"Barbéryl Clochecuivre, al final del Bastion des Marteaux-Aigris. Nivel 190, 16 pasos: encontrar a Vitkour Pied-Vif con la ayuda de Malva Bonnepanse.",w:"[32,-64]",l:[["Pasos detallados (Dofuserie)", "https://www.dofuserie.com/quetes/chercher-un-marteau-aigri-dans-une-galerie-d-ereboria/"]]}),
+ I("p4r","La fin des maningances (pasos abajo)",{n:"Vitkour Pied-Vif. Nivel 190, 13 pasos.",w:"[32,-62]",l:[["Pasos detallados (Dofuserie)", "https://www.dofuserie.com/quetes/la-fin-des-maningances/"]]})
+    ]},
+    {h:"La fin des maningances (paso a paso)",items:[
+      T("Nivel 190. Empieza con Vitkour Pied-Vif detrás de la cascada [32,-62], tras Chercher un Marteau-Aigri dans une galerie d'Ereboria. Un combate posible en grupo. Fuente: Dofuserie (septiembre de 2026)."),
+      I("lm1","Habla con Vitkour Pied-Vif y trama el plan",{n:"Confiesa que Malva lo manipuló para quitarle el puesto a Barbéryl: hay que escapar para protegerla.",w:"[32,-62]"}),
+      I("lm2","Haz clic en la reja de la prisión para levantarla",{n:"Vitkour la calza con su pierna de madera.",w:"[32,-62]"}),
+      I("lm3","Vuelve a hablar con Vitkour",{n:"Perdió su pierna de madera: hay que encontrarle otra antes de ver a Barbéryl.",w:"[32,-62]"}),
+      I("lm4","Sal de la cueva y coge la Pioche des Marteaux-Aigris junto al trío de cajas",{w:"[32,-65]"}),
+      I("lm5","Vuelve detrás de la cascada y entrégale la pioche a Vitkour",{n:"Se pone el mango como pierna y puede acompañarte.",w:"[32,-62]"}),
+      I("lm6","Ve al Bastion des Marteaux-Aigris y habla con el guardia Pasmühr Aye",{n:"Elige «Désigner Vitkour et dire que Barbéryl vous attend».",w:"[32,-64]"}),
+      I("lm7","Escucha a Malva y a Vitkour y elige «Entendre Malva hurler de rage en fonçant vers le Nimbos unijambiste et s'interposer pour le protéger»",{n:"Si vas en grupo, hacedlo con esta primera opción: la misión se actualiza para todos y el combate se hace una vez. Para unirse hay que estar en la misma etapa o en la sala de salida de la mazmorra.",w:"[32,-64]"}),
+      I("lm8","Vence a Malva Bonnepanse",{n:"Nivel 190, 5.000 PV, 14 PA y 5 PM. Combate posible en grupo, con Vitkour y dos guardias de Barbéryl.",w:"[32,-64]"}),
+      I("lm9","Habla con Barbéryl Clochecuivre: «S'assurer que Malva est fermement retenue»",{w:"[32,-64]"}),
+      Q("lm10",20,"Caisse de pierres précieuses",{n:"Objeto de misión, en ocho mapas de Ereboria: 2 en [31,-63] y 2 en [34,-62] (bolsa sobre la caja grande de la izquierda), 2 en [33,-65] (caja a la derecha de la estatua nimbo), 2 en [32,-68] (trío de sacos junto a la puerta izquierda), 2 en [33,-68] (trío de flechas clavadas a la derecha) y 2 en [35,-68] (caja grande junto a las tres pequeñas de la derecha); 4 hablando con Armin en [35,-67] y 4 con Minarm en [33,-72]."}),
+      I("lm11","Entrega las 20 cajas a Hönger Lébaï, en la isla de Albuera",{w:"[38,-77]"}),
+      I("lm12","Cuéntale tu aventura a Gidrud en su cabaña",{n:"Cire Momore es una armadura animada que absorbe el alma de quien toca el tesoro.",w:"[36,-77]"}),
+      I("lm13","Habla con Nascherite en el templo Forgelance",{n:"Termina la misión. Atajo: Edmön Taägnard, en [37,-77], te teletransporta a [34,-83] por 50 kamas.",w:"[33,-84]"})
+    ]},
+    {h:"Logro 3: Conseiller en patrimoine (3 misiones, nivel 200)",items:[
+ I("p4s","La graine de la révolte",{n:"Nascherite, en el templo Forgelance. Nivel 200, 16 pasos: la Lance Originelle se muere y hay que remontarse a su origen.",w:"[33,-84]",l:[["Pasos detallados (Dofuserie)", "https://www.dofuserie.com/quetes/la-graine-de-la-revolte/"]]}),
+ I("p4t","Par l'héritage qui vous lie",{n:"Nascherite. Nivel 200, 30 pasos: encontrar a Gidrud, Godefon de Bouilloire y Edgard Cœur de Dragon, tres guardianes de las lanzas del Juramento.",w:"[33,-84]",l:[["Pasos detallados (Dofuserie)", "https://www.dofuserie.com/quetes/par-l-heritage-qui-vous-lie/"]]}),
+ I("p4u","Une dernière volonté",{n:"Nascherite, en la sala del Juramento. Nivel 200, 19 pasos: reunir a Namuna e Ilyzaelle, los dos últimos Forgelances del Juramento, y salvar la Lance Originelle.",w:"[33,-84]",l:[["Pasos detallados (Dofuserie)", "https://www.dofuserie.com/quetes/une-derniere-volonte/"]]})
+    ]},
+    {h:"Logro 4: Le bouquet final (4 misiones, nivel 200; recompensa: 3 Fleur des protecteurs)",items:[
+ I("p4v","Les risques du métier",{n:"Capitaine d'escouade, en la isla de Ephedrya. Nivel 200, 12 pasos: encontrar a los tres Nimbos de su escuadra (un Marthos caído en un pozo, un Sanglirok rodeado de bourdards y una Serpyn sin arma).",w:"[22,-80]",l:[["Pasos detallados (Dofuserie)", "https://www.dofuserie.com/quetes/les-risques-du-metier/"]]}),
+ I("p4w","La sorcière exilée",{n:"Gidrud. Nivel 200, 22 pasos: la joven Frida desapareció y se sospecha de la bruja de Ephedrya.",w:"[36,-77]",l:[["Pasos detallados (Dofuserie)", "https://www.dofuserie.com/quetes/la-sorciere-exilee/"]]}),
+ I("p4x","Pour que la flamme vacille",{n:"Nascherite, en el templo Forgelance. Nivel 200, 12 pasos: los Marteaux-Aigris te revelan su secreto para enfrentarte a Cire Momore.",w:"[33,-84]",l:[["Pasos detallados (Dofuserie)", "https://www.dofuserie.com/quetes/pour-que-la-flamme-vacille/"]]}),
+ I("p4y","L'heure des adieux",{n:"Esprit d'un Blanchebière, en las galerías de Ereboria. Nivel 200, 12 pasos: devolver al rey Skori su lanza Gnugnir para que su clan se una a Externam.",w:"[31,-63]",l:[["Pasos detallados (Dofuserie)", "https://www.dofuserie.com/quetes/l-heure-des-adieux/"]]}),
+      I("p4z","Meta-logro L'héritage de l'île brisée completo",{l:[L("Guía de Valonia","quetes-de-l-archipel-de-valonia.html")]})
+    ]}
+  ]},
+  {id:"p5",title:"Conseguir el Dom de Pin (Piñata de Pino)",sub:"La primera versión de tu Dofus",blocks:[
+    {h:"Requisitos",items:[
+      I("p5a","Six sur six terminado"),
+      I("p5b","Le secret des Dofus : Prologue terminado"),
+      I("p5c","L'héritage de l'île brisée terminado"),
+      I("p5d","Los 6 Dofus primordiales en el inventario",{n:"En el inventario, no en el banco."}),
+      T("En total son unas 270 misiones de prerrequisito, o 369 contando las de alineamiento."),
+      T("Hay un diagrama con todos los prerrequisitos en la guía del Dom de Pin.")
+    ]},
+    {h:"El paso a paso",items:[
+      I("p5e","Derrota a Grunob en la mazmorra Akadémie des Gobs",{w:"[-5,3]"}),
+      I("p5f","Antes de salir, habla con Gobalden",{n:"Saluda, pregunta si es alumno de Grunob y revela que ya tienes los seis Dofus. Te pedirá que vuelvas más tarde: es normal."}),
+      I("p5g","Ve a Valonia y habla con Gobdepin",{w:"[38,-80]",n:"Enséñale los seis Dofus primordiales y acepta custodiar su Dofus."}),
+      I("p5h","Tienes el Dom de Pin (+1 de Alcance)",{n:"Está ligado al personaje y no se puede intercambiar. Verificado con Dofuserie (septiembre de 2026).",l:[L("Guía del Dom de Pin","dom-de-pin.html")]})
+    ]}
+  ]},
+  {id:"p6",title:"Las misiones de Silvosse",sub:"Logro L'arbre qui cache la forêt (El árbol que esconde el bosque)",blocks:[
+    {h:"Las misiones, en orden",items:[
+      T("Las cuatro primeras ya existían antes de la actualización 2.70. Si ya las hiciste, salta lo que no necesites."),
+ I("p6a","1. C'est tout Simple (nivel 90)",{n:"Saule, en el Bois des Arak-haï, te hace encontrar a su hijo Simple y ponerlo a salvo en el templo Sadida. Un combate posible en grupo contra los Arak-haï que lo amenazan, en [-16,-13].",w:"[-6,-15]",l:[["Pasos detallados (Dofuserie)", "https://www.dofuserie.com/quetes/c-est-tout-simple/"]]}),
+ I("p6b","2. Arak-haï en pagaille (nivel 90)",{n:"Colonel Rumo, castillo de Amakna: monstruos de zona (Dardalaine, Néfileuse, Gargantûl y Saltik), una emboscada de Arak-haï (grupo posible) y la mazmorra Antre de la Reine Nyée.",w:"[5,-6]",l:[["Pasos detallados (Dofuserie)", "https://www.dofuserie.com/quetes/arak-hai-en-pagaille/"]]}),
+ I("p6c","3. Munster lève le mystère (nivel 90)",{n:"Cornelia Granpa, en la linde del bosque de los Abraknydes: 6 Glande d'Arak-haï, un disfraz de Arak-haï y la mazmorra Domaine Ancestral.",w:"[-6,-10]",l:[["Pasos detallados (Dofuserie)", "https://www.dofuserie.com/quetes/munster-leve-le-mystere/"]]}),
+ I("p6d","4. L'art de la langue de bois (nivel 140)",{n:"Silvosse, en la Forêt Sombre. Nivel 120 como mínimo. Mazmorra Clairière du Chêne Mou y un combate posible en grupo contra La Comploteuse.",w:"[-11,-13]",l:[["Pasos detallados (Dofuserie)", "https://www.dofuserie.com/quetes/l-art-de-la-langue-de-bois/"]]}),
+ I("p6e","5. Les derniers d'entre nous (nivel 180)",{n:"Kroa, en la Forêt Sombre. Libera a Cornelia Granpa y persigue hasta Frigost al nuevo dueño del huevo negro: tres combates y la mazmorra Antre du Korriandre. Exige haber hecho Rester planté là (serie Ocre d'ambre); C'est frais, mais c'est pas grave bloquea un paso. Una sola Essence du Korriandre reemplaza toda la receta de la Essence de Sylvesprit.",w:"[-11,-13]",l:[["Pasos detallados (Dofuserie)", "https://www.dofuserie.com/quetes/les-derniers-d-entre-nous/"]]}),
+ I("p6f","6. Cultures et turpitudes (nivel 200; pasos más abajo)",{n:"Emmie Nansgriz, en la segunda sala del castillo de Amakna. Exige nivel 180 y Les derniers d'entre nous; para la parte de Grobe, Gobstination d'un Grobelin y Par ce serment s'écrit le monde.",w:"[4,-6]",l:[["Pasos detallados (Dofuserie)", "https://www.dofuserie.com/quetes/cultures-et-turpitudes/"]]}),
+ I("p6g","7. Qui nous protège du Protecteur ? (parte 1)",{n:"Epuop Tik, en el templo Sadida. Reúne la ayuda de los Protectores: los once sigils, y el Ménologium, que hay que reforjar y bendecir. Exige Mort et renouveau, Un héritage tourmenté y Le givre des révélations; Dites-le avec des fleurs y Pas de fumée sans feu bloquean un paso cada una.",w:"[-1,9]",l:[["Pasos detallados (Dofuserie)", "https://www.dofuserie.com/quetes/qui-nous-protege-du-protecteur/"]]}),
+      I("p6h","8. Qui nous protège du Protecteur ? (parte 2): avanza solo hasta conocer a Elya Wood",{n:"Ahí se abre Flovoraison. No cierres esta misión todavía: se termina en la fase 16.",l:[L("Guía","qui-nous-protege-du-protecteur-p2.html")]})
+    ]},
+    {h:"Requisitos ocultos de Silvosse",items:[
+      T("Verificados con la ficha del Dofus Sylvestre de Dofuserie (septiembre de 2026). Hazlos antes de las misiones que los piden."),
+      I("sv1","Alquimista a nivel 140, o un alquimista que te fabrique el Élixir des Trépasseurs",{n:"Receta: 1 Dernière pour la route (2.000 kamas a Namabiru, en Grobe [36,-43]), 4 Étoffe de Samouraï fantôme, 2 Malt, 4 Pierre de Sélénite, 5 Pluie de Pandala y 12 Ginseng. La misión Jusqu'à leur dernier soupir detalla la fabricación.",l:[["Pasos detallados (Dofuserie)", "https://www.dofuserie.com/quetes/jusqu-a-leur-dernier-soupir/"]]}),
+      I("sv2","Forjador (Forgeron) a nivel 180, o un herrero que te fabrique la Tapette à moskitos",{n:"Hay que tenerla antes de ver a Hécate; sin ella no aparece el diálogo correcto. Además hace falta consumir una Enchanterelle para verla."}),
+      I("sv3","Poder ir al Xélorium",{n:"Para los Métronomes du Début-Temps."}),
+      I("sv4","Haber terminado Gobstination d'un Grobelin y Par ce serment s'écrit le monde",{n:"Sin ellas, Cultures et turpitudes se bloquea con el Grobelin Jardinier. Aún sin pasos.",l:[["Pasos detallados (Dofuserie)", "https://www.dofuserie.com/quetes/gobstination-d-un-grobelin/"]]}),
+      I("sv5","Haber terminado C'est frais, mais c'est pas grave",{n:"Bloquea un paso de Les derniers d'entre nous. Aún sin pasos.",l:[["Pasos detallados (Dofuserie)", "https://www.dofuserie.com/quetes/c-est-frais-mais-c-est-pas-grave/"]]}),
+      I("sv6","Haber terminado Mort et renouveau, Un héritage tourmenté y Le givre des révélations",{n:"Los pide Qui nous protège du Protecteur ?. Aún sin pasos."}),
+      I("sv7","Haber terminado Dites-le avec des fleurs",{n:"Bloquea un paso de Qui nous protège du Protecteur ?. Pas de fumée sans feu ya está en la serie Ocre d'ambre."})
+    ]},
+    {h:"Cultures et turpitudes (paso a paso)",items:[
+      T("Nivel 200 (mínimo 180). Empieza con Emmie Nansgriz en la segunda sala del castillo de Amakna [4,-6]. Tres combates con un compañero, dos de ellos por oleadas: si Simple muere, el combate se pierde; si aguantas hasta el turno 12, él elimina a los que queden. Fuente: Dofuserie (septiembre de 2026)."),
+      I("ct1","Habla con Emmie Nansgriz: «Proposer vos services tout en évoquant les missions accomplies pour les Forestiers»",{w:"[4,-6]"}),
+      I("ct2","Ve a ver a Epuop Tik, en el templo Sadida",{n:"Te envía a asistir a Simple.",w:"[-1,9]"}),
+      I("ct3","Defiende a Simple en el campo de calabazas",{n:"Elige «Répondre qu'il n'a plus rien à craindre et brandir votre arme». Combate por oleadas: 3 Citwouilles déchaînées, 3 más en el turno 2, 4 en el turno 4 y 4 en el turno 7.",w:"[7,5]"}),
+      I("ct4","Protege a Simple en el campo de cebada",{n:"Combate por oleadas: 4 Épouvantails déchaînés y 4 más en el turno 2. Lleva resistencia Neutro y golpéalos a una casilla en diagonal.",w:"[11,6]"}),
+      I("ct5","Acompaña a Simple al huerto, en el borde del bosque",{n:"Esta vez no hay ataque.",w:"[3,14]"}),
+      I("ct6","Consigue el Jus de cawotte fwelaté con Neuky",{n:"Cuesta 1.000 kamas y solo se compra si has reclutado al compañero Karotz en la auberge des compagnons. Si no, en el paso siguiente pagas 100.000 kamas.",w:"[0,6]"}),
+      I("ct7","Habla con Gobergine, justo encima del huerto",{n:"Elige «Demander si elle est la propriétaire du potager d'à côté».",w:"[3,13]"}),
+      I("ct8","Paga el secreto de Gobergine",{n:"Elige entre 100.000 kamas o entregar el Jus de cawotte («Proposer d'échanger ce secret contre celui de la transformation en cawotte»). Su secreto es un terreau mágico de su primo grobelin.",w:"[3,13]"}),
+      I("ct9","Habla con Simple: «Dire que vous feriez bien un petit saut sur l'île de Grobe»"),
+      I("ct10","En Grobe, habla con el Grobelin Jardinier de parte de Gobergine",{w:"[34,-40]"}),
+      I("ct11","Haz clic en la caseta de madera de arriba a la izquierda y habla dos veces con el Grobelin",{n:"El terreau se pudrió: hay que fabricar uno nuevo con 20 recursos de cada zona de Pandala.",w:"[34,-40]"}),
+      T("Cada zona de Pandala tiene 5 posiciones fijas con un PNJ que lleva el nombre de la zona. Hablar con él da 1 a 2 recursos directamente, o lanza un combate solo contra un Protecteur pandalien que da 2 a 4. Las posiciones se vacían y reaparecen a los 20 minutos: cuenta con dos o tres pasadas."),
+      Q("ct12a",20,"Pierre fertile",{n:"Terrdala: [25,-27], [23,-26], [24,-24], [25,-23] y [25,-22] (esta última, en la mina)."}),
+      Q("ct12b",20,"Limon des cascades",{n:"Akwadala: [23,-23], [23,-22], [20,-21], [19,-22] y [21,-24]."}),
+      Q("ct12c",20,"Cendres fécondes",{n:"Feudala: [18,-31], [17,-30], [14,-33], [16,-35] y [18,-36]."}),
+      Q("ct12d",20,"Akènes à tout vent",{n:"Aerdala: [20,-35], [20,-32], [21,-34], [22,-37] y [23,-36]."}),
+      Q("ct12e",20,"Humus plantalien",{n:"Plantala: [24,-33], [25,-34], [26,-32], [25,-30] y [26,-28]."}),
+      I("ct13","Consigue el Élixir des Trépasseurs",{n:"Lo fabrica un Alquimista nivel 140 o más. Bendición Œil de pluie con el Akwalique anónimo en [20,-20]; Pluie de Pandala en [22,-19], [20,-21], [18,-23], [21,-24] y [19,-26] (reaparecen en 1 hora); bendición Souffle d'airgile: haz clic en la cuerda y luego en la fumarola grande en [25,-23]; Pierre de Sélénite: 2 combates en la mina [25,-22] y luego en [24,-25] y [26,-26] (25 % base). Compra la Dernière pour la route a Namabiru en [36,-43] por 2.000 kamas."}),
+      I("ct14","Consume el Élixir y recoge 20 Pandouille fantôme en Grobe",{n:"La alteración «Je vois des gens qui sont morts» dura 44 combates. Posiciones: [35,-41], [36,-42], [37,-43], [37,-45] y [37,-46].",w:"[35,-41]"}),
+      I("ct15","Entrega los 120 recursos al Grobelin Jardinier y responde en orden a sus tres preguntas",{n:"Elige «Donner tout ou partie des ingrédients demandés pour le terreau», espera y vuelve a hablarle. Luego: «Répondre ‹pas pas pas patient›», «Répondre que vous êtes un mort réincarné» y «Rester immobile». Una respuesta mala obliga a esperar 5 minutos.",w:"[34,-40]"}),
+      I("ct16","Vuelve al campo de los Ingalsse: habla con el Arbabra de Simple y luego con Simple y enséñale el abono",{n:"Esparcís el terreau y aparecen huellas.",w:"[7,5]"}),
+      I("ct17","Habla con el Esprit malfaisant (sigue las huellas)",{n:"Elige «Jeter une poignée de terreau en direction de l'esprit» y «Prononcer la formule ‹situ voapatu tupa› et tousser».",w:"[7,5]"}),
+      I("ct18","Vence al Gnome des jardins",{n:"Combate con un compañero, junto a Simple, al que controlas (12.000 PV). Elige «Reculer pour montrer que vous ne cherchez pas la bagarre» y «Hausser les épaules et laisser parler les armes».",w:"[7,5]"}),
+      I("ct19","Habla con Silvosse, que te acusa",{n:"Elige «Rester de marbre devant une telle accusation» y «Regarder Silvosse droit dans les yeux…»; reparla dos veces más.",w:"[7,5]"}),
+      I("ct20","Cuéntaselo a Epuop Tik",{n:"Termina la misión. Desbloquea Qui nous protège du Protecteur ?.",w:"[-1,9]"})
+    ]},
+    {h:"Recursos para todo el bloque",items:[
+      T("Una sola Essence du Korriandre reemplaza toda la receta de la Essence de Sylvesprit (Eau calme, Volve de Fistulor, Lamelle de Dramanite, Lamelle de Mérulette, Volve de Fongeur y Écorce d'Abrazif), no una por recurso. Otros sustitutos: 1 Orichor por cada Métronome du Début-Temps (Collecteur Sup, en el Xélorium), Galet Lunaire por 15 Almaton y Galet Solaire por 75 Almaton (Xanamla)."),
+      Q("p6r01",500,"Pépite",{n:"Hay que llevarlas encima antes de entrar en la Bataille de l'Aurore Pourpre: Raval le Terrible solo da su sigil a cambio de 500 Pépite, tras el jefe."}),
+      Q("p6r02",31,"Ailes de Moskito"),
+      Q("p6r03",24,"Métronome du Début-Temps",{alt:[24,"Orichor"]}),
+      Q("p6r04",20,"Eau calme"),
+      Q("p6r05",12,"Poudre de Perlinpainpain"),
+      Q("p6r06",12,"Capsule Explosive"),
+      Q("p6r07",12,"Poudre d'Artifice"),
+      Q("p6r08",12,"Goulobule rouge"),
+      Q("p6r09",6,"Glande d'Arak-haï"),
+      Q("p6r10",6,"Citron"),
+      Q("p6r11",6,"Fil de Néfileuse"),
+      Q("p6r12",6,"Résine"),
+      Q("p6r13",6,"Kouartz"),
+      Q("p6r14",4,"Volve de Fistulor"),
+      Q("p6r15",4,"Lamelle de Dramanite"),
+      Q("p6r16",4,"Lamelle de Mérulette"),
+      Q("p6r17",4,"Volve de Fongeur"),
+      Q("p6r18",4,"Écorce d'Abrazif"),
+      Q("p6r19",4,"Tourmaline"),
+      Q("p6r20",4,"Œil de Cycloïde"),
+      Q("p6r21",3,"Huile de Koode"),
+      Q("p6r22",2,"Queue de Mantaze"),
+      Q("p6r23",2,"Fragment d'anomalie"),
+      Q("p6r24",2,"Ardonite"),
+      Q("p6r25",2,"Galet Solaire"),
+      Q("p6r26",1,"Jus de cawotte fwelaté",{alt:[100000,"kamas"]}),
+      Q("p6r27",1,"Élixir des Trépasseurs"),
+      Q("p6r28",1,"Galet Lunaire"),
+      Q("p6r29",1,"Substrat de Forêt vierge"),
+      Q("p6r30",1,"Clef de la Clairière du Chêne Mou"),
+      Q("p6r31",1,"Dague de Will Killson",{alt:[20,"Kama de glace"]}),
+      Q("p6r32",1,"Essence de Torkélonia"),
+      Q("p6r33",1,"Essence de Tal Kasha"),
+      Q("p6r34",1000,"kamas"),
+      Q("p6r35",1,"Signe de Masse",{n:"Opcional."})
+    ]},
+    {h:"Mazmorras que te pedirán",items:[
+      I("p6d1","Antre de la Reine Nyée"),
+      I("p6d2","Domaine Ancestral"),
+      I("p6d3","Clairière du Chêne Mou"),
+      I("p6d4","Antre du Korriandre"),
+      I("p6d5","Palais du Roi Nidas",{n:"Acuérdate de llevar la llave."}),
+      I("p6d6","Bataille de l'Aurore Pourpre",{n:"Acuérdate de llevar la llave."}),
+      I("p6d7","Tour de Solar"),
+      I("p6d8","Chambre des maléfices",{n:"Es la de Belladone; también la usas en la fase 16."}),
+      T("Combates: unos 6 en solitario con compañero, 1 en solitario, 5 en grupo, 3 por oleadas con compañero, 1 por oleadas en solitario, 1 con compañero Masse, más combates aleatorios y de drop al 100 %.")
+    ]}
+  ]},
+  {id:"p7",title:"Flovoraison (Flovoración)",sub:"Regenerar el Dom de Pin con Eniripsa y Sadida",blocks:[
+    {h:"Antes de empezar",items:[
+      I("p7a","Nivel superior a 179"),
+      I("p7b","Qui nous protège du Protecteur ? (parte 2) avanzada hasta conocer a Elya Wood"),
+      I("p7c","Dom de Pin en tu poder y los 6 Dofus primordiales en el inventario"),
+      I("p7d","Baja las escaleras del Temple Eniripsa y reza ante la estatua de la diosa",{w:"[7,1]",n:"Te lleva a la Sylve céleste."}),
+      I("p7e","Habla con la diosa Eniripsa y luego con el dios Sadida",{n:"Te piden tres pasos. El orden da igual; aquí van A, B y C."})
+    ]},
+    {h:"Paso A: cuatro semillas (equipa el Dom de Pin)",items:[
+      I("p7f","Habla con la Pom de pin y coge la semilla",{w:"[40,-84]"}),
+      I("p7g","Habla con la Pom de pin y coge la semilla",{w:"[38,-80]"}),
+      I("p7h","Entra en la taberna, baja a la bodega y habla con la Pom de pin",{w:"[38,-78]"}),
+      I("p7i","Entra por el subterráneo de [38,-77], habla con la Pom de pin y luego con el Grolours grognon",{w:"[38,-81]",n:"Se lanza un combate en solitario (con compañero). Al terminar, vuelve a hablar con la Pom de pin para la cuarta semilla."})
+    ]},
+    {h:"Paso B: los champiñones de Valonia (equipa el Dofus Ocre)",items:[
+      I("p7j","Habla con Girol sobre el pacto entre el pino y los champiñones",{w:"[31,-62]"}),
+      I("p7k","En la biblioteca, pide a Tom Nindex un libro viejo sin valor",{w:"[33,-64]",n:"Te da la Introduction à l'encyclopédie des Gobelins."}),
+      I("p7l","Vuelve con Girol y enséñale el libro como si fuera imprescindible",{w:"[31,-62]"}),
+      I("p7m","Cuando te ofrezca el primer champiñón, elige la opción de dudar («Émettre quelques réserves»)",{n:"Si lo aceptas, te cae una maldición de -50 de daños en cada elemento durante 3 combates. Te ofrecerá otro (una oronge): ese sí, cómelo."}),
+      I("p7n","Habla con Huskri y ofrécele el libro",{n:"Verá manchas oscuras en el pacto."}),
+      I("p7o","Habla con Girol y luego enséñale el Dofus Ocre a Huskri",{n:"Acerca el Dofus al libro y prepárate para el combate."}),
+      I("p7p","Combate por oleadas, en solitario, con Huskri y 2 Russul que controlas",{n:"Oleada 1: 3 Gandredogue embusqué y 1 Dolid embusqué. Oleada 2 (a los 2 turnos): 2 Gandredogue y 2 Dolid. Oleada 3 (a los 3 turnos): 2 Gandredogue, 1 Dolid y 1 Pistilangue."}),
+      I("p7q","Habla con Huskri para purificar el libro con el Ocre")
+    ]},
+    {h:"Paso C: los espíritus salvajes (equipa el Dofus Ébano al hablar con Belladone)",items:[
+      I("p7r","Derrota a Belladone en la Chambre des maléfices",{w:"[29,-88]"}),
+      I("p7s","Sin salir de la mazmorra, equipa el Ébano y habla con Belladone",{n:"Elige la respuesta de que necesitas una experta en sortilegios venenosos y luego amenázala con volver una y otra vez. Te dará collares de zarzas."}),
+      I("p7t","Habla con el Esprit sauvage y elige «Tenter de dompter l'esprit»",{w:"[23,-80]"}),
+      I("p7u","Habla con el segundo Esprit sauvage y repite",{w:"[22,-81]"})
+    ]},
+    {h:"El ritual final",items:[
+      I("p7v","Vuelve al templo Eniripsa y usa la estatua para ir a la Sylve céleste",{w:"[7,1]"}),
+      I("p7w","Equipa los Dofus Turquesa, Púrpura y Dom de Pin y habla con Sadida",{n:"Dile que cumpliste las condiciones del ritual."}),
+      I("p7x","Haz clic en la flor grande del centro de la sylve para depositar el Dom de Pin y las semillas"),
+      I("p7y","Habla con Sadida y luego con la diosa Eniripsa"),
+      I("p7z","Equipa el Dofus Marfil, habla con el Dom de Pin y acerca el Marfil",{n:"Se transforma en un Dofus Sylvestre. Recógelo antes de salir. Este todavía no da bonus: solo sirve para la misión. Sumergido en el caldero delante de la estatua de Eniripsa se convierte en el Dofus Verdoyant, que sirve para curar a Silvosse."})
+    ]},
+    {h:"Cerrar la misión de Silvosse",items:[
+      I("p7za","Vuelve a Qui nous protège du Protecteur ? (parte 2) y usa el Dofus para curar a Silvosse: vence a Silvosse"),
+      I("p7zb","Habla con Silvosse y con el fantasma de Simple",{n:"Te pide entregar el Dofus Verdoyant a Silvosse. Es distinto del Sylvestre definitivo que te dará Silvosse en el último paso."}),
+      I("p7zc","Entrega el Dofus a Silvosse: misión terminada",{l:[L("Guía de Flovoraison","flovoraison.html")]}),
+      I("p7zd","Logro L'arbre qui cache la forêt completo",{n:"Recompensa: título Protecteur des Protecteurs y el bouclier Souvenir du Ménologium.",l:[L("Guía del logro","l-arbre-qui-cache-la-foret.html")]})
+    ]}
+  ]},
+  {id:"p8",title:"Plantar la semilla y recibir el Silvestre",sub:"Logro En attendant le printemps (Mientras llega la primavera)",blocks:[
+    {h:"El final",items:[
+      I("p8a","Comprueba que tienes hechos: Prólogo, Dom de Pin, L'arbre qui cache la forêt y Flovoraison",{n:"Silvosse solo avanza cuando todo lo anterior está terminado."}),
+      I("p8b","Ten a mano tus 6 Dofus primordiales"),
+      I("p8c","Habla con Silvosse",{n:"Te ofrece un Dofus Sylvestre para el ritual."}),
+      I("p8d","Planta la nueva semilla donde Magni derribó el Gran Árbol de Albuera",{n:"Usas el Sylvestre que te da Silvosse y tus seis Dofus primordiales. Aparece un pequeño pino."}),
+      I("p8e","Logro En attendant le printemps completo: ya tienes el Dofus Silvestre",{l:[L("Guía del logro","en-attendant-le-printemps.html")]}),
+      I("p8f","Equipa el Dofus Silvestre")
+    ]}
+  ]}
+  ];
+
+  var TONES = {p1e:"#3f9b3a",p1f:"#a3255a",p1g:"#1fa9a5",p1h:"#d69a1e",p1i:"#bfb28a",p1j:"#3a3a40",p3:"#6b8f3a",p4:"#6b8f3a",p5:"#6b8f3a",p6:"#6b8f3a",p7:"#6b8f3a",p8:"#6b8f3a"};
+  var EGGS = [
+    {id:"p1e",name:"Esmeralda",a:"#7cf27a",b:"#1e8f3a"},
+    {id:"p1f",name:"Púrpura",a:"#f0629a",b:"#8a1447"},
+    {id:"p1g",name:"Turquesa",a:"#6ff5ee",b:"#0f8f9c"},
+    {id:"p1h",name:"Ocre",a:"#ffe070",b:"#c9861a"},
+    {id:"p1i",name:"Marfil",a:"#fffbea",b:"#cbbf9a"},
+    {id:"p1j",name:"Ébano",a:"#6b6b78",b:"#17171b"}
+  ];
+
+  /* ---------- estado por personaje ---------- */
+  var KEY = "dofus-sylvestre-checklist-v1", SKEY = "dofus-sylvestre-sel-v1";
+  var chars = ["Selotrop","Eniripsa","Forjalanza","Feca"], states = {}, sel = chars.slice();
+  try { var ss = JSON.parse(localStorage.getItem(SKEY)); if (ss && ss.length){ var fl = chars.filter(function(c){ return ss.indexOf(c)>=0; }); if (fl.length) sel = fl; } } catch(e) {}
+  chars.forEach(function(c){
+    var s = {};
+    try { var raw = localStorage.getItem(KEY+":"+c); if (raw) s = JSON.parse(raw) || {}; } catch(e) { s = {}; }
+    states[c] = s;
+  });
+  var NKEY="dofus-sylvestre-names-v1", names={};
+  try{ var rn=localStorage.getItem(NKEY); if(rn){ var on=JSON.parse(rn); if(on) names=on; } }catch(e){}
+  function dn(c){ return names[c]||c; }
+  function saveChar(c){ try { localStorage.setItem(KEY+":"+c, JSON.stringify(states[c])); } catch(e) {} }
+  function saveSel(){ try { localStorage.setItem(SKEY, JSON.stringify(sel)); } catch(e) {} }
+  function allDone(id){ return sel.every(function(c){ return states[c][id]; }); }
+  function setItems(ids,val){ sel.forEach(function(c){ ids.forEach(function(id){ if (val) states[c][id]=1; else delete states[c][id]; }); saveChar(c); }); }
+  function selLabel(){ return sel.length===chars.length ? "Los 4" : (sel.length===3 ? "3 personajes" : sel.map(dn).join(" + ")); }
+
+  /* ---------- huevos (SVG) ---------- */
+  var SVGNS="http://www.w3.org/2000/svg";
+  var EGG_D="M50 4 C22 4 6 50 6 82 C6 110 26 126 50 126 C74 126 94 110 94 82 C94 50 78 4 50 4 Z";
+  function S(tag,attrs){ var e=document.createElementNS(SVGNS,tag); for (var k in attrs) e.setAttribute(k,attrs[k]); return e; }
+  function eggBase(uid){
+    var svg = S("svg",{viewBox:"0 0 100 130","aria-hidden":"true"});
+    var defs = S("defs",{}), cp = S("clipPath",{id:"cp"+uid}); cp.appendChild(S("path",{d:EGG_D})); defs.appendChild(cp);
+    var rg = S("radialGradient",{id:"sh"+uid,cx:"0.35",cy:"0.28",r:"0.85"});
+    rg.appendChild(S("stop",{offset:"0","stop-color":"#fff","stop-opacity":".32"}));
+    rg.appendChild(S("stop",{offset:"0.55","stop-color":"#fff","stop-opacity":"0"}));
+    rg.appendChild(S("stop",{offset:"1","stop-color":"#000","stop-opacity":".40"}));
+    defs.appendChild(rg); svg.appendChild(defs); svg.setAttribute("data-u",uid);
+    return svg;
+  }
+  function eggFinish(svg){
+    var uid = svg.getAttribute("data-u");
+    svg.appendChild(S("path",{d:EGG_D,fill:"url(#sh"+uid+")"}));
+    svg.appendChild(S("path",{d:EGG_D,fill:"none",stroke:"#0c0906","stroke-width":4,"stroke-linejoin":"round"}));
+    svg.appendChild(S("path",{d:EGG_D,fill:"none",stroke:"#c79a3b","stroke-width":1.4,"stroke-linejoin":"round"}));
+  }
+  function makeEgg(uid,c1,c2){
+    var svg = eggBase(uid), defs = svg.firstChild;
+    var lg = S("linearGradient",{id:"lg"+uid,x1:"0",y1:"0",x2:"1",y2:"1"});
+    lg.appendChild(S("stop",{offset:"0","stop-color":c1})); lg.appendChild(S("stop",{offset:"1","stop-color":c2})); defs.appendChild(lg);
+    svg.appendChild(S("path",{d:EGG_D,fill:"var(--eggbg)"}));
+    var g = S("g",{"clip-path":"url(#cp"+uid+")"}), r = S("rect",{x:0,y:126,width:100,height:0,fill:"url(#lg"+uid+")"});
+    g.appendChild(r); svg.appendChild(g); eggFinish(svg);
+    return {svg:svg,rect:r};
+  }
+  function setEgg(e,pct){ var h = Math.round(122*pct/100); e.rect.setAttribute("y",126-h); e.rect.setAttribute("height",h); }
+
+  // huevo grande del Silvestre: escamas de piña que pasan de marrón a verde
+  var rows=[2,3,4,5,5,4,3], scales=[];
+  (function(){
+    var svg = eggBase("big");
+    svg.appendChild(S("path",{d:EGG_D,fill:"var(--scale)"}));
+    var g = S("g",{"clip-path":"url(#cpbig)"});
+    rows.forEach(function(n,r){
+      for (var k=0;k<n;k++){
+        var cx = 50 + (k-(n-1)/2)*17, cy = 20 + r*16;
+        var p = S("path",{d:"M"+cx+","+(cy-12)+" Q"+(cx+11)+","+(cy-4)+" "+(cx+10)+","+(cy+7)+" Q"+cx+","+(cy+14)+" "+(cx-10)+","+(cy+7)+" Q"+(cx-11)+","+(cy-4)+" "+cx+","+(cy-12)+"Z","stroke-width":"1.6","stroke-linejoin":"round",stroke:"rgba(40,20,5,.55)",fill:"var(--scale)"});
+        g.appendChild(p); scales.push({p:p,row:r,off:Math.abs(k-(n-1)/2)});
+      }
+    });
+    svg.appendChild(g); eggFinish(svg);
+    var order = scales.slice().sort(function(a,b){ return (b.row-a.row)||(a.off-b.off); });
+    order.forEach(function(s,i){ s.rank=i; });
+    document.getElementById("bigEgg").appendChild(svg);
+  })();
+  function paintBig(pct){ var lit=Math.round(pct/100*scales.length); scales.forEach(function(s){ s.p.setAttribute("fill", s.rank<lit ? "var(--scale-lit)" : "var(--scale)"); }); }
+
+  var mini = makeEgg("mini","#a9e070","#3d7220"); document.getElementById("miniEgg").appendChild(mini.svg);
+  var eggRefs = {};
+  EGGS.forEach(function(eg,i){
+    var b = el("button","eg"); b.type="button"; b.setAttribute("aria-label","Ir al bloque del Dofus "+eg.name);
+    var e = makeEgg("e"+i,eg.a,eg.b); b.appendChild(e.svg); b.appendChild(el("span",null,eg.name));
+    var sm = el("small",null,"0/0"); b.appendChild(sm);
+    b.addEventListener("click", function(){ var d=document.getElementById(eg.id); d.open=true; d.scrollIntoView({block:"start"}); });
+    document.getElementById("eggs").appendChild(b);
+    eggRefs[eg.id] = {egg:e,sm:sm,btn:b};
+  });
+
+  /* ---------- fases ---------- */
+  var root = document.getElementById("phases");
+  var boxes = [];
+  PHASES.forEach(function(ph,pi){
+    var d = el("details","phase"); d.id = ph.id; d.style.setProperty("--tone", TONES[ph.id] || "#b8892e");
+    var s = el("summary");
+    s.appendChild(el("span","pn",String(pi+1)));
+    var pt = el("span","pt"); pt.appendChild(el("span","ptitle",ph.title)); pt.appendChild(el("span","psub",ph.sub));
+    var bar = el("span","pbar"); bar.appendChild(el("i")); pt.appendChild(bar); s.appendChild(pt);
+    s.appendChild(el("span","pc","0/0"));
+    d.appendChild(s);
+    var body = el("div","pbody");
+    var tools = el("div","ptools");
+    var bAll = el("button","mini-btn","Marcar la fase como hecha"); bAll.type="button";
+    bAll.addEventListener("click", function(){ setItems(boxes.filter(function(x){ return x.phase===ph.id; }).map(function(x){ return x.id; }), true); update(); });
+    var bNone = el("button","mini-btn","Desmarcar la fase"); bNone.type="button";
+    bNone.addEventListener("click", function(){ setItems(boxes.filter(function(x){ return x.phase===ph.id; }).map(function(x){ return x.id; }), false); update(); });
+    tools.appendChild(bAll); tools.appendChild(bNone); body.appendChild(tools);
+    ph.blocks.forEach(function(b){
+      body.appendChild(el("h3",null,b.h));
+      var ul = el("ul");
+      b.items.forEach(function(it){
+        var li = el("li");
+        if (it.tip){ li.className="tip"; li.appendChild(el("span",null,it.t)); ul.appendChild(li); return; }
+        li.className="item";
+        var inp = el("input"); inp.type="checkbox"; inp.id="c-"+it.id; inp.checked = false;
+        var wrap = el("div");
+        var lab = el("label",null, it.q!=null ? qtitle(it) : it.t); lab.htmlFor = inp.id;
+        var lr = el("div","lrow"); lr.appendChild(lab);
+        var pips = el("span","pips"); pips.setAttribute("aria-hidden","true");
+        chars.forEach(function(c){ var pi_ = el("i"); pi_.title = dn(c); pips.appendChild(pi_); });
+        lr.appendChild(pips); wrap.appendChild(lr);
+        if (it.n) wrap.appendChild(el("p","n",it.n));
+        if (it.w || it.l){
+          var meta = el("div","meta");
+          if (it.w) meta.appendChild(mkChip(it.w));
+          (it.l||[]).forEach(function(lk){ var a=el("a",null,lk[0]); a.href=lk[1]; a.target="_blank"; a.rel="noopener"; meta.appendChild(a); });
+          wrap.appendChild(meta);
+        }
+        li.appendChild(inp); li.appendChild(wrap); ul.appendChild(li);
+        boxes.push({id:it.id,input:inp,li:li,phase:ph.id,it:it,lab:lab,pips:pips,bh:b.h,pn:pi+1,pt:ph.title});
+        inp.addEventListener("change", function(){
+          setItems([it.id], !allDone(it.id)); update();
+        });
+      });
+      body.appendChild(ul);
+    });
+    d.appendChild(body);
+    root.appendChild(d);
+  });
+
+  /* ---------- personajes, misión activa ---------- */
+  function pctOf(c){ var n=0; boxes.forEach(function(b){ if (states[c][b.id]) n++; }); return boxes.length ? Math.round(n/boxes.length*100) : 0; }
+  function toggleSel(c){
+    var i = sel.indexOf(c);
+    if (i>=0){ if (sel.length>1) sel.splice(i,1); }
+    else { sel.push(c); sel.sort(function(x,y){ return chars.indexOf(x)-chars.indexOf(y); }); }
+    saveSel(); update();
+  }
+  function renderChars(){
+    var box = document.getElementById("chars"); box.innerHTML = "";
+    chars.forEach(function(c){
+      var p = pctOf(c);
+      var b = el("button","slot"); b.type="button";
+      b.appendChild(el("span","nm",dn(c))); b.appendChild(el("span","pc2",(dn(c)!==c ? c+" · " : "")+p+" %"));
+      var bar = el("span","bar"); var i = el("i"); i.style.width = p+"%"; bar.appendChild(i); b.appendChild(bar);
+      b.setAttribute("aria-pressed", sel.indexOf(c)>=0 ? "true":"false");
+      b.addEventListener("click", function(){ toggleSel(c); });
+      box.appendChild(b);
+    });
+  }
+  function renderNext(){
+    var c = document.getElementById("nextCard"); c.innerHTML = "";
+    var nb = boxes.filter(function(b){ return !allDone(b.id); })[0];
+    if (!nb){
+      c.appendChild(el("h2",null,selLabel()+": todo completado"));
+      c.appendChild(el("p","n","Marcaste todas las casillas. Ya deberías tener el Dofus Silvestre."));
+      return;
+    }
+    c.appendChild(el("p","k","Misión activa · "+selLabel()+" · Fase "+nb.pn+": "+nb.pt));
+    c.appendChild(el("h2","nt",nb.lab.textContent));
+    c.appendChild(el("p","kb",nb.bh));
+    var ya = sel.filter(function(x){ return states[x][nb.id]; });
+    if (ya.length) c.appendChild(el("p","n","Ya la tienen hecha: "+ya.map(dn).join(", ")+"."));
+    if (nb.it.n) c.appendChild(el("p","n",nb.it.n));
+    if (nb.it.w){ var m = el("div","meta"); m.appendChild(mkChip(nb.it.w)); c.appendChild(m); }
+    var row = el("div","ctrl");
+    var done = el("button","pri","Hecho, siguiente");
+    done.addEventListener("click", function(){ setItems([nb.id], true); update(); });
+    var go = el("button",null,"Ver en la lista");
+    go.addEventListener("click", function(){ document.getElementById(nb.phase).open = true; nb.li.scrollIntoView({block:"center"}); });
+    row.appendChild(done); row.appendChild(go); c.appendChild(row);
+  }
+
+  /* ---------- actualizar ---------- */
+  var openedFirst = false;
+  function update(){
+    var total = boxes.length, done = 0, per = {};
+    boxes.forEach(function(b){
+      var n = 0; sel.forEach(function(x){ if (states[x][b.id]) n++; });
+      var c = (n===sel.length);
+      b.input.checked = c; b.input.indeterminate = (n>0 && n<sel.length);
+      if (c) done++;
+      b.li.classList.toggle("done", c);
+      var tot = 0; chars.forEach(function(x,i){ var on = !!states[x][b.id]; b.pips.children[i].className = on ? "on" : ""; if (on) tot++; });
+      b.pips.style.display = (tot===0 || tot===chars.length) ? "none" : "inline-flex";
+      var p = per[b.phase] || (per[b.phase]={t:0,d:0}); p.t++; if (c) p.d++;
+    });
+    var pct = total ? Math.round(done/total*100) : 0;
+    document.getElementById("pct").textContent = pct + " %";
+    document.getElementById("cnt").textContent = done + " de " + total + " casillas";
+    document.getElementById("topLbl").textContent = selLabel() + " · " + pct + " %";
+    document.getElementById("topFill").style.width = pct + "%";
+    paintBig(pct); setEgg(mini,pct);
+    PHASES.forEach(function(ph){
+      var d = document.getElementById(ph.id), p = per[ph.id] || {t:0,d:0};
+      d.querySelector(".pc").textContent = p.d + "/" + p.t;
+      d.querySelector(".pbar i").style.width = (p.t ? Math.round(p.d/p.t*100) : 0) + "%";
+      d.classList.toggle("done", p.t>0 && p.d===p.t);
+      var er = eggRefs[ph.id];
+      if (er){ var pp = p.t ? Math.round(p.d/p.t*100) : 0; setEgg(er.egg,pp); er.sm.textContent = p.d + "/" + p.t; er.btn.classList.toggle("full", pp===100 && p.t>0); }
+    });
+    renderChars(); renderNext();
+    if (!openedFirst){
+      openedFirst = true;
+      var first = PHASES.filter(function(ph){ var p=per[ph.id]; return p && p.d<p.t; })[0] || PHASES[0];
+      document.getElementById(first.id).open = true;
+    }
+  }
+  update();
+
+  /* ---------- lista de compras ---------- */
+  var shopWrap = document.getElementById("shopWrap");
+  function renderShop(){
+    var agg = {}, order = [];
+    PHASES.forEach(function(ph,pi){ ph.blocks.forEach(function(b){ b.items.forEach(function(it){
+      if (it.q==null) return;
+      if (!agg[it.name]){ agg[it.name]={q:0,ph:[]}; order.push(it.name); }
+      agg[it.name].q += it.q;
+      if (agg[it.name].ph.indexOf(pi+1)<0) agg[it.name].ph.push(pi+1);
+    }); }); });
+    shopWrap.innerHTML = "";
+    var d = el("details","phase"), s = el("summary");
+    s.appendChild(el("span","pn","$"));
+    var pt = el("span","pt"); pt.appendChild(el("span","ptitle","Lista de compras total")); pt.appendChild(el("span","psub","Todo lo que hay que reunir, sumado, para "+(mult===4?"los 4 personajes":"1 personaje"))); s.appendChild(pt);
+    s.appendChild(el("span","pc",order.length+" cosas"));
+    d.appendChild(s);
+    var body = el("div","pbody");
+    var tbl = el("table","shop"), thead = el("thead"), trh = el("tr");
+    ["Recurso","Cantidad","Fases"].forEach(function(x){ trh.appendChild(el("th",null,x)); });
+    thead.appendChild(trh); tbl.appendChild(thead);
+    var tb = el("tbody");
+    order.forEach(function(n){
+      var r = el("tr");
+      r.appendChild(el("td",null,n)); r.appendChild(el("td","qty",fmt(agg[n].q*mult))); r.appendChild(el("td",null,agg[n].ph.join(", ")));
+      tb.appendChild(r);
+    });
+    tbl.appendChild(tb);
+    var sc = el("div","scroll"); sc.appendChild(tbl); body.appendChild(sc);
+    body.appendChild(el("p","n","Suma solo la opción principal de cada recurso; las alternativas (Orichor, Essence du Korriandre unique, etc.) no entran en el total."));
+    d.appendChild(body);
+    shopWrap.appendChild(d);
+  }
+  function applyMult(){
+    boxes.forEach(function(b){ if (b.it.q!=null) b.lab.textContent = qtitle(b.it); });
+    document.getElementById("m1").setAttribute("aria-pressed", mult===1?"true":"false");
+    document.getElementById("m4").setAttribute("aria-pressed", mult===4?"true":"false");
+    renderShop(); renderNext();
+  }
+  document.getElementById("m1").addEventListener("click", function(){ mult=1; try{localStorage.setItem(MKEY,"1")}catch(e){} applyMult(); });
+  document.getElementById("m4").addEventListener("click", function(){ mult=4; try{localStorage.setItem(MKEY,"4")}catch(e){} applyMult(); });
+  applyMult();
+
+  /* ---------- controles ---------- */
+  var hideBtn = document.getElementById("hideBtn");
+  hideBtn.addEventListener("click", function(){
+    var on = document.body.classList.toggle("hide-done");
+    hideBtn.setAttribute("aria-pressed", on ? "true" : "false");
+  });
+  var resetBtn = document.getElementById("resetBtn"), armed = false, timer;
+  resetBtn.addEventListener("click", function(){
+    if (!armed){
+      armed = true; resetBtn.textContent = "¿Seguro? Toca de nuevo para borrar a "+selLabel();
+      timer = setTimeout(function(){ armed=false; resetBtn.textContent="Reiniciar los seleccionados"; }, 4000);
+      return;
+    }
+    clearTimeout(timer); armed=false; resetBtn.textContent="Reiniciar los seleccionados";
+    sel.forEach(function(c){ states[c] = {}; saveChar(c); });
+    update();
+  });
+
+  function ioMsg(t){ var m=document.getElementById("ioMsg"); m.textContent=t; setTimeout(function(){ if (m.textContent===t) m.textContent=""; }, 6000); }
+  document.getElementById("expBtn").addEventListener("click", function(){
+    try{
+      var data = {app:"dofus-silvestre", v:1, states:states, sel:sel, names:names, mult:mult};
+      var blob = new Blob([JSON.stringify(data)], {type:"application/json"});
+      var a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = "dofus-silvestre-progreso.json";
+      document.body.appendChild(a); a.click(); document.body.removeChild(a);
+      setTimeout(function(){ URL.revokeObjectURL(a.href); }, 2000);
+      ioMsg("Progreso exportado. Guarda el archivo dofus-silvestre-progreso.json.");
+    }catch(e){ ioMsg("No se pudo exportar el progreso en este navegador."); }
+  });
+  document.getElementById("impBtn").addEventListener("click", function(){ document.getElementById("impFile").click(); });
+  document.getElementById("impFile").addEventListener("change", function(ev){
+    var f = ev.target.files && ev.target.files[0]; if (!f) return;
+    var rd = new FileReader();
+    rd.onload = function(){
+      try{
+        var d = JSON.parse(rd.result);
+        if (!d || d.app!=="dofus-silvestre" || !d.states) throw new Error("formato");
+        chars.forEach(function(c){ states[c] = (d.states[c] && typeof d.states[c]==="object") ? d.states[c] : {}; saveChar(c); });
+        if (d.sel && d.sel.length){ var fl = chars.filter(function(c){ return d.sel.indexOf(c)>=0; }); if (fl.length) sel = fl; }
+        saveSel();
+        if (d.names && typeof d.names==="object"){ names = d.names; try{ localStorage.setItem(NKEY, JSON.stringify(names)); }catch(e){} }
+        if (d.mult===4 || d.mult===1){ mult = d.mult; try{ localStorage.setItem(MKEY, String(mult)); }catch(e){} }
+        var inputs = document.querySelectorAll("#nameEd input"); chars.forEach(function(c,i){ if (inputs[i]) inputs[i].value = dn(c); });
+        applyMult(); update();
+        ioMsg("Progreso importado correctamente.");
+      }catch(e){ ioMsg("Ese archivo no es un progreso válido de esta página."); }
+      ev.target.value = "";
+    };
+    rd.readAsText(f);
+  });
+  document.getElementById("allBtn").addEventListener("click", function(){ sel = chars.slice(); saveSel(); update(); });
+  var ned = document.getElementById("nameEd");
+  chars.forEach(function(c){
+    var lb = el("label",null,"Clase: "+c), inp = el("input"); inp.type="text"; inp.value = dn(c); inp.maxLength = 24;
+    inp.setAttribute("aria-label","Nombre del personaje de clase "+c);
+    inp.addEventListener("input", function(){
+      var v = inp.value.trim();
+      if (v) names[c] = v; else delete names[c];
+      try{ localStorage.setItem(NKEY, JSON.stringify(names)); }catch(e){}
+      update();
+    });
+    lb.appendChild(inp); ned.appendChild(lb);
+  });
+})();
+</script>
+</body>
+</html>
