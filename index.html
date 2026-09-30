@@ -85,6 +85,9 @@ details.pend{border-left-color:#c97a3a;margin-top:14px}
 .pips i.on{background:var(--gold);border-color:#8d6a20}
 .item input:indeterminate{border-color:var(--gold)}
 .item input:indeterminate::after{content:"";position:absolute;left:3px;top:8px;width:12px;height:2px;background:var(--gold)}
+.optbadge{font:600 .66rem var(--text);letter-spacing:.1em;text-transform:uppercase;color:var(--link);border:1px solid var(--link);border-radius:3px;padding:0 6px;white-space:nowrap}
+.item.opt input{border-style:dashed}
+body.hide-opt .item.opt{display:none}
 /* herramientas de fase */
 .ptools{display:flex;flex-wrap:wrap;gap:8px;padding-top:12px}
 button.mini-btn{min-height:0;padding:5px 10px;font-size:.66rem}
@@ -211,6 +214,7 @@ table.shop td.qty{font-weight:700;white-space:nowrap}
       <div class="ctrl">
         <span class="seg" role="group" aria-label="Cantidades a comprar"><button id="m1" aria-pressed="true">Comprar para 1</button><button id="m4" aria-pressed="false">Comprar para los 4</button></span>
         <button id="hideBtn" class="tog" aria-pressed="false">Ocultar completadas</button>
+        <button id="optBtn" class="tog" aria-pressed="false">Ocultar opcionales</button>
         <button id="resetBtn">Reiniciar los seleccionados</button>
         <button id="expBtn" type="button">Exportar progreso</button>
         <button id="impBtn" type="button">Importar progreso</button>
@@ -243,6 +247,7 @@ table.shop td.qty{font-weight:700;white-space:nowrap}
       <li>Hablar con PNJ y recoger objetos de misión lo tiene que hacer cada personaje. Repite cada paso con los cuatro, uno tras otro.</li>
       <li>Los cuatro personajes vienen seleccionados: al marcar una casilla se marca en todos. Si un día avanzas solo con uno, quita a los demás de la selección y marca solo ese; luego vuelve a pulsar «Seleccionar los 4».</li>
       <li>Cuando los personajes van por separado, cada casilla muestra cuatro cuadritos con el estado de cada uno, y una casilla con guion significa que solo algunos de los seleccionados la tienen hecha. Tocarla la marca en todos los seleccionados.</li>
+      <li>Las casillas con la etiqueta <b>Opcional</b> son requisitos que puede cubrir otro jugador (por ejemplo, un oficio para fabricar un objeto) o una ayuda de un segundo personaje. No cuentan para el progreso ni para la misión activa, y puedes ocultarlas con el botón «Ocultar opcionales». Cada una lleva una nota que explica cuándo sí conviene hacerla.</li>
       <li>Los combates marcados «en solitario» los gana cada personaje por su cuenta. Los marcados «en grupo» puedes hacerlos con los cuatro juntos.</li>
       <li>Toca una coordenada oscura, por ejemplo [-6,-3], para copiar el comando <b>/travel -6,-3</b>; pégalo en el chat del juego para ir en piloto automático.</li>
       <li>Arriba tienes el botón <b>Comprar para los 4</b>: multiplica por 4 las cantidades de recursos y la lista de compras total.</li>
@@ -256,6 +261,7 @@ table.shop td.qty{font-weight:700;white-space:nowrap}
       <li>Es de los Dofus más largos del juego: sumando prerrequisitos, la guía de Dofus pour les Noobs habla de más de 400 misiones.</li>
       <li>Los seis Dofus primordiales (Esmeralda, Púrpura, Turquesa, Ocre, Marfil y Ébano) tienen que estar en tu inventario, no en el banco, en varios pasos.</li>
       <li>El Dofus Marfil exige alineamiento 100 (orden 5) en Bonta o Brâkmar, y Quatre sur six exige haber terminado la serie Ocre d'ambre. Están marcados en sus bloques.</li>
+      <li>El Prólogo exige pasar antes por los tres Dofus de Pandala: Domakuro, Dorigami y Tacheté (bloques 10 a 12). Los necesitas en el inventario, no equipados, hasta la misión En ce jardin qui nous unit.</li>
       <li>Los nombres van en francés, como en Dofus pour les Noobs y Dofuserie. Para verlos en español instala la extensión Dofus Translator (Chrome o Firefox), que usa las traducciones oficiales.</li>
     </ul>
   </section>
@@ -278,10 +284,13 @@ table.shop td.qty{font-weight:700;white-space:nowrap}
         <li>Quatre sur six, misión 3 (Une ombre au tableau): solo resumen de terceros.</li>
         <li>Ça est frugal, une fois: opcional, ahorra 50.000 kamas en À la croisée des mondes.</li>
         <li>Las misiones de los bloques 4 a 9 (Esmeralda, Púrpura, Turquesa, Ocre, Marfil y Ébano) tienen resumen y enlace, no cada clic.</li>
-        <li>Alineamiento 100 (orden 5) del Marfil: solo enlaces a las guías de alineamiento.</li>
+        <li>Alineamiento 100 (orden 5) del Marfil: decisión tomada, solo enlaces a las guías de Dofus pour les Noobs (Bonta y Brâkmar), sin desglosar misión por misión.</li>
         <li>Valonia: la estructura (4 logros, 16 misiones, orden, niveles y NPC de inicio) está verificada con Dofuserie. Solo La fin des maningances está paso a paso; las otras 15 tienen resumen y enlace. Los recursos de preparación siguen viniendo de Dofus pour les Noobs.</li>
         <li>Prólogo, Dom de Pin, Silvosse y Flovoraison ya están verificados con Dofuserie. En Silvosse solo Cultures et turpitudes está paso a paso; las otras seis tienen resumen y enlace.</li>
-        <li>Requisitos ocultos nuevos sin pasos: Quand l'éveil n'est qu'un songe, Gobstination d'un Grobelin, Par ce serment s'écrit le monde, C'est frais mais c'est pas grave, Mort et renouveau, Un héritage tourmenté, Le givre des révélations, Dites-le avec des fleurs y Jusqu'à leur dernier soupir.</li>
+        <li>Requisitos ocultos sin pasos: La source de tous les maux (no he podido identificar dónde empieza), Le Saule du Promeneur, Infâme pourriture, Le dernier rempart y Une bien étrange prophétie (Quand l'éveil n'est qu'un songe); L'épopée du moine pèlerin y Dites-le avec des fleurs (Tacheté); C'est frais mais c'est pas grave, Mort et renouveau, Un héritage tourmenté y Le givre des révélations (Silvosse).</li>
+        <li>Domakuro, Dorigami y Tacheté (bloques 10 a 12): misiones con resumen verificado en Dofuserie, sin cada clic; cada una lleva su enlace.</li>
+        <li>Par ce serment s'écrit le monde y Quand l'éveil n'est qu'un songe: solo resumen de terceros. Gobstination d'un Grobelin sí está paso a paso.</li>
+        <li>Oficios nuevos que aparecen en la ruta: Escultor 180 (Pinceau de calligraphie), Campesino 140 (Huile de Pichon), Bricoleur 1, Alquimista 140 y Forjador 180. Verifica si otros jugadores pueden fabricar por ti los objetos que lo permitan.</li>
       </ul>
       <h3>Otros</h3>
       <ul class="plist">
@@ -331,13 +340,19 @@ table.shop td.qty{font-weight:700;white-space:nowrap}
       I("p1h","Instala la extensión Dofus Translator para ver los nombres en español",{n:"Traduce misiones, objetos y logros con las traducciones oficiales. Existe para Chrome y Firefox.",l:[["Chrome","https://chromewebstore.google.com/detail/dofus-translator/oejpehohlnnkidannkailjjocdekjbbf"],["Firefox","https://addons.mozilla.org/en-US/firefox/addon/dofus-translator/"]]})
     ]},
     {h:"Oficios (súbelos desde cero en cada personaje)",items:[
-      T("Plan mínimo de oficios para toda la ruta. Minero a 200 cubre tres requisitos a la vez, así que es el primero que conviene subir."),
+      T("Plan de oficios para toda la ruta. Minero a 200 cubre tres requisitos a la vez, así que es el primero que conviene subir. Los marcados «Opcional» solo hacen falta si quieres fabricar tú el objeto: si otro jugador puede hacerlo por ti, no cuentan para el progreso."),
       I("jo1","Minero a nivel 200",{n:"Cumple el oficio de recolección a 200 de Six sur six, el Minero 20 de Quatre sur six y del Ébano, y el oficio a 50 de Esmeralda (misión 2). Para saber qué recursos comprar, usa tú la calculadora de XP de oficio de DofusDB (eliges oficio y nivel).",l:[["DofusDB", "https://dofusdb.fr"]]}),
-      I("jo2","Campesino a nivel 80",{n:"Lo pide Le creuset de Mériana, misión 5 del Ébano."}),
-      I("jo3","Cazador a nivel 120",{n:"Para fabricar los Délices des Kitsous de la serie Ocre d'ambre (misión 7 de esa serie)."}),
+ I("jo2","Campesino a nivel 80",{n:"Lo pide Le creuset de Mériana (Ébano, misión 5): hay que segar tú mismo los Brins des possibles. Cubre además el Campesino 1 (Offrande à l'esprit du Vent) y el Campesino 20 (Offrande au Wukang) que piden el Domakuro, el Dorigami y el Tacheté."}),
+ I("jo2b","Campesino a nivel 140 (para las Huile de Pichon)",{o:true,n:"Opcional: solo hace falta si quieres fabricarlo tú. Sirve para fabricar las 30 Huile de Pichon de Gobstination d'un Grobelin. Otro jugador con Campesino 140 o más puede hacértelas si le das los pescados; el resto de la misión es tuyo."}),
+ I("jo3","Cazador a nivel 120",{o:true,n:"Opcional: solo hace falta si quieres fabricarlo tú. Sirve para fabricar los 12 Délices des Kitsous de la serie Ocre d'ambre. Si el objeto es intercambiable, otro jugador puede fabricarlos; compruébalo antes de contar con ello."}),
       I("jo4","Criador (Éleveur) a nivel 20",{n:"Lo pide Naissance d'une vocation, misión 5 de Esmeralda, junto con los logros «Ce n'est qu'un prélèvement» y «Elle a peut-être trop mangé ?»."}),
       I("jo5","Façonneur a nivel 10",{n:"Lo pide À la croisée des mondes: hay que fabricar tu propio escudo (Pandaclier) en el taller de Pandala. Es necesario para Dans la gueule du Dragon."}),
-     I("jo6","Forjador (Forgeron) a nivel 180 y Alquimista a nivel 140 (o encárgalos a otros jugadores)",{n:"El forjador fabrica la Tapette à moskitos y el alquimista el Élixir des Trépasseurs (Silvosse). Si compras esos objetos, puedes saltarte estos oficios."}),
+ I("jo6","Forjador (Forgeron) a nivel 180",{o:true,n:"Opcional: solo hace falta si quieres fabricarlo tú. Sirve para fabricar la Tapette à moskitos de Silvosse: basta con que un forjador de ese nivel te la haga, y Dofus pour les Noobs habla de «trouver un forgeron»."}),
+ I("jo6b","Alquimista a nivel 140",{o:true,n:"Opcional: solo hace falta si quieres fabricarlo tú. Sirve para fabricar el Élixir des Trépasseurs (Silvosse y Valonia): otro alquimista de ese nivel puede fabricártelo si le das los ingredientes."}),
+ I("jo7","Escultor (Sculpteur) a nivel 180",{o:true,n:"Opcional: solo hace falta si quieres fabricarlo tú. Sirve para fabricar el Pinceau de calligraphie de Par ce serment s'écrit le monde. A confirmar: si es un objeto de misión ligado al personaje, tendrás que fabricarlo tú."}),
+ I("jo8","Bricoleur a nivel 1",{n:"Para fabricar los Savon grobelin de Gobstination d'un Grobelin (craft no cooperativo)."}),
+ I("jo9","Alquimista a nivel 1",{n:"Para el Baume Hakouï de Au nom de l'Art (Domakuro): hay que fabricarlo tú; no vale el craft cooperativo."}),
+ I("jo6c","Forjador (Forgeron) a nivel 140 (Outil de gravure)",{o:true,n:"Opcional: solo hace falta si quieres fabricarlo tú. Sirve para el Outil de gravure de Requiem pour un Yokai (Dorigami). El objeto se intercambia: basta que lo fabrique una persona."}),
       T("Los oficios son por personaje: hay que subirlos en los cuatro. Cuando quieras, dime los oficios que ya tenga cada uno y ajusto esta lista.")
     ]}
   ]},
@@ -751,7 +766,7 @@ table.shop td.qty{font-weight:700;white-space:nowrap}
       Q("am8",12,"Riz"),
       Q("am9",2,"Enchanterelle",{n:"La piden las misiones 6, 7 y 8 de la serie (una es un bonus que se consume antes de la última). Salen de los Malters de la Orée enchantée. Dofuserie las resume como 1; comprueba en el juego."}),
       Q("am10",1,"Potion d'Otomaï",{n:"La consigues en La raison du plus fort."}),
-      I("am11","Cazador (chasseur) a nivel 120",{n:"Para fabricar los Délices des Kitsous."}),
+ I("am11","Cazador (chasseur) a nivel 120",{o:true,n:"Opcional: solo hace falta si quieres fabricarlo tú. Sirve para fabricar los Délices des Kitsous. Si el objeto es intercambiable, otro jugador puede fabricarlos."}),
       I("am12","Mazmorra Akadémie des Gobs (nivel 40)"),
       I("am13","Mazmorra Grotte Hesque (nivel 50)"),
       I("am14","Mazmorra Antre de la Reine Nyée (nivel 90)"),
@@ -774,7 +789,7 @@ table.shop td.qty{font-weight:700;white-space:nowrap}
   {id:"p1i",title:"Bloque 8: Dofus Marfil (Blanc ivoire)",sub:"10 misiones de nivel 200, 9 mazmorras. Exige alineamiento 100",blocks:[
     {h:"Prepara antes",items:[
       T("Ojo con el alineamiento: pide alineamiento 100 (orden 5) en Bonta o Brâkmar en cada personaje. Es lo que más tiempo puede llevarte de este Dofus. Las guías de Dofus pour les Noobs cuentan unas 270 misiones de prerrequisito para el Dom de Pin y 369 si se suman las de alineamiento."),
-      I("mf1","Alineamiento 100 (orden 5) en Bonta o Brâkmar",{n:"Lo pide Examen de passage para recoger el masque mortuaire en la torre de tu ciudad. Sin él no entras en Externam.",l:[["Alineamiento bontarien", "https://www.dofuspourlesnoobs.com/alignement-bontarien.html"], ["Alineamiento brâkmarien", "https://www.dofuspourlesnoobs.com/alignement-bracirckmarien.html"]]}),
+ I("mf1","Alineamiento 100 (orden 5), en Bonta o en Brâkmar: indispensable para el Marfil",{n:"Lo pide Examen de passage para recoger el masque mortuaire en la torre de tu ciudad; sin él no entras en Externam. Elige una ciudad por personaje. No detallo las misiones de alineamiento una por una: sigue la guía completa de Dofus pour les Noobs de la ciudad que elijas.",l:[["Alineamiento de Bonta (Dofus pour les Noobs)", "https://www.dofuspourlesnoobs.com/alignement-bontarien.html"], ["Alineamiento de Brâkmar (Dofus pour les Noobs)", "https://www.dofuspourlesnoobs.com/alignement-bracirckmarien.html"]]}),
       I("mf2","Terminar antes las misiones anexas que bloquean etapas",{n:"Espionnage industriel (misión 4); Malédiction !, Allumer le feu y La garde meurt mais ne se rend pas (misión 5); logro La chasse aux chasseurs (misión 6); haber lanzado Son nom est Personne (misión 7)."}),
       I("mf3","Poder ir a Enutrosor, a Ecaflipus (tres veces) y a Srambad"),
       Q("mf4",50,"Graisse Gélatineuse",{n:"Cire draconique, misión 1."}),
@@ -1011,6 +1026,7 @@ table.shop td.qty{font-weight:700;white-space:nowrap}
       I("df1","Encuentra las tres señales de Ignemikhal (escamas púrpura)",{n:"Bordure de Feudala [27,-46] (clic en la madera de la izquierda), oeste de Brâkmar [-32,35] y península de los Dragoeufs [-4,28] (con el Cadavre Calciné). Hazlo antes de hablar con Yova Etna."}),
       I("df2","Habla con Yova Etna en la feria y pregunta por Ignemikhal, el dragón primordial de las llamas",{w:"[-9,-40]"}),
       I("df3","Entra en la Hypogée de l'Obsidiantre",{n:"Te llevan ante la Gardienne des flammes, en la primera sala de la mazmorra. Solo te deja acercarte al dragón si le llevas dos llaves.",w:"[-71,-83]"}),
+ I("df3b","Llevar a un segundo personaje o jugador para abrir las rejas de la sala 13 del Minotoror",{o:true,n:"Solo hace falta si vas solo: la sala 13 exige al menos dos personajes para abrir las rejas. Uno de tus otros personajes o un amigo cubre el requisito, y con tus 4 en grupo ya lo cumples."}),
       I("df4","Consigue la Clef carbonisée: en el centro del laberinto del Minotoror (sala 13), haz clic en el pavé junto al PNJ Lorkos",{n:"Hacen falta al menos dos personajes para abrir las rejas hasta la sala 13: con tu equipo de 4 es fácil. Una guía de 2016 dice que es la madera a la derecha del Enutrof.",w:"[-38,-15]"}),
       I("df5","Consigue la Clef incandescente: en la herrería de Bonta, haz clic en la forja",{w:"[-28,-55]"}),
       I("df6","Vuelve a la primera sala del Obsidiantre y entrega las dos llaves a la Gardienne des flammes",{n:"Combate; después te conduce ante el dragón.",w:"[-71,-83]"}),
@@ -1135,10 +1151,152 @@ table.shop td.qty{font-weight:700;white-space:nowrap}
     ]}
 
   ]},
+  {id:"pdk",title:"Bloque 10: Domakuro (Les grands esprits se rencontrent)",sub:"8 misiones de Pandala, niveles 30 a 140. Requisito oculto del Prólogo",blocks:[
+    {h:"Prepara antes (Domakuro)",items:[
+      T("Las misiones 1 y 2 (Le réveil de Pandala y À la croisée des mondes) ya están en el bloque 3. Aquí faltan las otras seis. Verificado con la ficha del Domakuro de Dofuserie (septiembre de 2026). Nivel mínimo: 120 para las tres últimas."),
+      I("dk0","Haber terminado Ça est frugal, une fois (recomendado)",{n:"Sin ella, la Filtounga pokuzienne de À la croisée des mondes cuesta 50.000 kamas."}),
+      I("dk0b","Alquimista a nivel 1",{n:"Para el Baume Hakouï de Au nom de l'Art: hay que fabricarlo tú; el craft cooperativo no vale."}),
+      T("El Campesino que ya tendrás (nivel 1 o más) sirve para la Offrande à l'esprit du Vent de L'équilibre des forces, y el Façonneur 10 ya está en los oficios (Pandaclier)."),
+      Q("dk1",7000,"kamas",{n:"Au nom de l'Art: 1.000 del Alcool à 99 % de Hintikou, 1.000 del libro Les Géoglyphes pour les nuls y 5.000 del emplazamiento de exposición (solución rápida; 7.500 o 10.000 con las otras opciones)."}),
+      Q("dk2",1000,"kamas",{n:"Sang d'encre: la Offrande au Grand Pouddah de la Marchande aerdalienne."}),
+      Q("dk3",15,"kamas",{n:"La jetée des enfants perdus: las cuatro granouilles del puente, un kama cada vez."}),
+      Q("dk4",2,"Pandazahi",{n:"O Pandaporo, 40 kamas cada uno: una chope para À la croisée des mondes y otra para Sang d'encre."}),
+      Q("dk5",2,"Artefact Pandawushu Roc",{n:"Pandaclier de À la croisée des mondes."}),
+      Q("dk6",2,"Artefact Pandawushu Vent"),
+      Q("dk7",2,"Artefact Pandawushu Bois"),
+      Q("dk8",2,"Artefact Pandawushu Feu"),
+      Q("dk9",2,"Artefact Pandawushu Eau"),
+      Q("dk10",20,"Bois de Bambou",{n:"Pandaclier."}),
+      Q("dk11",1,"Pandaburg",{n:"Pandaclier. Se vende en la taverne du Pandazaap."}),
+      Q("dk12",1,"Huile de Riz",{n:"Baume Hakouï, Au nom de l'Art."}),
+      Q("dk13",3,"Poils magiques de Tanuki",{n:"Baume Hakouï."}),
+      Q("dk14",100,"Graine de Sésame",{n:"Le festival de la lanterne: 10 wanchiao al sésame."}),
+      Q("dk15",100,"Riz",{n:"Le festival de la lanterne: 50 por cada tipo de wanchiao."}),
+      Q("dk16",50,"Haricot",{n:"Le festival de la lanterne: 10 wanchiao con alubias."}),
+      Q("dk17",20,"Eau Potable",{n:"Le festival de la lanterne: 10 por tipo de wanchiao."}),
+      Q("dk18",8,"Bananagrume",{n:"Offrande à l'esprit du Vent, L'équilibre des forces."}),
+      Q("dk19",3,"Fraise",{n:"Offrande à l'esprit du Vent."}),
+      Q("dk20",3,"Viscères de Scarafeuille",{n:"Offrande à l'esprit du Vent."}),
+      I("dk21","Mazmorra Bambusaie de Damadrya (nivel 110)"),
+      I("dk22","Mazmorra Atelier du Tanukouï San (nivel 130)"),
+      I("dk23","Mazmorra Vallée de la Dame des eaux (nivel 130)"),
+      I("dk24","Mazmorra Fabrique de foux d'artifice (nivel 140)"),
+      I("dk25","Mazmorra Dojo du Vent (nivel 140)")
+    ]},
+    {h:"Las 6 misiones que faltan (en orden)",items:[
+      I("dq3","3. Sous le bois de sa colère (nivel 110)",{n:"Daimya Hikomi. Griffe du Bois: un combate por oleadas delante de la entrada, la mazmorra Bambusaie de Damadrya y luego Kykori con su cómplice y los frutos podridos (grupo posible). En la sala 4 de la mazmorra lee la página del registro antes de seguir: si no, la misión no se actualiza y hay que repetir la mazmorra.",w:"[22,-29]",l:[["Pasos detallados (Dofuserie)", "https://www.dofuserie.com/quetes/sous-le-bois-de-sa-colere/"]]}),
+      I("dq4","4. Au nom de l'Art (nivel 130)",{n:"Daimya Hikomi. En Terrdala, los Tanuki roban el mineral de los Pandawas: mazmorra Atelier du Tanukouï San, un Baume Hakouï que fabricar, geoglifos que descifrar, dos combates en grupo y uno en solitario contra Tanuki Durtouki. Griffe du Roc.",w:"[22,-29]",l:[["Pasos detallados (Dofuserie)", "https://www.dofuserie.com/quetes/au-nom-de-l-art/"]]}),
+      I("dq5","5. La jetée des enfants perdus (nivel 130)",{n:"Daimya Hikomi. En Akwadala: dos combates en grupo, uno en solitario junto a Kwatalo, la mazmorra Vallée de la Dame des eaux y el puente de las granouilles (tira los kamas de la más grande a la más pequeña). Griffe de l'Eau.",w:"[22,-29]",l:[["Pasos detallados (Dofuserie)", "https://www.dofuserie.com/quetes/la-jetee-des-enfants-perdus/"]]}),
+      I("dq6","6. Le festival de la lanterne (nivel 140)",{n:"Daimya Hikomi. En Feudala: 8 enigmas que se sacan a los Firefoux (12 % base), 20 wanchiao que fabricar, un combate en solitario para proteger al Qilin de papier (si muere, pierdes) y la mazmorra Fabrique de foux d'artifice. Griffe du Feu.",w:"[22,-29]",l:[["Pasos detallados (Dofuserie)", "https://www.dofuserie.com/quetes/le-festival-de-la-lanterne/"]]}),
+      I("dq7","7. L'équilibre des forces (nivel 140)",{n:"Daimya Hikomi. En Aerdala: una Offrande à l'esprit du Vent que fabricas tú con el oficio de Campesino (no vale el craft cooperativo), dos combates en solitario contra los poseurs de bombe, uno en grupo en la Tour de guet y la mazmorra Dojo du Vent. Griffe du Vent.",w:"[22,-29]",l:[["Pasos detallados (Dofuserie)", "https://www.dofuserie.com/quetes/l-equilibre-des-forces/"]]}),
+      I("dq8","8. Sang d'encre (nivel 140)",{n:"Daimya Hikomi. Con las cinco garras reunidas, recupera el Dofus de tinta del Maître Pandore: dos combates en solitario con ayuda de Ikunochi. Lleva el Pandaclier equipado para entrar en la Pandassemblée, la chope de Pandazahi y 1.000 kamas. Vuelve al Éter y devuélvele el huevo a Orukam.",w:"[22,-29]",l:[["Pasos detallados (Dofuserie)", "https://www.dofuserie.com/quetes/sang-d-encre/"]]}),
+      I("dq9","Logro Les grands esprits se rencontrent completo: tienes el Domakuro")
+    ]}
+  ]},
+  {id:"pdg",title:"Bloque 11: Dorigami (Le gardien de l'immaculé)",sub:"3 misiones de Pandala y Grobe, niveles 160 a 170",blocks:[
+    {h:"Prepara antes (Dorigami)",items:[
+      T("Requisitos: nivel 140 y Sang d'encre (última misión del Domakuro) más Voir le Dark Vlad et mourir… ou pas (bloque 3). Las misiones 2 y 3 piden nivel 150. La serie pide 6.444 kamas, tres fabricaciones y dos artesanos de nivel 140. Verificado con la ficha del Dorigami de Dofuserie (septiembre de 2026)."),
+      I("dg0","Haber rehecho las cuatro primeras misiones de Mais où sont les Dofus ? si las hiciste antes de la 2.56",{n:"Cambiaron con la actualización 2.56; comprueba en el diario de misiones que aparecen sus nombres."}),
+      I("dg0b","Alquimista a nivel 140, o un alquimista que te fabrique el Élixir des Trépasseurs",{o:true,n:"Opcional: solo hace falta si quieres fabricarlo tú. Se usa en Jusqu'à leur dernier soupir."}),
+      I("dg0c","Forjador (Forgeron) a nivel 140, o un herrero que te fabrique el Outil de gravure",{o:true,n:"Opcional: solo hace falta si quieres fabricarlo tú. Sirve para Requiem pour un Yokai. El objeto se intercambia: basta con fabricarlo una vez, así que puede servir para tus cuatro personajes si quien lo tenga lo comparte."}),
+      I("dg0d","Tener el Pandaclier equipado y una chope de Pandazahi o de Pandaporo",{n:"Para entrar en la Pandassemblée y hacer aparecer al Grandapan."}),
+      I("dg0e","Tener el hechizo Lanterne des Spiritueurs",{n:"Lo da Danaba Retzu por 4 Étoffe de Samouraï fantôme. Hace falta para entrar en la cripta de Maudite disparition."}),
+      Q("dg1",4444,"kamas",{n:"Jusqu'à leur dernier soupir: el paso de Karon le Trépasseur. No regatees: si discutes, te mata."}),
+      Q("dg2",8,"Étoffe de Samouraï fantôme",{n:"4 para el hechizo Lanterne des Spiritueurs y 4 para el Élixir des Trépasseurs."}),
+      Q("dg3",12,"Ginseng",{n:"Élixir des Trépasseurs."}),
+      Q("dg4",2,"Malt",{n:"Élixir des Trépasseurs."}),
+      Q("dg5",8,"Bananagrume",{n:"Offrande à l'esprit du Vent, Jusqu'à leur dernier soupir."}),
+      Q("dg6",3,"Fraise",{n:"Offrande à l'esprit du Vent."}),
+      Q("dg7",3,"Viscères de Scarafeuille",{n:"Offrande à l'esprit du Vent."}),
+      Q("dg8",3,"Planche de Gravure",{n:"Outil de gravure (Requiem pour un Yokai)."}),
+      Q("dg9",5,"Bauxite",{n:"Outil de gravure."}),
+      Q("dg10",1,"Diamant",{n:"Outil de gravure."}),
+      Q("dg11",2000,"kamas",{n:"La Dernière pour la route de Namabiru, si no la tienes ya."}),
+      I("dg12","Mazmorra Tombe du Shogun Tofugawa (nivel 160)",{n:"Entra por la sala 1: si no, la misión no se actualiza."}),
+      I("dg13","Mazmorra Demeure des Esprits (nivel 170)")
+    ]},
+    {h:"Las 3 misiones",items:[
+      I("dgq1","1. Maudite disparition (nivel 160)",{n:"Orukam, por la sala de la Pandassemblée: equipa el Pandaclier y haz aparecer al Grandapan. Laberinto de 17 losas y combate en solitario en la cripta, cuatro ectoplasmas (6 % base; mejor fuera de la mazmorra), la mazmorra Tombe du Shogun Tofugawa y un combate por oleadas contra los espectros Pandissidans (grupo posible).",w:"[22,-29]",l:[["Pasos detallados (Dofuserie)", "https://www.dofuserie.com/quetes/maudite-disparition/"]]}),
+      I("dgq2","2. Jusqu'à leur dernier soupir (nivel 170)",{n:"Koumiho, Mont des Tombeaux, en Grobe. Se lanza durante Requiem pour un Yokai, al final de la mazmorra Demeure des Esprits. Dos fabricaciones: la Offrande à l'esprit du Vent (con el oficio de Campesino, tú mismo) y el Élixir des Trépasseurs. Hasta 8 combates posibles en grupo y 4 en solitario contra Tanukis fantômes para las Pierres de Sélénite (25 % base; se pueden comprar en el mercadillo). Nivel 150.",w:"[39,-44]",l:[["Pasos detallados (Dofuserie)", "https://www.dofuserie.com/quetes/jusqu-a-leur-dernier-soupir/"]]}),
+      I("dgq3","3. Requiem pour un Yokai (nivel 170)",{n:"Shogun Tofugawa, cementerio de Grobe. Mazmorra Demeure des Esprits, llama del Kitsounebi de Koumiho, devolver su tumba a Tonam Etamwa con el Outil de gravure y vencer solo al Péki Garou. Exige Jusqu'à leur dernier soupir y Le voleur d'âmes (Esmeralda, bloque 4). Nivel 150.",w:"[36,-44]",l:[["Pasos detallados (Dofuserie)", "https://www.dofuserie.com/quetes/requiem-pour-un-yokai/"]]}),
+      I("dgq4","Logro Le gardien de l'immaculé completo: tienes el Dorigami")
+    ]}
+  ]},
+  {id:"ptc",title:"Bloque 12: Dofus Tacheté (Un rêve en clair-obscur)",sub:"3 misiones de nivel 200 en Pandala. Requisito oculto del Prólogo",blocks:[
+    {h:"Prepara antes (Tacheté)",items:[
+      T("Requisitos: nivel 180, Requiem pour un Yokai terminada y 1 Dorigami y 1 Domakuro en el inventario durante toda la serie (hay que equiparlos los dos en la última misión). Las tres misiones se entrelazan: Deux souffles, une inspiration se lanza en mitad de Main dans la main y hay que terminarla para avanzar. Verificado con la ficha del Dofus Tacheté de Dofuserie (septiembre de 2026). Kamas: cuenta con 3.340 como máximo."),
+      I("tc0","Campesino a nivel 20 como mínimo, tú mismo",{n:"Para la Offrande au Wukang, que no se puede fabricar en cooperativo. El plan de oficios (Campesino 80) ya lo cubre."}),
+      I("tc0b","Tener el hechizo Cawotte Savouweuse o un arma que cure",{n:"Main dans la main: el Yokai amouraché debe volver a su máximo de PV, primero con una Cawotte y luego con tus golpes, que lo curan al 150 %. Ese combate admite hasta 8 jugadores."}),
+      I("tc0c","Haber terminado L'épopée du moine pèlerin",{n:"Bloquea un paso de Main dans la main. Aún sin pasos."}),
+      I("tc0d","Hacer Dites-le avec des fleurs antes de empezar (recomendado)",{n:"No es obligatoria, pero sin ella Fleurawa no te da la Campanule timide en Deux souffles, une inspiration y hay que combatir contra los Tsukumogami, un combate complicado."}),
+      Q("tc1",1000,"kamas",{n:"5 Bière Tsingtawo con Urakoru, 200 kamas cada una."}),
+      Q("tc2",1000,"kamas",{n:"10 Pwimen con Itamawe, 100 kamas cada uno."}),
+      Q("tc3",1000,"kamas",{n:"Alcool à 99 % de Hintikou, si no tienes ninguno."}),
+      Q("tc4",340,"kamas",{n:"2 Pizwa, la Limo d'Grobe, el Pandneken y el Pandazahi."}),
+      Q("tc5",100,"Riz",{n:"Offrande au Wukang."}),
+      Q("tc6",20,"Bois de Bambou Sacré",{n:"Offrande au Wukang."}),
+      Q("tc7",10,"Pwimen",{n:"Offrande au Wukang."}),
+      Q("tc8",5,"Bière Tsingtawo",{n:"Offrande au Wukang."}),
+      Q("tc9",1,"Pétale de Papier",{n:"Offrande au Wukang."}),
+      Q("tc10",1,"Pétale d'encre",{n:"Offrande au Wukang. Los pétalos de papel y de tinta no valen para el intercambio."}),
+      Q("tc11",10,"Artefact Pandawushu Bois",{n:"Offrande du Mont Noir et Blanc."}),
+      Q("tc12",10,"Artefact Pandawushu Feu"),
+      Q("tc13",10,"Artefact Pandawushu Eau"),
+      Q("tc14",10,"Artefact Pandawushu Vent"),
+      Q("tc15",10,"Artefact Pandawushu Roc"),
+      Q("tc16",30,"recurso recolectable de los reinos de tinta y papel",{n:"Seis lotes de 5 a elegir: Pichon d'encre, Tulipe en papier, Cristal pliable y Cristal liquide (Puits de Feu Noir)."}),
+      Q("tc17",4,"recurso de monstruo de los reinos de tinta y papel",{n:"Dos por cada Offrande aux esprits célestes, sin contar los pétalos."}),
+      Q("tc18",1,"Umeshushu",{n:"Taverne du Fermenthé, para Urazim."}),
+      Q("tc19",1,"Gnôle de Grobe",{n:"Taverne del cementerio de Grobe, para Urazawi."}),
+      Q("tc20",1,"Bière forte légère",{n:"Con Urakoru, para Urazaki."}),
+      Q("tc21",2,"Pizwa",{n:"Con Urakoru, para la Tortue ninjawa (Main dans la main)."}),
+      Q("tc22",1,"Limo d'Grobe",{n:"Con Namabiru, para el Grandapan."}),
+      Q("tc23",1,"Pandneken",{n:"Con Hintikou, para la bière forte."}),
+      Q("tc24",1,"Pandazahi",{n:"Con Urakoru o Chonayu, para la bière forte."}),
+      Q("tc25",1,"Épices",{n:"Para la bière forte."}),
+      I("tc26","Mazmorra Mémoire d'Orukam (nivel 200)"),
+      I("tc27","Mazmorra Souvenir d'Imagiro (nivel 200)")
+    ]},
+    {h:"Las 3 misiones",items:[
+      I("tcq1","1. Main dans la main (nivel 200)",{n:"Imagiro, en el Éter, bajo la cascada de Pandala. Curar al Yokai amouraché, preparar una bière forte para el Grandapan y ganar tres combates (Yokai amouraché, Sumowa y Shinobi novice). Gardas 1 Dorigami y 1 Domakuro en el inventario. En mitad de la misión se lanza Deux souffles, une inspiration.",w:"[21,-33]",l:[["Pasos detallados (Dofuserie)", "https://www.dofuserie.com/quetes/main-dans-la-main/"]]}),
+      I("tcq2","2. Deux souffles, une inspiration (nivel 200)",{n:"El Grandapan, en la taverne interdite. Es la misión más larga: fabricar la Offrande au Wukang, las mazmorras Mémoire d'Orukam y Souvenir d'Imagiro, y varios combates en solitario. Nivel 180 y Main dans la main avanzada hasta la invitación de la diosa.",w:"[23,-32]",l:[["Pasos detallados (Dofuserie)", "https://www.dofuserie.com/quetes/deux-souffles-une-inspiration/"]]}),
+      I("tcq3","3. En ce jardin qui nous unit (nivel 200)",{n:"Déesse Pandawa. Equipa el Dorigami y el Domakuro para entrar en el jardín secreto, vence a Torakhan, el chtigre de Keltra Ekazumi (golpea fortísimo a exactamente 2 de alcance: no te quedes a 2 casillas) y luego al Reflet d'Imagirorukam en combate táctico, para reunir a Imagiro y Orukam. Se desbloquea al seguir la conversación con la diosa.",w:"[23,-32]",l:[["Pasos detallados (Dofuserie)", "https://www.dofuserie.com/quetes/en-ce-jardin-qui-nous-unit/"]]}),
+      I("tcq4","Logro Un rêve en clair-obscur completo: tienes el Dofus Tacheté")
+    ]}
+  ]},
+  {id:"p3a",title:"Requisito del Prólogo: Quand l'éveil n'est qu'un songe",sub:"Pandala, Grobe y el Royaume de papier. Resumen con huecos",blocks:[
+    {h:"Qué es y qué pide",items:[
+      T("Quand l'éveil n'est qu'un songe (nivel 200) se lanza con Draconiros en la grotte du réceptacle, Pandala [21,-33]. Exige haber terminado La source de tous les maux y En ce jardin qui nous unit. Draconiros te confía tres misiones, en el orden que quieras: Par ce serment s'écrit le monde, Le dernier rempart y Une bien étrange prophétie. Al terminarlas se abre Au détour d'un rêve perdu, la primera misión del Prólogo. Fuentes: dofus-portals.fr, DofusDB y Dofus pour les Noobs; verifica los datos."),
+ I("qe0","Escultor (Sculpteur) a nivel 180, o un escultor que te fabrique el Pinceau de calligraphie",{o:true,n:"Opcional: solo hace falta si quieres fabricarlo tú. Lo pide Par ce serment s'écrit le monde. A confirmar: si es un objeto de misión ligado al personaje, tendrás que fabricarlo tú."}),
+      I("qe1","Haber terminado La source de tous les maux",{n:"Requisito de Quand l'éveil n'est qu'un songe. Aún sin pasos."}),
+      I("qe2","Haber terminado En ce jardin qui nous unit",{n:"Requisito de Quand l'éveil n'est qu'un songe. Sus pasos están en el bloque 12 (Tacheté)."}),
+      I("qe3","Haber avanzado Le Saule du Promeneur, L'art de la langue de bois e Infâme pourriture",{n:"Varios pasos de Par ce serment s'écrit le monde se bloquean hasta entonces. L'art de la langue de bois ya está en la fase de Silvosse; las otras dos aún sin pasos."}),
+      I("qe4","Habla con Draconiros para lanzar Quand l'éveil n'est qu'un songe",{w:"[21,-33]"})
+    ]},
+    {h:"Par ce serment s'écrit le monde (resumen)",items:[
+      T("También lo pide Cultures et turpitudes (la parte de Grobe): hazla una sola vez. Nivel 200 según la ficha, pero DofusDB indica que el nivel real exigido es 180. Fuentes: dofus-portals.fr, Dofuserie y Wow Magazine (agosto de 2026)."),
+      I("qs1","Empieza en la taverne interdite de Pandala",{w:"[23,-32]"}),
+      I("qs2","Sigue la pista de los juramentos con Namabiru, en Grobe",{w:"[36,-43]"}),
+      I("qs3","Entra en el Royaume de papier y habla con Daoh en el templo",{n:"El punto de partida está en [0,0]. Primera pregunta, según tu clase: «Le Feu Blanc» (Eniripsa, Feca, Selotrop, Ecaflip, Iop, Crâ y Sacrieur), «Le feu Noir» (Sadida, Osamodas, Enutrof, Sram, Xélor, Pandawa, Roublard, Zobal, Steamer y Ouginak) o «Le Feu Blanc et le Feu Noir» (Huppermage y Forjalanza). Segunda pregunta: «Le dragon de Pandala». Recibes el Symbole de l'Iroru, que abre los reinos de tinta y papel.",w:"[0,2]"}),
+      I("qs4","Habla con Shodowa, Urazawi, Tanukang Jei, Silvosse e Imagirorukam",{n:"Son los PNJ del Royaume de papier que enlazan los juramentos."}),
+      I("qs5","Fabrica el Pinceau de calligraphie",{n:"Escultor nivel 180 como mínimo."}),
+      I("qs6","Recoge el juramento del Bois, en Plantala",{n:"También en [25,-33] y [26,-32].",w:"[27,-29]"}),
+      I("qs7","Recoge el juramento del Roc",{w:"[25,-25]"}),
+      I("qs8","Recoge el juramento de l'Eau",{w:"[19,-24]"}),
+      I("qs9","Recoge el juramento du Feu",{n:"También en [18,-34].",w:"[16,-32]"}),
+      I("qs10","Recoge el juramento du Vent",{n:"También en [21,-34], [23,-33], [19,-36] y [21,-39].",w:"[21,-38]"}),
+      I("qs11","Vence al Esprit de contagion en tres combates",{n:"Uno posible en grupo, uno por oleadas y uno en solitario. Así se sellan los juramentos."})
+    ]},
+    {h:"Las otras dos misiones de Draconiros (sin pasos)",items:[
+      I("qe5","Le dernier rempart",{n:"Cómo la división lleva a la ruina. Aún sin pasos."}),
+      I("qe6","Une bien étrange prophétie",{n:"La protección de los Pandawas. Aún sin pasos."}),
+      I("qe7","Quand l'éveil n'est qu'un songe completo",{n:"Abre Au détour d'un rêve perdu."})
+    ]}
+  ]},
   {id:"p3",title:"Prólogo: Le secret des Dofus (El secreto de los Dofus: Prólogo)",sub:"Tres misiones cortas",blocks:[
     {h:"Requisitos y preparación",items:[
       T("Draconiros lanza las tres misiones en la grotte du réceptacle, en Pandala [21,-33]. Nivel 190. Combates: 1 en solitario y 1 por oleadas (Au détour d'un rêve perdu), 2 en solitario (Entretemps, une renaissance) y 2 en solitario (La bête au bois dormant). Verificado con Dofuserie (septiembre de 2026)."),
-      I("pr0","Haber terminado Quand l'éveil n'est qu'un songe",{n:"Requisito de Au détour d'un rêve perdu que no estaba en la ruta. Aún no tengo sus pasos.",l:[["Pasos detallados (Dofuserie)", "https://www.dofuserie.com/quetes/quand-l-eveil-n-est-qu-un-songe/"]]}),
+      I("pr0","Haber terminado Quand l'éveil n'est qu'un songe",{n:"Requisito de Au détour d'un rêve perdu que no estaba en la ruta. Su resumen está en la fase anterior.",l:[["Pasos detallados (Dofuserie)", "https://www.dofuserie.com/quetes/quand-l-eveil-n-est-qu-un-songe/"]]}),
       I("pr1","Tener los seis Dofus primordiales en el inventario y La fin… ou le commencement terminada"),
       I("pr2","Tener el Masque mortuaire",{n:"Se equipa en la última sala del Belvédère d'Ilyzaelle durante Entretemps, une renaissance. Es el mismo del Marfil."}),
       I("pr3","Tener 1 Ambre gris spirituel",{n:"Para entrar en el templo de la ballena (Entretemps, une renaissance)."}),
@@ -1248,17 +1406,34 @@ table.shop td.qty{font-weight:700;white-space:nowrap}
  I("p6e","5. Les derniers d'entre nous (nivel 180)",{n:"Kroa, en la Forêt Sombre. Libera a Cornelia Granpa y persigue hasta Frigost al nuevo dueño del huevo negro: tres combates y la mazmorra Antre du Korriandre. Exige haber hecho Rester planté là (serie Ocre d'ambre); C'est frais, mais c'est pas grave bloquea un paso. Una sola Essence du Korriandre reemplaza toda la receta de la Essence de Sylvesprit.",w:"[-11,-13]",l:[["Pasos detallados (Dofuserie)", "https://www.dofuserie.com/quetes/les-derniers-d-entre-nous/"]]}),
  I("p6f","6. Cultures et turpitudes (nivel 200; pasos más abajo)",{n:"Emmie Nansgriz, en la segunda sala del castillo de Amakna. Exige nivel 180 y Les derniers d'entre nous; para la parte de Grobe, Gobstination d'un Grobelin y Par ce serment s'écrit le monde.",w:"[4,-6]",l:[["Pasos detallados (Dofuserie)", "https://www.dofuserie.com/quetes/cultures-et-turpitudes/"]]}),
  I("p6g","7. Qui nous protège du Protecteur ? (parte 1)",{n:"Epuop Tik, en el templo Sadida. Reúne la ayuda de los Protectores: los once sigils, y el Ménologium, que hay que reforjar y bendecir. Exige Mort et renouveau, Un héritage tourmenté y Le givre des révélations; Dites-le avec des fleurs y Pas de fumée sans feu bloquean un paso cada una.",w:"[-1,9]",l:[["Pasos detallados (Dofuserie)", "https://www.dofuserie.com/quetes/qui-nous-protege-du-protecteur/"]]}),
-      I("p6h","8. Qui nous protège du Protecteur ? (parte 2): avanza solo hasta conocer a Elya Wood",{n:"Ahí se abre Flovoraison. No cierres esta misión todavía: se termina en la fase 16.",l:[L("Guía","qui-nous-protege-du-protecteur-p2.html")]})
+      I("p6h","8. Qui nous protège du Protecteur ? (parte 2): avanza solo hasta conocer a Elya Wood",{n:"Ahí se abre Flovoraison. No cierres esta misión todavía: se termina en la fase 20.",l:[L("Guía","qui-nous-protege-du-protecteur-p2.html")]})
     ]},
     {h:"Requisitos ocultos de Silvosse",items:[
       T("Verificados con la ficha del Dofus Sylvestre de Dofuserie (septiembre de 2026). Hazlos antes de las misiones que los piden."),
-      I("sv1","Alquimista a nivel 140, o un alquimista que te fabrique el Élixir des Trépasseurs",{n:"Receta: 1 Dernière pour la route (2.000 kamas a Namabiru, en Grobe [36,-43]), 4 Étoffe de Samouraï fantôme, 2 Malt, 4 Pierre de Sélénite, 5 Pluie de Pandala y 12 Ginseng. La misión Jusqu'à leur dernier soupir detalla la fabricación.",l:[["Pasos detallados (Dofuserie)", "https://www.dofuserie.com/quetes/jusqu-a-leur-dernier-soupir/"]]}),
-      I("sv2","Forjador (Forgeron) a nivel 180, o un herrero que te fabrique la Tapette à moskitos",{n:"Hay que tenerla antes de ver a Hécate; sin ella no aparece el diálogo correcto. Además hace falta consumir una Enchanterelle para verla."}),
+ I("sv1","Alquimista a nivel 140, o un alquimista que te fabrique el Élixir des Trépasseurs",{o:true,n:"Opcional: solo hace falta si quieres fabricarlo tú. Receta: 1 Dernière pour la route (2.000 kamas a Namabiru, en Grobe [36,-43]), 4 Étoffe de Samouraï fantôme, 2 Malt, 4 Pierre de Sélénite, 5 Pluie de Pandala y 12 Ginseng. La misión Jusqu'à leur dernier soupir detalla la fabricación.",l:[["Pasos detallados (Dofuserie)", "https://www.dofuserie.com/quetes/jusqu-a-leur-dernier-soupir/"]]}),
+ I("sv2","Forjador (Forgeron) a nivel 180, o un herrero que te fabrique la Tapette à moskitos",{o:true,n:"Opcional: solo hace falta si quieres fabricarlo tú. Hay que tenerla antes de ver a Hécate; sin ella no aparece el diálogo correcto. Además hace falta consumir una Enchanterelle para verla."}),
       I("sv3","Poder ir al Xélorium",{n:"Para los Métronomes du Début-Temps."}),
-      I("sv4","Haber terminado Gobstination d'un Grobelin y Par ce serment s'écrit le monde",{n:"Sin ellas, Cultures et turpitudes se bloquea con el Grobelin Jardinier. Aún sin pasos.",l:[["Pasos detallados (Dofuserie)", "https://www.dofuserie.com/quetes/gobstination-d-un-grobelin/"]]}),
+      I("sv4","Haber terminado Gobstination d'un Grobelin y Par ce serment s'écrit le monde",{n:"Sin ellas, Cultures et turpitudes se bloquea con el Grobelin Jardinier. Gobstination está paso a paso justo debajo; Par ce serment s'écrit le monde está en la fase del requisito del Prólogo.",l:[["Pasos detallados (Dofuserie)", "https://www.dofuserie.com/quetes/gobstination-d-un-grobelin/"]]}),
       I("sv5","Haber terminado C'est frais, mais c'est pas grave",{n:"Bloquea un paso de Les derniers d'entre nous. Aún sin pasos.",l:[["Pasos detallados (Dofuserie)", "https://www.dofuserie.com/quetes/c-est-frais-mais-c-est-pas-grave/"]]}),
       I("sv6","Haber terminado Mort et renouveau, Un héritage tourmenté y Le givre des révélations",{n:"Los pide Qui nous protège du Protecteur ?. Aún sin pasos."}),
       I("sv7","Haber terminado Dites-le avec des fleurs",{n:"Bloquea un paso de Qui nous protège du Protecteur ?. Pas de fumée sans feu ya está en la serie Ocre d'ambre."})
+    ]},
+    {h:"Gobstination d'un Grobelin (paso a paso)",items:[
+      T("Nivel 170. Empieza con el Grobelin Jardinier en el cementerio de Grobe [34,-40] (barco en [27,-27]). Hay que entregarle 30 Savon grobelin, objetos de misión ligados al personaje: prepara los materiales para los 4 con el botón «Comprar para los 4». Fuente: Dofus pour les Noobs (2020) más comentarios de jugadores de 2020 y 2021."),
+      Q("gb1",90,"Dorade Grise",{n:"30 Huile de Pichon × 3."}),
+      Q("gb2",90,"Lotte",{n:"30 Huile de Pichon × 3."}),
+      Q("gb3",90,"Raie Bleue",{n:"30 Huile de Pichon × 3."}),
+      Q("gb4",30,"Croissant de Tsukinochi",{n:"Concassé de brume."}),
+      Q("gb5",30,"Plastron de Tambouraï",{n:"Concassé de brume."}),
+      Q("gb6",30,"Fleur d'Onabu-Geisha",{n:"Concassé de brume."}),
+      Q("gb7",30,"Os de Jiangshi-Nobi",{n:"Concassé de brume."}),
+      Q("gb8",30,"Blague de Soufre",{alt:[30000,"kamas"],n:"1.000 kamas cada una, con Ernest Laye en Frigost [-77,-45]."}),
+      I("gb9","Habla con el Grobelin Jardinier",{n:"Es el último gobelin jardinero de la isla y necesita jabón para limpiar el musgo de las rocas.",w:"[34,-40]"}),
+      I("gb10","Fabrica 30 Concassé de brume en el triturador del taller de los forjamagos («Fusionner des ressources»)",{n:"Cada uno: 1 Plastron de Tambouraï, 1 Fleur d'Onabu-Geisha, 1 Croissant de Tsukinochi y 1 Os de Jiangshi-Nobi."}),
+      I("gb11","Consigue 30 Huile de Pichon: las fabrica un Campesino nivel 140 o más en el taller «moudre»",{n:"Cada una: 3 Lotte, 3 Raie Bleue y 3 Dorade Grise (por eso 90 de cada). Puedes pedírselo a otro jugador con ese nivel."}),
+      I("gb12","Compra las 30 Blague de Soufre a Ernest Laye",{w:"[-77,-45]"}),
+      I("gb13","Fabrica 30 Savon grobelin con el oficio de Bricoleur (nivel 1 o más)",{n:"Cada uno: 1 Concassé de brume, 1 Huile de Pichon y 1 Blague de Soufre. No se puede fabricar en cooperativo."}),
+      I("gb14","Entrega los 30 Savon grobelin al Grobelin Jardinier",{n:"Termina la misión. Recompensa: 5 Fleur d'Onabu-Geisha y 5 Os de Jiangshi-Nobi.",w:"[34,-40]"})
     ]},
     {h:"Cultures et turpitudes (paso a paso)",items:[
       T("Nivel 200 (mínimo 180). Empieza con Emmie Nansgriz en la segunda sala del castillo de Amakna [4,-6]. Tres combates con un compañero, dos de ellos por oleadas: si Simple muere, el combate se pierde; si aguantas hasta el turno 12, él elimina a los que queden. Fuente: Dofuserie (septiembre de 2026)."),
@@ -1334,7 +1509,7 @@ table.shop td.qty{font-weight:700;white-space:nowrap}
       I("p6d5","Palais du Roi Nidas",{n:"Acuérdate de llevar la llave."}),
       I("p6d6","Bataille de l'Aurore Pourpre",{n:"Acuérdate de llevar la llave."}),
       I("p6d7","Tour de Solar"),
-      I("p6d8","Chambre des maléfices",{n:"Es la de Belladone; también la usas en la fase 16."}),
+      I("p6d8","Chambre des maléfices",{n:"Es la de Belladone; también la usas en la fase 20."}),
       T("Combates: unos 6 en solitario con compañero, 1 en solitario, 5 en grupo, 3 por oleadas con compañero, 1 por oleadas en solitario, 1 con compañero Masse, más combates aleatorios y de drop al 100 %.")
     ]}
   ]},
@@ -1498,9 +1673,9 @@ table.shop td.qty{font-weight:700;white-space:nowrap}
     var body = el("div","pbody");
     var tools = el("div","ptools");
     var bAll = el("button","mini-btn","Marcar la fase como hecha"); bAll.type="button";
-    bAll.addEventListener("click", function(){ setItems(boxes.filter(function(x){ return x.phase===ph.id; }).map(function(x){ return x.id; }), true); update(); });
+    bAll.addEventListener("click", function(){ setItems(boxes.filter(function(x){ return x.phase===ph.id && !x.it.o; }).map(function(x){ return x.id; }), true); update(); });
     var bNone = el("button","mini-btn","Desmarcar la fase"); bNone.type="button";
-    bNone.addEventListener("click", function(){ setItems(boxes.filter(function(x){ return x.phase===ph.id; }).map(function(x){ return x.id; }), false); update(); });
+    bNone.addEventListener("click", function(){ setItems(boxes.filter(function(x){ return x.phase===ph.id && !x.it.o; }).map(function(x){ return x.id; }), false); update(); });
     tools.appendChild(bAll); tools.appendChild(bNone); body.appendChild(tools);
     ph.blocks.forEach(function(b){
       body.appendChild(el("h3",null,b.h));
@@ -1513,6 +1688,7 @@ table.shop td.qty{font-weight:700;white-space:nowrap}
         var wrap = el("div");
         var lab = el("label",null, it.q!=null ? qtitle(it) : it.t); lab.htmlFor = inp.id;
         var lr = el("div","lrow"); lr.appendChild(lab);
+        if (it.o){ li.classList.add("opt"); lr.appendChild(el("span","optbadge","Opcional")); }
         var pips = el("span","pips"); pips.setAttribute("aria-hidden","true");
         chars.forEach(function(c){ var pi_ = el("i"); pi_.title = dn(c); pips.appendChild(pi_); });
         lr.appendChild(pips); wrap.appendChild(lr);
@@ -1536,7 +1712,7 @@ table.shop td.qty{font-weight:700;white-space:nowrap}
   });
 
   /* ---------- personajes, misión activa ---------- */
-  function pctOf(c){ var n=0; boxes.forEach(function(b){ if (states[c][b.id]) n++; }); return boxes.length ? Math.round(n/boxes.length*100) : 0; }
+  function pctOf(c){ var n=0,t=0; boxes.forEach(function(b){ if (b.it.o) return; t++; if (states[c][b.id]) n++; }); return t ? Math.round(n/t*100) : 0; }
   function toggleSel(c){
     var i = sel.indexOf(c);
     if (i>=0){ if (sel.length>1) sel.splice(i,1); }
@@ -1557,7 +1733,7 @@ table.shop td.qty{font-weight:700;white-space:nowrap}
   }
   function renderNext(){
     var c = document.getElementById("nextCard"); c.innerHTML = "";
-    var nb = boxes.filter(function(b){ return !allDone(b.id); })[0];
+    var nb = boxes.filter(function(b){ return !b.it.o && !allDone(b.id); })[0];
     if (!nb){
       c.appendChild(el("h2",null,selLabel()+": todo completado"));
       c.appendChild(el("p","n","Marcaste todas las casillas. Ya deberías tener el Dofus Silvestre."));
@@ -1581,16 +1757,16 @@ table.shop td.qty{font-weight:700;white-space:nowrap}
   /* ---------- actualizar ---------- */
   var openedFirst = false;
   function update(){
-    var total = boxes.length, done = 0, per = {};
+    var total = boxes.filter(function(b){ return !b.it.o; }).length, done = 0, per = {};
     boxes.forEach(function(b){
       var n = 0; sel.forEach(function(x){ if (states[x][b.id]) n++; });
       var c = (n===sel.length);
       b.input.checked = c; b.input.indeterminate = (n>0 && n<sel.length);
-      if (c) done++;
+      if (c && !b.it.o) done++;
       b.li.classList.toggle("done", c);
       var tot = 0; chars.forEach(function(x,i){ var on = !!states[x][b.id]; b.pips.children[i].className = on ? "on" : ""; if (on) tot++; });
       b.pips.style.display = (tot===0 || tot===chars.length) ? "none" : "inline-flex";
-      var p = per[b.phase] || (per[b.phase]={t:0,d:0}); p.t++; if (c) p.d++;
+      if (!b.it.o){ var p = per[b.phase] || (per[b.phase]={t:0,d:0}); p.t++; if (c) p.d++; }
     });
     var pct = total ? Math.round(done/total*100) : 0;
     document.getElementById("pct").textContent = pct + " %";
@@ -1663,6 +1839,8 @@ table.shop td.qty{font-weight:700;white-space:nowrap}
     var on = document.body.classList.toggle("hide-done");
     hideBtn.setAttribute("aria-pressed", on ? "true" : "false");
   });
+  var optBtn = document.getElementById("optBtn");
+  optBtn.addEventListener("click", function(){ var on = document.body.classList.toggle("hide-opt"); optBtn.setAttribute("aria-pressed", on ? "true" : "false"); });
   var resetBtn = document.getElementById("resetBtn"), armed = false, timer;
   resetBtn.addEventListener("click", function(){
     if (!armed){
